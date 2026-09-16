@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Clarified native, user-wide extension availability while preserving project
+  restrictions and human action approvals. Added a pinned-source English
+  configuration excerpt and updated per-file ownership without changing
+  installed runtimes, agent roles, or native configuration.
 - Restored the centrally managed public Agent Core from the exercised
   `2.0.0-rc.3` fallback to the same immutable `2.0.0-rc.4` payload through an
   exact SHA- and target-inventory-bound Candidate sync. Application, provider,
