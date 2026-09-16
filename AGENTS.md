@@ -248,8 +248,11 @@ aktuelle Autorisierung.
 ## 10) Tools, MCPs und Plugins
 
 - Unbekannte Integrationen bleiben deaktiviert oder approval-pflichtig.
-- Inventarisiere je Integration Owner, Datenklasse, Mutationsgrad,
-  Approval-Modus, Reviewdatum und jedes freigegebene Tool.
+- Bereits installierte und verbundene Erweiterungen über die native Konfiguration
+  nutzen; kein zusätzliches Tool-Inventar pro Chat oder Worktree voraussetzen.
+  Projektbeschränkungen und konkrete Aktionsfreigaben bleiben wirksam.
+  Benutzerweite Ausnahmen und Anmeldedaten nicht in die allgemeinen Lieferdateien
+  übernehmen; siehe [Konfiguration](.agent-core/CONFIGURATION.md).
 - Read-only-Zugriff ist keine Schreibfreigabe; externe Nachrichten,
   Live-Steuerung, privilegierte oder destruktive Aktionen verlangen eine
   konkrete menschliche Autorisierung.

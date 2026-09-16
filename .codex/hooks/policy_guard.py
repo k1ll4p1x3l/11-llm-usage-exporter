@@ -141,7 +141,7 @@ def _inventory_entry(
                 return None, f"{path} tool {name} has invalid zone"
             if tool.get("approval") not in TOOL_APPROVALS:
                 return None, f"{path} tool {name} has invalid approval"
-            if integration["enabled"] and name == tool_name:
+            if integration["enabled"] and integration["approval_mode"] != "disabled" and name == tool_name:
                 found = tool
     return found, None
 
@@ -149,6 +149,10 @@ def _inventory_entry(
 def _is_mutating(payload: Dict[str, Any], entry: Optional[Dict[str, Any]]) -> bool:
     name = _tool_name(payload)
     if name in MUTATING_LOCAL_TOOLS:
+        return True
+    # Native Codex owns tool approvals. Preserve the repository guards for
+    # unclassified MCP calls without requiring a separate tool inventory.
+    if name.startswith("mcp__") and entry is None:
         return True
     return bool(
         entry
@@ -682,7 +686,11 @@ def _pre_tool_use(payload: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     status = run_guard.load_status(payload)
     name = _tool_name(payload)
     entry, inventory_error = _inventory_entry(status.root, name)
-    if name.startswith("mcp__") and (inventory_error or entry is None):
+    inventory_path = status.root / run_guard.STATE_DIRECTORY / "tool-inventory.json"
+    has_project_inventory = inventory_path.exists() or inventory_path.is_symlink()
+    # No inventory is the native default; an explicit project inventory remains
+    # an additional restriction, including malformed and disabled entries.
+    if name.startswith("mcp__") and (inventory_error or (has_project_inventory and entry is None)):
         reason = inventory_error or (
             "MCP tool is absent from the enabled consumer inventory at "
             f"{run_guard.STATE_DIRECTORY}/tool-inventory.json"
@@ -783,6 +791,8 @@ def _permission_request(payload: Dict[str, Any]) -> Dict[str, Any]:
 def _post_tool_use(payload: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     status = run_guard.load_status(payload)
     entry, _ = _inventory_entry(status.root, _tool_name(payload))
+    if _tool_name(payload).startswith("mcp__") and entry is None:
+        return None
     if not _is_mutating(payload, entry):
         return None
     return {

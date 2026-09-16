@@ -1,5 +1,16 @@
 # Task Log
 
+## Native Codex compatibility migration — 2026-09-16
+
+- Scope: two existing adapters, ownership metadata and required documentation.
+- Preserve all roles, inherited model selection, four-agent concurrency and
+  existing overlay/run/envelope/hook registrations; no new runtime or installer.
+- Retain 25 legacy paths as consumer-owned; preserve 58 central entries exactly.
+- Validation: 27 external adapter regression tests plus syntax, scope and hash
+  readback. Current native acceptance and hosted CI remain activation gates.
+- State: local migration prepared; no publication or merge claimed here.
+- Rollback: revert migration changes after baseline `e864b5dd65b4a1bfcff58c95ec833c695bf6cc6e`.
+
 ## Checkpoint 2026-09-07 Europe/Berlin — restore RC4 after recovery rehearsal
 
 ### Goal and authorization
