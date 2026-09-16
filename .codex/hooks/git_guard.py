@@ -396,6 +396,7 @@ def _safe_git_read(tokens: list[str]) -> bool:
     subcommand = tokens[1]
     if subcommand in {
         "describe",
+        "check-ignore",
         "diff",
         "for-each-ref",
         "log",
@@ -408,11 +409,28 @@ def _safe_git_read(tokens: list[str]) -> bool:
         "show",
         "show-ref",
         "status",
-        "symbolic-ref",
     }:
-        return not any(item == "--output" or item.startswith("--output=") for item in tokens[2:])
+        return not any(item in {"--output", "--ext-diff", "--textconv"} or item.startswith("--output=") for item in tokens[2:])
+    if subcommand == "symbolic-ref":
+        args = tokens[2:]
+        return len([arg for arg in args if not arg.startswith("-")]) == 1 and all(
+            not arg.startswith("-") or arg in {"--short", "--quiet", "-q"} for arg in args
+        )
     if subcommand == "branch":
-        return len(tokens) >= 3 and tokens[2] in {"--contains", "--list", "--show-current", "-l"}
+        arguments = tokens[2:]
+        if arguments == ["--show-current"]:
+            return True
+        if not arguments or arguments[0] not in {"--contains", "--list", "-l"}:
+            return False
+        # A read selector must not hide a later delete, rename, copy or
+        # configuration flag. Unknown or bundled options stay unclassified.
+        read_options = {
+            "--contains", "--no-contains", "--merged", "--no-merged",
+            "--list", "-l", "--all", "-a", "--remotes", "-r",
+            "--verbose", "-v", "-vv", "--no-color", "--no-column",
+            "--ignore-case", "-i",
+        }
+        return all(not item.startswith("-") or item in read_options for item in arguments)
     if subcommand == "worktree":
         return len(tokens) >= 3 and tokens[2] == "list"
     if subcommand == "remote":
@@ -424,20 +442,89 @@ def _safe_git_read(tokens: list[str]) -> bool:
     return False
 
 
-def _safe_read_command(command: str) -> bool:
-    tokens = _tokens(command)
+def _read_segments(command: str) -> Optional[list[str]]:
+    """Split simple sequences, keeping quoted regex punctuation literal.
+
+    This is not a general shell parser. Expansions, pipelines and redirects
+    remain unknown; each accepted command must independently be read-only.
+    """
+    quote = ""
+    escaped = False
+    current: list[str] = []
+    segments: list[str] = []
+    for char in command:
+        if escaped:
+            if char in "\n\r":
+                return None
+            current.append(char)
+            escaped = False
+            continue
+        if char == "\\" and quote != "'":
+            current.append(char)
+            escaped = True
+            continue
+        if quote:
+            if char == quote:
+                quote = ""
+            elif quote == '"' and char in "$`":
+                return None
+            current.append(char)
+            continue
+        if char in "'\"":
+            quote = char
+            current.append(char)
+        elif char in "$`|&<>#()":
+            return None
+        elif char in ";\n\r":
+            if "".join(current).strip():
+                segments.append("".join(current))
+            current = []
+        else:
+            current.append(char)
+    if quote or escaped:
+        return None
+    if "".join(current).strip():
+        segments.append("".join(current))
+    return segments or None
+
+
+def _safe_read_tokens(tokens: list[str]) -> bool:
     if not tokens:
         return False
     if tokens[0] == "git":
         return _safe_git_read(tokens)
+    if tokens[0] == "rg" and any(
+        arg in {"--pre", "--hostname-bin"} or arg.startswith(("--pre=", "--hostname-bin="))
+        for arg in tokens[1:]
+    ):
+        return False
+    if tokens[0] == "file" and any(
+        (arg.startswith("-") and not arg.startswith("--") and "C" in arg[1:])
+        or (arg.startswith("--") and arg != "--" and "--compile".startswith(arg))
+        for arg in tokens[1:]
+    ):
+        return False
     if tokens[0] in {"cat", "file", "grep", "head", "ls", "pwd", "rg", "stat", "tail", "test", "wc", "which"}:
         return True
     if tokens[0] == "sed":
-        return "-n" in tokens and not any(item == "-i" or item.startswith("-i") for item in tokens[1:])
+        # Only the common print-range form is statically classified as a read.
+        return len(tokens) >= 4 and tokens[1] == "-n" and re.fullmatch(
+            r"(?:\d+|\$)(?:,(?:\d+|\$))?p", tokens[2]
+        ) is not None and all(not arg.startswith("-") for arg in tokens[3:])
     if tokens[0] == "find":
-        dangerous = {"-delete", "-exec", "-execdir", "-fprint", "-fprint0", "-ok", "-okdir"}
+        dangerous = {"-delete", "-exec", "-execdir", "-fprint", "-fprint0", "-fprintf", "-fls", "-ok", "-okdir"}
         return not any(item in dangerous for item in tokens[1:])
     return False
+
+
+def _safe_read_command(command: str) -> bool:
+    segments = _read_segments(command)
+    if not segments:
+        return False
+    try:
+        return all(_safe_read_tokens(shlex.split(segment)) for segment in segments)
+    except ValueError:
+        return False
 
 
 def _safe_branch_escape(command: str, status: GitStatus) -> bool:

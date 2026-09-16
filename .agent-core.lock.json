@@ -11,31 +11,6 @@
       "sha256": "6194a0d7d0e33a0429d1a062a846d1edb2624bef2a171ce78af8ed41c13c6a5a",
       "size": 1069
     },
-    ".agent-core/templates/ACTION_ENVELOPE.json": {
-      "mode": "0644",
-      "sha256": "ec54c0db3853ffb05a4ceb7446e3ac95750085ce3a55bff5311b7c38f1de51f5",
-      "size": 814
-    },
-    ".agent-core/templates/CHECKPOINT.json": {
-      "mode": "0644",
-      "sha256": "43b2b396d096345975c406c74f14ab2a699e6d1bfe10e180155c8480070af8e0",
-      "size": 341
-    },
-    ".agent-core/templates/DELEGATION_LEDGER.json": {
-      "mode": "0644",
-      "sha256": "448511283bb167a8978cbc6fd540a7de717f1bc78440e5e7ac6d66358bb2aef9",
-      "size": 573
-    },
-    ".agent-core/templates/EVIDENCE.json": {
-      "mode": "0644",
-      "sha256": "90ad8cb899fa7e130c2419c1697bcb4724076ff8f33d4b7238336ac66ef03fc1",
-      "size": 347
-    },
-    ".agent-core/templates/GIT_LIFECYCLE_APPROVAL_ENVELOPE.json": {
-      "mode": "0644",
-      "sha256": "f9b52fcaeb2e71b425158ab63341fd78517a4c340f9a18178ae0aa29d2b1b22f",
-      "size": 4113
-    },
     ".agent-core/templates/HOMELAB_APPROVAL_CHANGE_TEMPLATE.md": {
       "mode": "0644",
       "sha256": "797127e929635e519e6fda1e8342d8edf60f1b273871ec6fe04f864de909c1bf",
@@ -66,45 +41,10 @@
       "sha256": "a54087e27da3aca0ab697cee9b00145ba3a30d7d61b63686f69ec72c441264fd",
       "size": 1016
     },
-    ".agent-core/templates/REPOSITORY_AGENT_OVERLAY.md": {
-      "mode": "0644",
-      "sha256": "5990cfce40620eb9fc8f4441b3ffccf65531ee49409449b135725b5ce1ec074a",
-      "size": 944
-    },
-    ".agent-core/templates/REPOSITORY_AGENT_OVERLAY.schema.json": {
-      "mode": "0644",
-      "sha256": "f9b529409be26ae671aa8866f43c0311c7e7a51a9d32d24cc5e6a9a978d231ed",
-      "size": 937
-    },
-    ".agent-core/templates/REPOSITORY_AGENT_OVERLAY_MANIFEST.json": {
-      "mode": "0644",
-      "sha256": "6ff62c39677c7b54735700fbfafbd14587d89a1c0f9380135a0175344ac159e8",
-      "size": 234
-    },
     ".agent-core/templates/REPO_POLICY.md": {
       "mode": "0644",
       "sha256": "5d1f6b28c9d5dab8e58e63b01efc4a869c9ba50559ed2e0775ebd67d988da355",
       "size": 2912
-    },
-    ".agent-core/templates/RUN_CONTRACT.json": {
-      "mode": "0644",
-      "sha256": "7e9fcf29c5d96a2f20fdba55dfa4bad460002a8765ea8319e633937f08d148af",
-      "size": 674
-    },
-    ".agent-core/templates/SCOPE_ASSUMPTION_LEDGER.json": {
-      "mode": "0644",
-      "sha256": "00fd7a47c725b0ef36aefe8069137b7ee70db42a857be05e05337606e1ce3fe5",
-      "size": 553
-    },
-    ".agent-core/templates/TASK_LOG.md": {
-      "mode": "0644",
-      "sha256": "14074779df5226438ffa887b04d3974a050b6e5907405e73d1d84ddcde3d75d7",
-      "size": 1410
-    },
-    ".agent-core/templates/TOOL_INTEGRATION_INVENTORY.json": {
-      "mode": "0644",
-      "sha256": "bc1b6220edcf1ce5ebb95b1d65774b281b7b6a35b55ca58b74541cf531c2c5eb",
-      "size": 474
     },
     ".agents/skills/approved-change-execution/SKILL.md": {
       "mode": "0644",
@@ -345,71 +285,6 @@
       "mode": "0644",
       "sha256": "954824a37d6cecaf04eaa4e12931a027322e98357eec01b0d3a661a731bac2eb",
       "size": 6209
-    },
-    ".codex/hooks.json": {
-      "mode": "0644",
-      "sha256": "75f7df4bae4c8eb3440570d42cf673f1e870311cec1df020a16fc5c577e02fec",
-      "size": 9391
-    },
-    ".codex/hooks/git_guard.py": {
-      "mode": "0644",
-      "sha256": "ab606ecd2fa44dbdcf507aa3708fe41a64310955a1579065c41445526d6fc189",
-      "size": 22534
-    },
-    ".codex/hooks/policy_guard.py": {
-      "mode": "0644",
-      "sha256": "dadcc537ddc0791f353e1b26b72f304f1537a5f6218e26c065fa5f507728c527",
-      "size": 33767
-    },
-    ".codex/hooks/repository_context.py": {
-      "mode": "0644",
-      "sha256": "cf8f1a9b5f8a84df54d8ef351ecddfb48d1f31cb94b6f23cd3599bcb2e813492",
-      "size": 5580
-    },
-    ".codex/hooks/repository_overlay.py": {
-      "mode": "0644",
-      "sha256": "a4b3eb910e0a29d3306937d6104a37cf1f58b750af8cc4dca1ac20d96824936e",
-      "size": 15637
-    },
-    ".codex/hooks/run_guard.py": {
-      "mode": "0644",
-      "sha256": "c0199a4c3b23a41d95d5004c4c0750fa5e9f1f03fd60b27b9170fe8115741c3a",
-      "size": 29828
-    },
-    ".codex/hooks/worktree_guard.py": {
-      "mode": "0644",
-      "sha256": "2cc1087b91af741c15692cecc23f8ee5f5e0d16df392f2d8c20fd0d5b0fdd8d2",
-      "size": 11163
-    },
-    ".codex/policies/capability_profiles.json": {
-      "mode": "0644",
-      "sha256": "c1f26c8271f4db6d42c924299a2509808cd99bc922542c4185c539d250813ec3",
-      "size": 1089
-    },
-    ".codex/policies/git_lifecycle.json": {
-      "mode": "0644",
-      "sha256": "45c9593a49d143789c3fc93239206865da5659bf8bc76aa0b80dba8529495a31",
-      "size": 2253
-    },
-    ".codex/policies/integration_registry.schema.json": {
-      "mode": "0644",
-      "sha256": "84915889261809eadb95b9d76462f53f6ff9dddebf862101b60d0fef96a7248b",
-      "size": 1854
-    },
-    ".codex/policies/orchestration_limits.json": {
-      "mode": "0644",
-      "sha256": "ddfc5632cfcf8389f27cf529e06b6bca12a412fbb713303434d8932129595850",
-      "size": 594
-    },
-    ".codex/policies/tool_zones.json": {
-      "mode": "0644",
-      "sha256": "64cd0bdd370430a0f940d1f9aa82ffe5373226a2cf523b0543813cb96cc8d3a4",
-      "size": 1328
-    },
-    ".codex/policies/trust_boundaries.json": {
-      "mode": "0644",
-      "sha256": "371f8017c74c51af63cc4346bc701d45f24f3a9f6fedaa92608ff40fd448c358",
-      "size": 1103
     },
     "AGENTS.md": {
       "mode": "0644",

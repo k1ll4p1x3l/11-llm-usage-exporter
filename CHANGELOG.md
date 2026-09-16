@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Use native Codex permissions without mandatory per-worktree inventories;
+  retain explicit project restrictions and existing safeguards under consumer
+  ownership, with stricter read-only command classification.
+
 - Clarified native, user-wide extension availability while preserving project
   restrictions and human action approvals. Added a pinned-source English
   configuration excerpt and updated per-file ownership without changing

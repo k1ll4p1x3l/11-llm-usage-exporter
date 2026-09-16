@@ -158,3 +158,9 @@ Useful docs:
 ## License
 
 Apache-2.0
+
+## Codex compatibility
+
+Native integration permissions and the preserved consumer-owned safeguards are
+documented in [CODEX_COMPATIBILITY.md](docs/CODEX_COMPATIBILITY.md). Model
+inheritance, agent roles and the four-agent concurrency limit remain unchanged.
