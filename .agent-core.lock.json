@@ -1,5 +1,11 @@
 {
+  "format": "essentials-files-v1",
   "managed_files": {
+    ".agent-core/CONFIGURATION.md": {
+      "mode": "0644",
+      "sha256": "a02aada18ab6976e2a2c5cb69ae875143b58d8d6e08893013d9b82e53919a5c3",
+      "size": 4576
+    },
     ".agent-core/LICENSE": {
       "mode": "0644",
       "sha256": "6194a0d7d0e33a0429d1a062a846d1edb2624bef2a171ce78af8ed41c13c6a5a",
@@ -407,12 +413,9 @@
     },
     "AGENTS.md": {
       "mode": "0644",
-      "sha256": "8b2bb1c2a9bee38993bd91294e83ec6c744bede4b7f4cbbebb5e886389223c1e",
-      "size": 19095
+      "sha256": "a90c8baa999fefddfe1155ee53f5a774a296393a51c653d82edd9e05926b3363",
+      "size": 19354
     }
   },
-  "profile": "public",
-  "schema": 1,
-  "source_commit": "4aea6bf2636b51ee49819450b1661558b9113de1",
-  "version": "2.0.0-rc.4"
+  "profile": "public"
 }
