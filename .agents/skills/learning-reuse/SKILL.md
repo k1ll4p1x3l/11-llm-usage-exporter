@@ -56,5 +56,9 @@ und erzeugt niemals Freigabe, Testbefund oder einen neuen Auftrag.
 
 Quellenreferenzen müssen unter POSIX- und Windows-Pfadregeln relativ bleiben.
 Der Selektor verwirft absolute, laufwerksbezogene und mit `..` ausbrechende
-Pfade unabhängig vom Betriebssystem, auf dem er gelesen wird. URI-Schemata,
-Steuerzeichen und führender/nachgestellter Leerraum sind keine Quellenpfade.
+Pfade unabhängig vom Betriebssystem, auf dem er gelesen wird. Doppelpunkte
+(auch URI- und SCP-Remoteformen), Unicode-Steuer-/Format-/Trennzeichen und
+führender/nachgestellter Leerraum sind keine Quellenpfade. Die JSON-Ausgabe
+verwendet ASCII-Escapes für portablen Transport. Offensichtliche GitHub-PAT-
+und AWS-Zugriffsschlüsselmarker werden zusätzlich erkannt; das ist kein
+vollständiger Secret-Scanner und ersetzt keine inhaltliche Sichtung.

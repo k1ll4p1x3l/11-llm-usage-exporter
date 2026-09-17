@@ -7,7 +7,10 @@ für alle Empfänger ausdrücklich bestätigt. Consumer-Richtlinie und Dokumenta
 sind angeglichen. URI-Schemata, Steuerzeichen und äußerer Leerraum sind als
 Lernreferenzen abgewiesen. Der zentrale Lernselektor prüft POSIX- und Windows-Pfade auf
 jedem Host; verwaltete Dateien und Eigentumsliste folgen gemeinsam der korrigierten
-Quelle `04-llm-essentials` bei `feb1ae231c550eb3cb1b1cd0dac905628588523b`.
+Quelle `04-llm-essentials` bei `927131f2c6d0e32072942073dc5d315a1e2c0e85`.
+Weitere belegte Randfälle (SCP-/Unicode-Referenzen, ASCII-Ausgabe, übertiefe
+JSON-Strukturen und bekannte Credentialmarker) sind zentral korrigiert. Das
+aktuelle offizielle Schema bestätigt die nativen agents-Felder für Variante 2.
 Keine neuen Clones oder Änderungen an Hooks, Secrets und Live-Diensten.
 Consumer-CI und Reviewabschluss vor Merge prüfen; Rücknahme per geprüftem Revert.
 

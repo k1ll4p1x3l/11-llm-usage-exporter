@@ -9,12 +9,14 @@ from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import stat
 import sys
+import unicodedata
 
 FIELDS = {"id", "title", "component", "versions", "environment", "triggers", "observed_problem",
           "verified_solution", "next_action", "source_refs", "status"}
 STATES = {"observed", "verified", "adopted", "obsolete", "refuted"}
 MARKERS = re.compile(r"(?i)(?:/users/|/home/|[a-z]:\\users\\|authorization\s*:|"
-                     r"bearer\s+|cookie\s*:|-----BEGIN .*PRIVATE KEY|(?:sk-|ghp_)[A-Za-z0-9_-]{12,})")
+                     r"bearer\s+|cookie\s*:|-----BEGIN .*PRIVATE KEY|(?:sk-|ghp_)[A-Za-z0-9_-]{12,}|"
+                     r"\bgithub_pat_[A-Za-z0-9_]{20,}\b|\bAKIA[0-9A-Z]{16}\b)")
 
 
 def read_lessons(path: Path) -> list[dict]:
@@ -57,8 +59,8 @@ def read_lessons(path: Path) -> list[dict]:
         if entry["id"] in ids or entry["status"] not in STATES:
             raise ValueError("duplicate ID or invalid lesson status")
         ids.add(entry["id"])
-        if any(ref != ref.strip() or re.match(r"^[A-Za-z][A-Za-z0-9+.-]*:", ref)
-               or any(ord(char) < 32 or ord(char) == 127 for char in ref)
+        if any(ref != ref.strip() or ":" in ref
+               or any(unicodedata.category(char) in {"Cc", "Cf", "Cs", "Zl", "Zp"} for char in ref)
                for ref in entry["source_refs"]):
             raise ValueError("lesson references must be plain repository paths, not URIs")
         if any(path.anchor or ".." in path.parts
@@ -87,10 +89,10 @@ def main() -> int:
     args = parser.parse_args()
     try:
         result = select(read_lessons(args.file), args.component, args.version, args.trigger)
-    except (ValueError, OSError, UnicodeError):
+    except (ValueError, OSError, UnicodeError, RecursionError):
         print("Invalid lesson file; no lesson contents emitted.", file=sys.stderr)
         return 2
-    print(json.dumps({"selected": result, "authority": "none"}, ensure_ascii=False, indent=2))
+    print(json.dumps({"selected": result, "authority": "none"}, ensure_ascii=True, indent=2))
     return 0
 
 

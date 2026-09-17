@@ -128,6 +128,17 @@ Nutzbarkeit und keine wirksame Aktionsfreigabe.
 
 ## Kompatibilitätsgrenzen
 
+Das am 2026-09-17 erneut gelesene aktuelle
+[Config-Schema](https://learn.chatgpt.com/docs/config-schema.json) definiert
+`enabled`, `interrupt_message` und `max_concurrent_threads_per_session` als
+skalare Eigenschaften von `AgentsToml`; Rollen bleiben zusätzliche Tabellen.
+Die [Referenz](https://learn.chatgpt.com/docs/config-file/config-reference)
+bestätigt diese Platzierung unter `agents`. Hinweise älterer Consumer-Beispiele
+zu Codex 0.137/0.144 sind keine Vorgabe für diese aktuelle Konfiguration.
+Eine ältere CLI, die diese Felder als Rollen interpretiert, ist damit inkompatibel;
+eine aktuelle passende Version verwenden. Es wird keine getestete Mindestversion
+oder lokale Agentenausführung behauptet.
+
 Das [Config-Schema](https://learn.chatgpt.com/docs/config-schema.json) akzeptiert
 vom Modell angebotene nichtleere Effortstrings. Die offiziellen Modellseiten
 führen `max` für die vorhandenen Qualitätsoptionen auf; die allgemeine

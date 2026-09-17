@@ -75,7 +75,7 @@ release or installation attestation.
 ## Current definition adoption — variant 2 (2026-09-17)
 
 The user explicitly selected variant 2 for all eight consumers. Definitions:
-[04-llm-essentials at feb1ae2](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/feb1ae231c550eb3cb1b1cd0dac905628588523b).
+[04-llm-essentials at 927131f](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/927131f2c6d0e32072942073dc5d315a1e2c0e85).
 The public profile contains 209 managed files. Current contents, hashes and
 modes are recorded in `.agent-core.lock.json`.
 
@@ -93,6 +93,10 @@ references under POSIX and Windows semantics, independently of the host.
 Retained hooks, templates, permission adapters and overlays remain consumer-owned.
 Their safeguards are preserved; only the explicit concurrency policy value changes.
 File adoption does not prove live agent or integration behavior.
+
+The reviewed selector also rejects SCP/colon references and Unicode control/format characters, uses ASCII-safe JSON, rejects over-nested input generically, and detects known GitHub PAT/AWS key markers. Detection is heuristic; content review remains required.
+
+The current official [schema](https://learn.chatgpt.com/docs/config-schema.json) and [reference](https://learn.chatgpt.com/docs/config-file/config-reference), checked 2026-09-17, define the scalar settings under `agents`. Old 0.137/0.144 parser examples are historical and incompatible; use a current compatible CLI. No tested minimum version or live agent execution is claimed.
 
 ## Future definition updates
 
