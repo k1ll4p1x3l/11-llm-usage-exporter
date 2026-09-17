@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Update the centrally managed public agent definitions from
+  `04-llm-essentials` at `f3e3af0bf7a1` (209 managed files).
+
 - Use native Codex permissions without mandatory per-worktree inventories;
   retain explicit project restrictions and existing safeguards under consumer
   ownership, with stricter read-only command classification.

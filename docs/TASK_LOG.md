@@ -1,5 +1,17 @@
 # Task Log
 
+## Central definition sync — 2026-09-17
+
+- Source: `k1ll4p1x3l/04-llm-essentials@f3e3af0bf7a15c7114413db1642b8205755950ef`.
+- Scope: 209 centrally managed public files and ownership lock; record this
+  adoption in the consumer changelog and this task log.
+- Evidence: App preview and publication succeeded; full path, content-hash and
+  executable-mode readback matched the approved payload without deletions.
+- Consumer correction: required changelog entry and existing milestone `0.5-beta`;
+  no check bypass or private profile payload.
+- Hosted CI and fresh PR/head/base/review checks gate the user-authorized merge.
+- Rollback after integration: revert this definition-sync PR through a reviewed PR.
+
 ## Native Codex compatibility migration — 2026-09-16
 
 - Scope: two existing adapters, ownership metadata and required documentation.
