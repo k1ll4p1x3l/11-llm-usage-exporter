@@ -57,6 +57,10 @@ def read_lessons(path: Path) -> list[dict]:
         if entry["id"] in ids or entry["status"] not in STATES:
             raise ValueError("duplicate ID or invalid lesson status")
         ids.add(entry["id"])
+        if any(ref != ref.strip() or re.match(r"^[A-Za-z][A-Za-z0-9+.-]*:", ref)
+               or any(ord(char) < 32 or ord(char) == 127 for char in ref)
+               for ref in entry["source_refs"]):
+            raise ValueError("lesson references must be plain repository paths, not URIs")
         if any(path.anchor or ".." in path.parts
                for ref in entry["source_refs"]
                for path in (PurePosixPath(ref), PureWindowsPath(ref))):

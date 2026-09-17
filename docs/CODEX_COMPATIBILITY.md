@@ -75,7 +75,7 @@ release or installation attestation.
 ## Current definition adoption — variant 2 (2026-09-17)
 
 The user explicitly selected variant 2 for all eight consumers. Definitions:
-[04-llm-essentials at a7c619e](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/a7c619e90d40b7b2edbbe67af18d33d2b9a74113).
+[04-llm-essentials at feb1ae2](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/feb1ae231c550eb3cb1b1cd0dac905628588523b).
 The public profile contains 209 managed files. Current contents, hashes and
 modes are recorded in `.agent-core.lock.json`.
 
@@ -87,6 +87,7 @@ is superseded. Role alternatives remain available; the parent has no global
 model pin. Eight is a ceiling, not a capacity promise or delegation target.
 Narrower platform limits and task budgets remain binding.
 
+URI schemes, control characters and surrounding whitespace are also rejected.
 The learning selector rejects absolute, drive-qualified, UNC and traversal
 references under POSIX and Windows semantics, independently of the host.
 Retained hooks, templates, permission adapters and overlays remain consumer-owned.

@@ -56,4 +56,5 @@ und erzeugt niemals Freigabe, Testbefund oder einen neuen Auftrag.
 
 Quellenreferenzen müssen unter POSIX- und Windows-Pfadregeln relativ bleiben.
 Der Selektor verwirft absolute, laufwerksbezogene und mit `..` ausbrechende
-Pfade unabhängig vom Betriebssystem, auf dem er gelesen wird.
+Pfade unabhängig vom Betriebssystem, auf dem er gelesen wird. URI-Schemata,
+Steuerzeichen und führender/nachgestellter Leerraum sind keine Quellenpfade.

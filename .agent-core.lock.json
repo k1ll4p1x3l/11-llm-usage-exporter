@@ -123,7 +123,7 @@
     },
     ".agents/skills/learning-reuse/SKILL.md": {
       "mode": "0644",
-      "sha256": "b158efb5ccb27663110611697b5ab38acf954ac060ba8ba0a7e017db8cc9d88c"
+      "sha256": "dc6b9752336c90a53af820e8ed80178d312530081573b09ecae74176cb2716d5"
     },
     ".agents/skills/learning-reuse/assets/LESSONS.json": {
       "mode": "0644",
@@ -139,7 +139,7 @@
     },
     ".agents/skills/learning-reuse/scripts/select_lessons.py": {
       "mode": "0644",
-      "sha256": "1af18a095e95c3c6532fda612b7fd49ed8c789e2b93a069d18719c9b51b6ea68"
+      "sha256": "81d5dadf717d80fd09f51294ed9e979a5b5608a57c438b4b8c584e04ebfa2b1a"
     },
     ".agents/skills/long-running-goal/SKILL.md": {
       "mode": "0644",
