@@ -26,16 +26,16 @@ Automatically generated historical inventories are retired only by separate
 host maintenance after exact provenance and hash checks. This repository does
 not create inventories, provision worktrees or embed host-specific exceptions.
 
-## Ownership migration
+## Ownership migration of 2026-09-16
 
-The current definitions source intentionally excludes the former runtime and
-its templates. Their removal would lose repository safeguards. The following
+The definitions source excluded the former runtime and its templates. Their
+removal would lose repository safeguards. The following
 25 existing paths therefore remain in the repository under consumer ownership;
 they are no longer deletion candidates in the central ownership map. Only the
-two compatibility adapters changed content. The 58 remaining centrally managed
-entries retain their prior metadata exactly. No file was removed.
+two compatibility adapters changed content. At that migration, the 58 remaining
+centrally managed entries retained their prior metadata exactly. No file was removed.
 
-Definition boundary: [08-llm-essentials at c616083](https://github.com/k1ll4p1x3l/08-llm-essentials/blob/c616083aa52a9a98cb861f8b911230f9897b1826/distribution/README.md).
+Definition boundary: [04-llm-essentials at c616083](https://github.com/k1ll4p1x3l/04-llm-essentials/blob/c616083aa52a9a98cb861f8b911230f9897b1826/distribution/README.md).
 Baseline before this compatibility migration: `e864b5dd65b4a1bfcff58c95ec833c695bf6cc6e`.
 Hashes below describe the retained files after this migration, not a complete
 release or installation attestation.
@@ -68,16 +68,31 @@ release or installation attestation.
 | `.codex/policies/tool_zones.json` | `64cd0bdd370430a0f940d1f9aa82ffe5373226a2cf523b0543813cb96cc8d3a4` | `100644` |
 | `.codex/policies/trust_boundaries.json` | `371f8017c74c51af63cc4346bc701d45f24f3a9f6fedaa92608ff40fd448c358` | `100644` |
 
+## Adopted definition update — 2026-09-17
+
+[PR #44](https://github.com/k1ll4p1x3l/11-llm-usage-exporter/pull/44) records the
+separately reviewed update from
+[04-llm-essentials at f3e3af0](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/f3e3af0bf7a15c7114413db1642b8205755950ef).
+The public profile now contains 209 managed files: 151 added paths, 40 changed
+existing definitions and 18 unchanged definitions, plus the updated ownership
+lock. All 28 existing role definitions now contain the source's explicit model
+pins. The versioned project configuration sets
+`max_concurrent_threads_per_session = 8`.
+
+These are accepted definition changes, not future compatibility proposals.
+The 25 consumer-owned paths and their hashes above remain unchanged, including
+the native permission adapters, hook registrations, overlays, run-contract and
+action-envelope checks. The central concurrency setting does not waive narrower
+agent instructions or consumer-owned guard limits. File adoption is not evidence
+that an installed runtime or a live integration has been exercised.
+
 ## Future definition updates
 
-Do not use a full definitions sync as an automatic compatibility migration.
-The current source would add 151 paths, change 40 existing definitions, replace
-inherited model selection in all 28 existing roles with explicit model pins,
-and raise project concurrency from four to eight. Those decisions are preserved
-here and require a separate reviewed change. The retained hooks and templates
-must remain consumer-owned; do not re-adopt or delete them merely because a
-central source omits them. Preserve the existing project configuration and
-repository overlays when reviewing any later definition update.
+Compare subsequent updates with the adopted source and the current
+`.agent-core.lock.json`, rather than restoring the old 58-file, inherited-model
+baseline. Keep the retained hooks and templates consumer-owned; do not re-adopt
+or delete them merely because a central source omits them. Preserve repository
+overlays and independently review any further model or concurrency changes.
 
 ## Validation and rollback
 
@@ -88,6 +103,12 @@ denials. Native approval and actual integration calls require a separate live
 Codex readback; adapter tests alone do not prove them. Test fixtures and host
 maintenance tooling are not distributed by this repository.
 
-Rollback is a reviewed revert of all compatibility changes after the recorded
-baseline, including both adapters, the ownership map and this documentation. It restores the previous
-inventory requirement; user sessions and worktree data are not deleted.
+Rollback of the definition adoption is a reviewed revert of PR #44 to its
+consumer base `e4ebc15291fe39d7244a93db1098df2eed541765`. It restores the
+previous managed definitions and lock while retaining the native permission
+adapters and consumer-owned safeguards.
+
+Reverting the older compatibility migration after baseline
+`e864b5dd65b4a1bfcff58c95ec833c695bf6cc6e` is a different operation requiring
+separate review: it would restore the previous inventory requirement. Neither
+rollback deletes user sessions or worktree data.
