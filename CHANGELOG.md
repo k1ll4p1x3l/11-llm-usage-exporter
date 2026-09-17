@@ -1,6 +1,23 @@
 # Changelog
 
+## 2026-09-17 — Variante 2 und Reviewkorrekturen
+
+Feste Modell-/Effortbindungen der 28 Basisrollen und native Obergrenze 8 sind
+für alle Empfänger ausdrücklich bestätigt. Consumer-Richtlinie und Dokumentation
+sind angeglichen. URI-Schemata, Steuerzeichen und äußerer Leerraum sind als
+Lernreferenzen abgewiesen. Der zentrale Lernselektor prüft POSIX- und Windows-Pfade auf
+jedem Host; verwaltete Dateien und Eigentumsliste folgen gemeinsam der korrigierten
+Quelle `04-llm-essentials` bei `927131f2c6d0e32072942073dc5d315a1e2c0e85`.
+Weitere belegte Randfälle (SCP-/Unicode-Referenzen, ASCII-Ausgabe, übertiefe
+JSON-Strukturen und bekannte Credentialmarker) sind zentral korrigiert. Das
+aktuelle offizielle Schema bestätigt die nativen agents-Felder für Variante 2.
+Keine neuen Clones oder Änderungen an Hooks, Secrets und Live-Diensten.
+Consumer-CI und Reviewabschluss vor Merge prüfen; Rücknahme per geprüftem Revert.
+
 ## Unreleased
+
+- Update the centrally managed public agent definitions from
+  `04-llm-essentials` at `f3e3af0bf7a1` (209 managed files).
 
 - Use native Codex permissions without mandatory per-worktree inventories;
   retain explicit project restrictions and existing safeguards under consumer

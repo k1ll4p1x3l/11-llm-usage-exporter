@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "python-fresh-fixture-bytecode",
+      "title": "Frische Test-Fixtures ohne veralteten Bytecode",
+      "component": "python-unittest",
+      "versions": [
+        "3.9",
+        "3.14"
+      ],
+      "environment": "Neues temporäres Python-Projekt ohne vorhandene Bytecode-Dateien",
+      "triggers": [
+        "same-second-source-rewrite"
+      ],
+      "observed_problem": "Ein gleich langer Testdatei-Edit innerhalb derselben Sekunde konnte im zweiten Prozess den alten Bytecode laden und den neuen Fehler verdecken.",
+      "verified_solution": "Bereits der erste Aufruf mit -B verhindert Bytecode-Erzeugung in der frischen Fixture. -B ignoriert vorhandene Caches nicht allgemein.",
+      "next_action": "In einer frischen eigenen Fixture ab dem ersten Aufruf python3 -B -m unittest discover -s tests -p 'test_example.py' -v verwenden; Exitcode und Testzahl prüfen.",
+      "source_refs": [
+        ".agents/skills/learning-reuse/references/example.md"
+      ],
+      "status": "adopted"
+    }
+  ]
+}

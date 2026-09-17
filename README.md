@@ -162,5 +162,7 @@ Apache-2.0
 ## Codex compatibility
 
 Native integration permissions and the preserved consumer-owned safeguards are
-documented in [CODEX_COMPATIBILITY.md](docs/CODEX_COMPATIBILITY.md). Model
-inheritance, agent roles and the four-agent concurrency limit remain unchanged.
+documented in [CODEX_COMPATIBILITY.md](docs/CODEX_COMPATIBILITY.md). Variant 2 applies to all
+consumers: explicit model/effort pins in all 28 base roles and a native concurrency
+ceiling of 8. The consumer policy uses the same ceiling; narrower platform limits
+and task budgets remain binding.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "max_parallel_subagents": 4,
+  "max_parallel_subagents": 8,
   "recursive_delegation_default": false,
   "max_same_action_retries": 2,
   "max_rejoin_cycles_without_new_evidence": 2,

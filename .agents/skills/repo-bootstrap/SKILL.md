@@ -14,7 +14,7 @@ description: Use when a repo is new, sparse, or being re-founded and needs local
 
 - File tree and obvious project markers.
 - Existing `README`, manifests, CI, Docker, build files, and repo policy.
-- Consumer template source path after installation: `.agent-core/templates/`.
+- Consumer template source path after file delivery: `.agent-core/templates/`.
 
 ## Workflow
 
@@ -23,9 +23,9 @@ description: Use when a repo is new, sparse, or being re-founded and needs local
 3. Create or propose copy-once local files from `.agent-core/templates/` into:
    - `PROJECT_PROFILE.md`
    - `docs/REPO_POLICY.md`
-   - `docs/TASK_LOG.md`
+   - `docs/TASK_LOG.md` (from `HANDOFF.md`)
 4. Use consumer templates as copy-once starters, not as permanently managed mirrors.
-5. If private local context is needed, point to `private/references/private/README.md` as a placeholder only.
+5. If private local context is needed, point to `.agent-core/private/README.md` as a placeholder only.
 6. Merge with existing docs instead of overwriting them where practical.
 
 ## Stop / Approval Rules

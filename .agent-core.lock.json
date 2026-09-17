@@ -3,293 +3,839 @@
   "managed_files": {
     ".agent-core/CONFIGURATION.md": {
       "mode": "0644",
-      "sha256": "a02aada18ab6976e2a2c5cb69ae875143b58d8d6e08893013d9b82e53919a5c3",
-      "size": 4576
+      "sha256": "5d020a8faca3a072e050b9aae705cc891bbfa3cbe7ae0f412226d51b7ed2bed3"
     },
     ".agent-core/LICENSE": {
       "mode": "0644",
-      "sha256": "6194a0d7d0e33a0429d1a062a846d1edb2624bef2a171ce78af8ed41c13c6a5a",
-      "size": 1069
+      "sha256": "6194a0d7d0e33a0429d1a062a846d1edb2624bef2a171ce78af8ed41c13c6a5a"
+    },
+    ".agent-core/ROLES.md": {
+      "mode": "0644",
+      "sha256": "351bfb1755ee3d17d50a948ef511ccf7bb25a59266e3269a8c1f3f76ceaa52c1"
+    },
+    ".agent-core/profiles/coordinator_deep.config.toml": {
+      "mode": "0644",
+      "sha256": "869392a9495b4a620e328b614513e8948429b83f7b3c3f9ea66ddedc31943d79"
+    },
+    ".agent-core/profiles/coordinator_standard.config.toml": {
+      "mode": "0644",
+      "sha256": "7e5b98362336dc03ad2aff27bc52fff40ad7fff45d46dd71c49cb2e5ef949abb"
+    },
+    ".agent-core/profiles/quality_build.config.toml": {
+      "mode": "0644",
+      "sha256": "ce84bd5cc484eae33a67a7ea3fb27bf556518b59fa9c191919d57b0945a257da"
+    },
+    ".agent-core/profiles/quality_build__sol_max.config.toml": {
+      "mode": "0644",
+      "sha256": "b4f29ae44d91b29c8bf3b819ed7f451c2cdbb3dd298adda9138400b11aae2752"
+    },
+    ".agent-core/profiles/review_deep.config.toml": {
+      "mode": "0644",
+      "sha256": "869392a9495b4a620e328b614513e8948429b83f7b3c3f9ea66ddedc31943d79"
+    },
+    ".agent-core/profiles/review_deep__astra_high.config.toml": {
+      "mode": "0644",
+      "sha256": "153a28b1537629fd75631e633f59dcf963ace8931c5191aaa597b1751c78bd67"
+    },
+    ".agent-core/templates/APPROVAL.md": {
+      "mode": "0644",
+      "sha256": "d6979734951549d264ce2ca14cc89a95fc3b095bfcfac4d040e57caa7c9c0bf2"
+    },
+    ".agent-core/templates/HANDOFF.md": {
+      "mode": "0644",
+      "sha256": "1c5dc706a6707c14f8b539fe551cad0d556dfef3cf039be886612575c66b4768"
     },
     ".agent-core/templates/HOMELAB_APPROVAL_CHANGE_TEMPLATE.md": {
       "mode": "0644",
-      "sha256": "797127e929635e519e6fda1e8342d8edf60f1b273871ec6fe04f864de909c1bf",
-      "size": 861
+      "sha256": "797127e929635e519e6fda1e8342d8edf60f1b273871ec6fe04f864de909c1bf"
     },
     ".agent-core/templates/HOMELAB_INCIDENT_RUNBOOK.md": {
       "mode": "0644",
-      "sha256": "78d56724cf7cb13b6fc82755f2b108203b51894e19d8cdbe66a6ead41659b238",
-      "size": 1429
+      "sha256": "78d56724cf7cb13b6fc82755f2b108203b51894e19d8cdbe66a6ead41659b238"
     },
     ".agent-core/templates/HOMELAB_INVENTORY_SCHEMA.json": {
       "mode": "0644",
-      "sha256": "80f5b1d7c7c3fad26c0d7e72bbdc8476146bdd69349a3fb3c72b7b0420198278",
-      "size": 746
+      "sha256": "80f5b1d7c7c3fad26c0d7e72bbdc8476146bdd69349a3fb3c72b7b0420198278"
     },
     ".agent-core/templates/HOMELAB_OBSERVABILITY_CATALOG.json": {
       "mode": "0644",
-      "sha256": "0f1ecc34c4bc829ff1ec6f554e72a7aa714a89d2dc5be30cb8b1aa2854395668",
-      "size": 723
+      "sha256": "0f1ecc34c4bc829ff1ec6f554e72a7aa714a89d2dc5be30cb8b1aa2854395668"
     },
     ".agent-core/templates/HOMELAB_RECOVERY_MATRIX.json": {
       "mode": "0644",
-      "sha256": "66226df59df0eea22a4da472db1a0a41b14814f89132d06ee877356cf1f1f071",
-      "size": 775
+      "sha256": "66226df59df0eea22a4da472db1a0a41b14814f89132d06ee877356cf1f1f071"
     },
     ".agent-core/templates/PROJECT_PROFILE.md": {
       "mode": "0644",
-      "sha256": "a54087e27da3aca0ab697cee9b00145ba3a30d7d61b63686f69ec72c441264fd",
-      "size": 1016
+      "sha256": "a54087e27da3aca0ab697cee9b00145ba3a30d7d61b63686f69ec72c441264fd"
     },
     ".agent-core/templates/REPO_POLICY.md": {
       "mode": "0644",
-      "sha256": "5d1f6b28c9d5dab8e58e63b01efc4a869c9ba50559ed2e0775ebd67d988da355",
-      "size": 2912
+      "sha256": "19a6a87d0f2a8577ee7f30efab36b5252f35d5359dbc615cbe51dd8d81742a9a"
     },
     ".agents/skills/approved-change-execution/SKILL.md": {
       "mode": "0644",
-      "sha256": "8d4866e45b3a0afd4c5a1ed1e62eca9028e2de119aa4b1814c12ccae5508fc4a",
-      "size": 2770
+      "sha256": "07dbf51f62fb1b808cbd0824f09fe32aad48147b111867c33e1a334ca50bff57"
     },
     ".agents/skills/automation-hardening/SKILL.md": {
       "mode": "0644",
-      "sha256": "9def8ccbaaf48f034854caa5d31128f1850677cc958a91d80f037854612d7ead",
-      "size": 1563
+      "sha256": "9def8ccbaaf48f034854caa5d31128f1850677cc958a91d80f037854612d7ead"
     },
     ".agents/skills/autonomous-run/SKILL.md": {
       "mode": "0644",
-      "sha256": "74ca722a67c9a5547faf45d87d4d437570a0525799fea60f8937aafe7448b132",
-      "size": 4628
+      "sha256": "1ba1b0b5338df77672bfda47d203bbc8b4bd89dd86629b7bfc92a3fef7ad07f9"
     },
     ".agents/skills/backup-restore-validation/SKILL.md": {
       "mode": "0644",
-      "sha256": "0786ea81fa303304b57cdadbb5b6f275011b7a3069dd5b03d712cac9b32711ef",
-      "size": 1887
+      "sha256": "0786ea81fa303304b57cdadbb5b6f275011b7a3069dd5b03d712cac9b32711ef"
     },
     ".agents/skills/budget-aware-orchestration/SKILL.md": {
       "mode": "0644",
-      "sha256": "00ce02f4d9679a276cc0c43f80efdfa59671797632b5d1058fed4812aa3b815d",
-      "size": 2244
+      "sha256": "fcfc654e4e54801e96eb1c424a2cb52babb2ac489025c9329652244ab3381bf9"
     },
     ".agents/skills/code-change/SKILL.md": {
       "mode": "0644",
-      "sha256": "d2fc57c30289502e543d5294196e73ffe5d908e5919a1ba24c224b447948210f",
-      "size": 1542
+      "sha256": "22451df6141e427d27d01eea29d71551564082d40449f70d7a4f3c15a14c6330"
     },
     ".agents/skills/data-analysis-project/SKILL.md": {
       "mode": "0644",
-      "sha256": "e227dbefa28e3d512e0a6fd70b1ada0b075919680610c564f6b3981a68455b9d",
-      "size": 1400
+      "sha256": "e227dbefa28e3d512e0a6fd70b1ada0b075919680610c564f6b3981a68455b9d"
     },
     ".agents/skills/decision-record/SKILL.md": {
       "mode": "0644",
-      "sha256": "cacff37a9e1c82709de3f74bb0acc1cabb17cda307000e485794978b2c984b0c",
-      "size": 1392
+      "sha256": "cacff37a9e1c82709de3f74bb0acc1cabb17cda307000e485794978b2c984b0c"
     },
     ".agents/skills/git-change-lifecycle/SKILL.md": {
       "mode": "0644",
-      "sha256": "ca433fc4f3b14ed8cdb679625e58f52d3171ba2dd0635f59eaa7673672f04046",
-      "size": 7238
+      "sha256": "07783fd5fe69b41d8813b894b2c6fdceb199fc9d94e656808e8691821577e3cf"
     },
     ".agents/skills/git-change-lifecycle/agents/openai.yaml": {
       "mode": "0644",
-      "sha256": "4920f8dad9b0c452e28c49c1de1ff2799de9214d9c0596d732c4159bec8787ad",
-      "size": 271
+      "sha256": "4920f8dad9b0c452e28c49c1de1ff2799de9214d9c0596d732c4159bec8787ad"
     },
     ".agents/skills/homelab-change-control/SKILL.md": {
       "mode": "0644",
-      "sha256": "12e269c4d97036310b06cdb9b74c68357d2f07bd567a8411eb743ef8c75b9d8d",
-      "size": 2457
+      "sha256": "12e269c4d97036310b06cdb9b74c68357d2f07bd567a8411eb743ef8c75b9d8d"
     },
     ".agents/skills/incident-response/SKILL.md": {
       "mode": "0644",
-      "sha256": "99aa7f1946a336b2237ab36e32140aa064aacd4b3e28804816c0fb5d438df4ed",
-      "size": 2105
+      "sha256": "99aa7f1946a336b2237ab36e32140aa064aacd4b3e28804816c0fb5d438df4ed"
+    },
+    ".agents/skills/learning-reuse/SKILL.md": {
+      "mode": "0644",
+      "sha256": "b74c297f07a3c4b782beaf56d697360f050869125153a6346d1180ef7e5a78c4"
+    },
+    ".agents/skills/learning-reuse/assets/LESSONS.json": {
+      "mode": "0644",
+      "sha256": "9663488dbfdb4838de6a25d1f45ca06d506ac7628e5f5ce701c1048540bcad73"
+    },
+    ".agents/skills/learning-reuse/references/example.json": {
+      "mode": "0644",
+      "sha256": "c05afc62909fcb951c97ab116582d287af9d959e987e6806ee2237afeb2c851b"
+    },
+    ".agents/skills/learning-reuse/references/example.md": {
+      "mode": "0644",
+      "sha256": "17f49743d46a03d6677c2e689d8965f372b25626bdf5401a91434218a4aadfdc"
+    },
+    ".agents/skills/learning-reuse/scripts/select_lessons.py": {
+      "mode": "0644",
+      "sha256": "73526aa12c05fd3c19f7e0dcec66bf68b2cf25a4dff8d8be7610e0234244d8b5"
     },
     ".agents/skills/long-running-goal/SKILL.md": {
       "mode": "0644",
-      "sha256": "0ee057f15660e5c78485d2189c3c6fa1ff723356874c3e32c3558f3298f7063b",
-      "size": 2185
+      "sha256": "bda720b4bd655982be13f03b54a3c6dafb681244c099eb33b589ebc264cc27cb"
     },
     ".agents/skills/observability-and-runbooks/SKILL.md": {
       "mode": "0644",
-      "sha256": "b41cebc6f9da32ba34c5e4d843afd30e2d69e8ef061b7a8fae7bf199454190b7",
-      "size": 1849
+      "sha256": "b41cebc6f9da32ba34c5e4d843afd30e2d69e8ef061b7a8fae7bf199454190b7"
     },
     ".agents/skills/repo-bootstrap/SKILL.md": {
       "mode": "0644",
-      "sha256": "fe078bf6f52f957a13946581def86dde0a8e5b509373c16f4f82eb07d52bbebb",
-      "size": 1802
+      "sha256": "781dcdacc6af1103b2b6c6c37c5d08e33abac1b89c8c08a9c008a81019708a8a"
     },
     ".agents/skills/research-dossier/SKILL.md": {
       "mode": "0644",
-      "sha256": "89d42662f3817f5c1a0bba0f88948798d9eb2e2b00ae4464699b876d357896e7",
-      "size": 1647
+      "sha256": "89d42662f3817f5c1a0bba0f88948798d9eb2e2b00ae4464699b876d357896e7"
     },
     ".agents/skills/security-review/SKILL.md": {
       "mode": "0644",
-      "sha256": "8edc158d229a415defe907f805ef7e6f8e83f787168b22ba3b94bda3e3183906",
-      "size": 2403
+      "sha256": "8edc158d229a415defe907f805ef7e6f8e83f787168b22ba3b94bda3e3183906"
     },
     ".agents/skills/worktree-safety/SKILL.md": {
       "mode": "0644",
-      "sha256": "a207854584e723c7340ae6fcaa491cd53b37ba6971e6e34c70339b84aca282f0",
-      "size": 3738
+      "sha256": "0a9d7e0bf226fea2cc04a89e3bebb3db9164338df51825dd75d46c8efdc0279c"
     },
     ".agents/skills/writing-project/SKILL.md": {
       "mode": "0644",
-      "sha256": "eac58d45cfec0b1ca6086b545c1cecf43a51a89c67c8b2a01487c312ad2d20b7",
-      "size": 1493
+      "sha256": "eac58d45cfec0b1ca6086b545c1cecf43a51a89c67c8b2a01487c312ad2d20b7"
     },
     ".codex/agents/automation_planner.toml": {
       "mode": "0644",
-      "sha256": "ec7dbba42b9c9eb9bb57aae2bbaed4f4e1479d3c3c88144519fd2f3f7a664810",
-      "size": 512
+      "sha256": "a7b07d2b8f8f65bc1804047f7b71baf10b3c610d9c127da606a1610c9894618c"
+    },
+    ".codex/agents/automation_planner__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "fa9dba65010c171392a45614fc31f37e94d43fb9bcd7c21dc7367360bf091f92"
+    },
+    ".codex/agents/automation_planner__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "8c70895b0b15d9e183f071e5233988238f0f6ad0fa74e875d639a0955a32edbc"
+    },
+    ".codex/agents/automation_planner__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "3469bb6ea609fa3462187ffaf727f67176b425cdbf94fe004bfe50e542a6e57c"
+    },
+    ".codex/agents/automation_planner__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "0195e121a9eadd008590ec9cf17a118244ecebc748cccec204c86d3435eb8e26"
     },
     ".codex/agents/ci_cd_worker.toml": {
       "mode": "0644",
-      "sha256": "33538df7126519f74e2e56867af5eaeaf3ba31e673570b2186d7bd98d2ea4656",
-      "size": 742
+      "sha256": "e650c883ada7c1ff442f1edf4466afffe0e3a67785b266bef41e1fc8340cf2ca"
+    },
+    ".codex/agents/ci_cd_worker__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "cf40680980c0594e5cd5362de4da92a27ef0d1162bc07c47f4bf51fda356a9a2"
+    },
+    ".codex/agents/ci_cd_worker__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "1ce9ae6c7938a233e2c9317e51ed4f143ad006f5ac97e5bad69b6cb9745d6d43"
+    },
+    ".codex/agents/ci_cd_worker__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "88878ab7e3abeff3cc02f17ce003ebd88ca72fe108832cafa545222b2d1abfa3"
+    },
+    ".codex/agents/ci_cd_worker__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "95ed27f9bfc0d0aabfd3e4a7e6ed5d1b852632f8a34bb8e5ca274ecd3736fda6"
+    },
+    ".codex/agents/ci_cd_worker__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "37f3324edcb0f33dc89a05d3ac3115fdf1e97c3ced7720244902c25df7b9deca"
     },
     ".codex/agents/code_heavy_worker.toml": {
       "mode": "0644",
-      "sha256": "a3b8f8432de0ea0cae7cea1404c219c8145e817039d5e063d0ecf7bf7df87ac8",
-      "size": 706
+      "sha256": "16faf41f012229851b752a66f0f59d5e8de8b0ebcb7f4ccfd5df8ee975a5dc63"
+    },
+    ".codex/agents/code_heavy_worker__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "ffe88a92cbc76cdfa0bce5b265720f153c7e45308d819dd18197f45c5e55508b"
+    },
+    ".codex/agents/code_heavy_worker__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "c1280797c02861fcea0be820637d84f13b1445d92d6a4e321463673773d7f57a"
+    },
+    ".codex/agents/code_heavy_worker__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "ac9122f5d3e97707f608abee366684daf7b8066988892d80f72b0901f696db14"
+    },
+    ".codex/agents/code_heavy_worker__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "d69dbf17f77469bdb6f17df7a6971c46d06318ed36f267fefe0ce657c60733db"
     },
     ".codex/agents/code_mapper.toml": {
       "mode": "0644",
-      "sha256": "3ad7673da0515fc66ac264176721a0499ee21c7c43b7fae5d270551dd8ddf211",
-      "size": 760
+      "sha256": "4f4594df07e95b46f92f3e6e521773c082c9e3e05f99ba08421a63d52e5f747d"
+    },
+    ".codex/agents/code_mapper__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "c8353afd7bee6e33d096b057614a9da9bc3e7205248c2415c9cfde53df171c0b"
+    },
+    ".codex/agents/code_mapper__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "703c9b4f04cde5cef90f7795ff1a7feb8def9341aac502c6d4a6e4d89909b656"
+    },
+    ".codex/agents/code_mapper__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "768ca9825aa09d71cc2a2c326b53b9b987bbbe0c04041846ba59909796f2ab59"
+    },
+    ".codex/agents/code_mapper__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "51f8a1f99a182bfbe254e5899b18187325aa014491700bb8cbef210a249961b2"
+    },
+    ".codex/agents/code_mapper__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "36d27404541596139452c15fbbde899ff3f6d5e31917e409b817d329e838dc13"
+    },
+    ".codex/agents/code_mapper__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "4133213be4b717f82ddc49e6e7eb443b40ddcdab5c8c08e05cd589736bcc71ac"
     },
     ".codex/agents/code_medium_worker.toml": {
       "mode": "0644",
-      "sha256": "139874508806a4bc436b5598a3d784ebc75d139c01893b81bf52ff884321b0bc",
-      "size": 625
+      "sha256": "10e74e4745461231a7992332d157b2cc711bb0d865db0b4e9d5fef0b531eede9"
+    },
+    ".codex/agents/code_medium_worker__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "6a1025b7430f2bfe001a3c86c2fd549d49824d3bee014bb319b5dbb515891539"
+    },
+    ".codex/agents/code_medium_worker__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "38c3e0a116998588e6851badfd1a6f4bd8650c734676adf1e2d0b6b08dae1a23"
+    },
+    ".codex/agents/code_medium_worker__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "0ebd1575abb3de5923d53067d98e96c1424f7314c6a8aa6d7dbdc5015cf37491"
+    },
+    ".codex/agents/code_medium_worker__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "5ed290eeb42aceaf9cb41d9730dad6f462beca9e0099c515ea4c5a3289288d54"
+    },
+    ".codex/agents/code_medium_worker__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "ea60b8c73b14fc39a2395836656e58108a39683a79546d2bf07888eb4c509e20"
     },
     ".codex/agents/code_review_gate.toml": {
       "mode": "0644",
-      "sha256": "6604c2875be3432afa2fae7b8ebb78da293d30298a8e447f95bf2ac5fc633fa0",
-      "size": 519
+      "sha256": "1a322e90aea60cd67ee0015092511efbe42308565bae65be3b831e8452269ea4"
+    },
+    ".codex/agents/code_review_gate__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "c65dcd4d276a17ee00de90abdb18ea109db067680d159a0ec50770b25d8fb50c"
+    },
+    ".codex/agents/code_review_gate__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "84e0e9aa5d636590e35b832e2271938f3f0ef25c92ee6a7d3a49798123c9289b"
+    },
+    ".codex/agents/code_review_gate__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "0986a7c88a7028adb4ce0de48da10c1956d1df5b2740b216a78d9d754b8bb4c1"
+    },
+    ".codex/agents/code_review_gate__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "cdf4825986198daa26cf7e335f905d0e6828019757b1bbe2f0bb25775c417c70"
     },
     ".codex/agents/code_simple_worker.toml": {
       "mode": "0644",
-      "sha256": "e6f6dbaa2a97edabf10e57b17165fc8feee2342fcc661e61b3714e3ae86ed49e",
-      "size": 620
+      "sha256": "067a54465adee0720479bd7025066182d0ea6af44c38b3a580963ed44c9a1b68"
+    },
+    ".codex/agents/code_simple_worker__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "181d3e3b57a6e41560b2faa218f5a7b99847095ce6bedb464001d8a4863c1158"
+    },
+    ".codex/agents/code_simple_worker__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "5138e733b3ddbb02477179363c90ab0467380a2e2a600a3f71acdd0bb63fe79e"
+    },
+    ".codex/agents/code_simple_worker__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "318daa518a3c5739e52fd648d6f9b9e2b6bc07b810fe6a483b46cbe04bbe8b23"
+    },
+    ".codex/agents/code_simple_worker__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "8a7857e305d18238c4884b485651d2dd99baf36360131d3162f69be781243c1d"
+    },
+    ".codex/agents/code_simple_worker__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "d010a3e6b976d7e8cad3b765e6d4c38c26325afe4c21fa202f4cbf293b2e4a4c"
+    },
+    ".codex/agents/code_simple_worker__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "27ba81c133f12eec777bcda4b8412ac10bfaddb480fcd037f7d388bdf4867425"
     },
     ".codex/agents/code_test_triage.toml": {
       "mode": "0644",
-      "sha256": "7e7204596290c83d3928281c6eb03f0bab8b08afba7099977dcf67d362795084",
-      "size": 474
+      "sha256": "a9f90862fa6d46b1ccb62a378b93dadd1a2525e922be62de1067f8d728384c42"
+    },
+    ".codex/agents/code_test_triage__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "2d96f7292c97c3b97d4ceb04b947d3dcc5f95dd51388f2f57a6525b86db58ba4"
+    },
+    ".codex/agents/code_test_triage__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "052bd0bedd66125f2b9c30fab4f35a6a007f2885abe47893273d477a83632270"
+    },
+    ".codex/agents/code_test_triage__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "44fcfce6df3e77b37ca1a6c1615821e95d304b4622018b5e1af79256449bd22e"
+    },
+    ".codex/agents/code_test_triage__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "e138c101c3961706c0399c7117f40625380ee3535414034546d57d11ce35a6df"
+    },
+    ".codex/agents/code_test_triage__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "95447b1376acdeec2b04db9dedd1262413e13df83de6cb8c29805c2c6baf58ce"
     },
     ".codex/agents/data_analyst.toml": {
       "mode": "0644",
-      "sha256": "eb22b850a7df9c7ef3c027593433ff34f4fcf672974ed1e056dba9859c1be712",
-      "size": 794
+      "sha256": "2b1e6e9b2580e21dfb62c116db5a57fb9f240ce6c39fdd5750e446845dc62d4d"
+    },
+    ".codex/agents/data_analyst__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "110501124aa22c4c41d4ad2ba75315e931005da534cc7a884fd38be389e28f41"
+    },
+    ".codex/agents/data_analyst__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "65e7126660cfef08f9936b32098977cf7739f2e2a8bd1ca74a586dfc18f6e593"
+    },
+    ".codex/agents/data_analyst__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "c546e1c6e783bdd5e2289c5fa463dc55cf5a2ff0a45b122d3c378226bc17ed82"
+    },
+    ".codex/agents/data_analyst__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "5faddace75fdb43680c4f44f1d24e2bf3786eb832518f0e7cf16674a5f0cf624"
+    },
+    ".codex/agents/data_analyst__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "8a451e2790bc09d5553f99b0bb612a34bb0a63b3e59acb316c404e39cacc0474"
     },
     ".codex/agents/data_quality_auditor.toml": {
       "mode": "0644",
-      "sha256": "716e3d3f06669fdd18df0918aa328c90e158588e9d063cd2ad6d4c7c9b61664f",
-      "size": 523
+      "sha256": "3522e949f64045e4eada0021341b7754542e5ad54b7b6403f610773f52c0a521"
+    },
+    ".codex/agents/data_quality_auditor__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "edfb03d1b454ccda0439a1a16df59098cb724cccb3f34874fbdf415098faf860"
+    },
+    ".codex/agents/data_quality_auditor__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "f775697c0a2be533c040f203c5333d8ce795ee166d7c21ac01598640989def37"
+    },
+    ".codex/agents/data_quality_auditor__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "295afe44db1ff3c098a228c2a536833169123e50f4351736f976a8437eb7251c"
+    },
+    ".codex/agents/data_quality_auditor__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "ce8749bcc59496fad4ab1c9f7dd1556c8af513a4c1d851086c861551dc39b3f5"
+    },
+    ".codex/agents/data_quality_auditor__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "cdc7b931190bfe22e356484c374feb2b423d4b1a9b896da5075a93289af8af9d"
     },
     ".codex/agents/decision_analyst.toml": {
       "mode": "0644",
-      "sha256": "9e3f3b9f180d506f54787c8661ac7ef9ff72532f7c32aa3ddfb31b6b3c76c3f5",
-      "size": 453
+      "sha256": "0709d1aaf866b19002997de9a102e150e27f0373035842bb56808e05503ea411"
+    },
+    ".codex/agents/decision_analyst__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "06096e7f9050daaa4c4874ea42de7b366b46e63af7a741f923db0ae65ee8ef7f"
+    },
+    ".codex/agents/decision_analyst__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "ab16e2ad2086e6b7d1cff4593f5e2e11c4ff918c6d184c66904cde9ccd3ff4a4"
+    },
+    ".codex/agents/decision_analyst__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "346488cc83baaa49e05dc2d35749fd9f67d31ee637104bb85c250d59362f5dba"
+    },
+    ".codex/agents/decision_analyst__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "a3a7a98d9fc07f81d5d8e6290dbc83bfd720c9d7eb8afaa279841715a4ff3bba"
     },
     ".codex/agents/docs_writer.toml": {
       "mode": "0644",
-      "sha256": "c658a78507f5cfda8e48d65d2e36818b73213a30951ee65334da9fbbd8f02afe",
-      "size": 671
+      "sha256": "488b6a6535798c51a32f9ae3cca99d8f55de7fe96a44b161d2924806e618e0c2"
+    },
+    ".codex/agents/docs_writer__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "5dece542ec9a5b779455463731a87d897c708ce9c5614cd472cc3991caf1a4a2"
+    },
+    ".codex/agents/docs_writer__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "f9126db0634cb8e40f9fb1a13942a423bd7c4ebbbbb3ebe3a43eda7b8eea1fc1"
+    },
+    ".codex/agents/docs_writer__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "6eb78dfbebad52833d60de75be1ce47968baa36831f29828cfc5697d780686f6"
+    },
+    ".codex/agents/docs_writer__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "1d89e5b003c4204085804c881bc9bee2726b17b2765728db1edeebdf6a783cbc"
+    },
+    ".codex/agents/docs_writer__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "2c873c4b0ef2a178f8e8aae88698514d2db4dddf9471dea785c4890184712830"
+    },
+    ".codex/agents/docs_writer__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "b670108a4746ee42825676440bc3944eab37d9b5505746a99ca9269a8a909504"
     },
     ".codex/agents/homelab_critical_patch_author.toml": {
       "mode": "0644",
-      "sha256": "76d4e3dce33ede86c438c5c541a33e83cc2e0bde3ac9859d1801cd3884a11288",
-      "size": 652
+      "sha256": "8e12a1fc13b0da0fef9012a187582acc43daeca94beade0c7a2f3cfc7ee6daf8"
+    },
+    ".codex/agents/homelab_critical_patch_author__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "45161f674ba262e39f8eaffd1239ed48dcca7c7ec90c576189ad2579e2d0699c"
+    },
+    ".codex/agents/homelab_critical_patch_author__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "e57e366b333b80345156c9244c6e30eecebcd2b05d9b881cf8fc71f65f21c6a0"
+    },
+    ".codex/agents/homelab_critical_patch_author__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "0b6018c1d052279efb059c641b78a227c51d8d50e843e2564140318e4516d1fa"
     },
     ".codex/agents/homelab_critical_planner.toml": {
       "mode": "0644",
-      "sha256": "fbf344ab8550a67aa32b14063a8878a85429686c05faa5e8b86a8c44d8043475",
-      "size": 500
+      "sha256": "d799e44786b0a07e4a32b9bb81facde02c4961ccc20fb6958e1b2edd14be55de"
+    },
+    ".codex/agents/homelab_critical_planner__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "979c8eaa69ad772769056975ccb7c3458d6b3dd024fbf6b659251c61bd4b1db9"
+    },
+    ".codex/agents/homelab_critical_planner__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "5d84b820a819fde16307c0be52b1b3ef0ee004607df00e6a50a045b094af0209"
+    },
+    ".codex/agents/homelab_critical_planner__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "bc519ae4c5583aec677deb2829e00e3c1e5c5f7d214fd0ef9cc356a31c1e8dd2"
     },
     ".codex/agents/homelab_inventory.toml": {
       "mode": "0644",
-      "sha256": "0101c8e707bcb4c56397d08c53ac13672cd4a3611168159c24f90cafdd0c25f4",
-      "size": 489
+      "sha256": "760764be532998906aec631d85948b9fe1324551e04a0d794975b3250a4423cd"
+    },
+    ".codex/agents/homelab_inventory__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "ea5b68c404722ae562aa8967a1dcd7211332a3acb835c88dfb9761e6aee3573c"
+    },
+    ".codex/agents/homelab_inventory__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "b6cc7dbbf418765308f8eb327d5f87f5becb2a8aab24a03e6eb5e02ae9d87006"
+    },
+    ".codex/agents/homelab_inventory__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "88fb8d13ff784849478a8d76dce65591a8fa77e9eeaf45dbe0cde28d9489660b"
+    },
+    ".codex/agents/homelab_inventory__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "c1e672ef366f6ddf5781b0fa19e3f60793f2790e41864e8f3c63b551e0447bce"
+    },
+    ".codex/agents/homelab_inventory__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "faa373cb0b27a2eea9496c58a545b86c95936ed6d19c1d7093a922be74400d5a"
+    },
+    ".codex/agents/homelab_inventory__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "045ff07ae45c9be493a27b884de0bae4453d7ea086c952629629c3f16c95fc4c"
     },
     ".codex/agents/homelab_light_worker.toml": {
       "mode": "0644",
-      "sha256": "b9372cc8517a872576683d66006ce9fb74b4f4049f3867cabe03a73e9ff03603",
-      "size": 647
+      "sha256": "a25a45aa9abce867b55d545fe23a1758106db8d3e59f2f3f234b3a42807ebc71"
+    },
+    ".codex/agents/homelab_light_worker__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "1ea6c99013285722a0ff36cc229671c2c254d9677a04a398f724eb5112778c9b"
+    },
+    ".codex/agents/homelab_light_worker__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "1e519e273c96c4691b148b5d5d8978b4e98e881c4ec3dc4c2c50fce607bdfc73"
+    },
+    ".codex/agents/homelab_light_worker__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "ca688151c63982d756daebad76128bedeef4578c0b8dd37b26496eb62b3f44de"
+    },
+    ".codex/agents/homelab_light_worker__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "e0e36197aeda752368a1c285b08d05ab70575bd4431c6a75a7da48f4e52b771b"
+    },
+    ".codex/agents/homelab_light_worker__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "fb57843f4a86c00adbf88d8d33dc6e53da4e927c10d20b2975147f3ecb6fd8ae"
+    },
+    ".codex/agents/homelab_light_worker__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "f28b2ad9faccb8b2f97d10ade174b0f11e9ae15b9e632bc8dfaff2f91dc20041"
     },
     ".codex/agents/homelab_log_triage.toml": {
       "mode": "0644",
-      "sha256": "127989105778adafaa0bda01e2b6bbd359114210e21f6e980b5b8bc29527b523",
-      "size": 449
+      "sha256": "2085e6511f9ae7f49a6b3bf40ee10df77e4b924eb217f4a4cd6fbd95cebcae26"
+    },
+    ".codex/agents/homelab_log_triage__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "e444b47f9e638464d755b863ceecbece45e16b73f6b9de1c07a3e9abb6486453"
+    },
+    ".codex/agents/homelab_log_triage__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "4081f806f67c04f941363a1c587d4341b3c6c3def7ac6fed3d0d54d590e9ff1c"
+    },
+    ".codex/agents/homelab_log_triage__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "c231e33cc7992fbd8d55f66725e0359a1689b8e9a0699861bae6f14418be0fb0"
+    },
+    ".codex/agents/homelab_log_triage__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "291500d2dc5b18f225d62e7e5953ffc57d59aed07381df52f7d90655736c57f5"
+    },
+    ".codex/agents/homelab_log_triage__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "8081617dc0a5633bb57a779efafdb848b6f2bbd34fb35f29148e41d996131bee"
+    },
+    ".codex/agents/homelab_log_triage__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "40d553403a3bc1bacbff2c7472ca265449f958595d0b66aa94fe58157090672e"
     },
     ".codex/agents/homelab_security_reviewer.toml": {
       "mode": "0644",
-      "sha256": "3a49843642806ac7eb1fd4f1d6bba0774802218577cfecc086e143046cd2bae9",
-      "size": 491
+      "sha256": "0b9fbfb08844a2cfbdf0d4996028dd98e75f17e89a85bbc7b2922a5ca5ad70f6"
+    },
+    ".codex/agents/homelab_security_reviewer__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "c0287c3429b4e0f92a8ba1eee1540688e6d948cb3455762e6c75b0f47d805ddf"
+    },
+    ".codex/agents/homelab_security_reviewer__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "e4e48a5640f4ece5514b6371b6cb8b79ada7c15d18cdef650a76f4b6ae002b68"
+    },
+    ".codex/agents/homelab_security_reviewer__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "df5bf44346a2a23b3fc65f1068a42e24ce333c4d4c4c6a9baa938e75bf12b348"
     },
     ".codex/agents/homelab_service_worker.toml": {
       "mode": "0644",
-      "sha256": "51f0ca0e2e689ad5f96c77ebc1cd2033017387530902cc42bfb00694b028c2d0",
-      "size": 672
+      "sha256": "cf5534a2bccc17862881694a9a9d87b4c0d826f03cfa60b07fb6148145050868"
+    },
+    ".codex/agents/homelab_service_worker__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "0fcba4ed2458478e19f446a2b0c4fe5acee1dc63b7b070d45e7cee218f9d0a93"
+    },
+    ".codex/agents/homelab_service_worker__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "6afb6251c2b572c1de5b935050be3aae11965c50e80ad76d0e4dd931a9334b0f"
+    },
+    ".codex/agents/homelab_service_worker__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "14a4e12a87d1cc83d16b40abdfe49e4936c8973d42f6694a073286ca05fe1f15"
+    },
+    ".codex/agents/homelab_service_worker__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "15b0e8910136197c9a9324a6cf8d12e2c3a4611c53574f2b110a834b26544013"
+    },
+    ".codex/agents/homelab_service_worker__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "8ae64723be5fc6fe37a31423adcbfffb9ba2cb27f50fdb93b612bbfe0c21f9b8"
     },
     ".codex/agents/long_context_summarizer.toml": {
       "mode": "0644",
-      "sha256": "6cb201b475a87d53d9ed492140880a7f87ae2ad4c42a498ddf462081fe370bde",
-      "size": 697
+      "sha256": "04782ab875176223d013ee39b49795efd06b83da77ac41ce4fddb68e7fa3d74c"
+    },
+    ".codex/agents/long_context_summarizer__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "b2639a7067d0dc54e191dd53d56d7f28efff86412a2030cf0311c127d09c323b"
+    },
+    ".codex/agents/long_context_summarizer__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "f78baec03511ac151a5e61aae1241318a4232e764e6e262cd3ffe0dce8572a95"
+    },
+    ".codex/agents/long_context_summarizer__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "2f3eee2c5b68879ee37f60bf9f02a8b58635576b039e542e5005ae5d1d1b92f8"
+    },
+    ".codex/agents/long_context_summarizer__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "9b44b3a1c6bf67fa2b77ece97e9cfa825b0554e01ca55aace94815f7f3e0110e"
+    },
+    ".codex/agents/long_context_summarizer__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "3f3b7d5994a2b6dab56c1a0c8aa4b702a5771cc6830f6fa857371cf19949f974"
+    },
+    ".codex/agents/long_context_summarizer__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "ab0996ed8b84ddd01c15890ac6c803e80614ec81768f76a2725de0f5d90c7f4e"
     },
     ".codex/agents/project_planner.toml": {
       "mode": "0644",
-      "sha256": "836bdd21cbba33ce1548e8d40169925edd0ff6fc28575f50be83fbb95272a1d8",
-      "size": 483
+      "sha256": "91b368874f5ce3d5863f7bdd0874958d8afad2164e4229f715f525043ef8420d"
+    },
+    ".codex/agents/project_planner__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "f18c6a209acb2d9c5f6ea3ac5a7741db59c090911e4c9277735a996935b1fcc9"
+    },
+    ".codex/agents/project_planner__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "5b83f9fb1b506eef45b896de9fd47c4515191078006a477274862f5d4e38a9a8"
+    },
+    ".codex/agents/project_planner__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "6f6ba193ddbc5efa33eee3c27b6e95195793b7ce92fed4dfa2397682a137bdb7"
+    },
+    ".codex/agents/project_planner__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "7f245e94422e939434f2e72be5079335525e1267196656026108b8c1f9c3a01c"
     },
     ".codex/agents/repo_bootstrapper.toml": {
       "mode": "0644",
-      "sha256": "e9d58e6984fd3af33aed8444423985fcd585ebc80b2a21307d826434b1e7eb82",
-      "size": 680
+      "sha256": "24b55d95323b34636d3bf90d8e1f16c523381c93cdbd5348f90063d615f604b8"
+    },
+    ".codex/agents/repo_bootstrapper__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "96f9fa18a30f4ab9c7af1df7c02844e2bc7862f71768ad64ce159c4fae9b8677"
+    },
+    ".codex/agents/repo_bootstrapper__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "185b5b749ca05bb859450602e5d4db1b7dfb43da0833d91f093583bb1606cb82"
+    },
+    ".codex/agents/repo_bootstrapper__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "e0624f83dc938c4fed45650d5c97522910d575f1bdac267e4ce0087b7109b9a9"
+    },
+    ".codex/agents/repo_bootstrapper__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "e65266b98dcbcb620d08b2d15afd723e4a5297a469ea9d0039e160e0f35f2939"
+    },
+    ".codex/agents/repo_bootstrapper__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "54d70ec7b8f1be10a20de5a44b0e96ce23272ccf40cb89841580e701ddfd2d29"
     },
     ".codex/agents/requirements_analyst.toml": {
       "mode": "0644",
-      "sha256": "f480a4ddb11899d24f66618febaa51570c5d2b77b9a444c750ea3e95a98d92a0",
-      "size": 654
+      "sha256": "e910fe34c517cdc24aceb58bfa6ca07b09eb8fc58297bbaad5c61e075a838ae2"
+    },
+    ".codex/agents/requirements_analyst__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "9a88e44dd99af9e7754b203ca85f9bbb4f74be7033a2fa37c1d099027a49fcc8"
+    },
+    ".codex/agents/requirements_analyst__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "cefc0497e0c0e8ec718670efd6f57b81c1298eeeced99d168c70c48ef79a3290"
+    },
+    ".codex/agents/requirements_analyst__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "858082df1f94f22129abac0fc9590d2d6bc9ab7a7f3960fe07f79afef88242fd"
+    },
+    ".codex/agents/requirements_analyst__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "74fd5d91d9ff07fcc29a7bcb4d24cd49d98a6b7e4f74c06e33320bcfb3f1cb69"
+    },
+    ".codex/agents/requirements_analyst__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "ba7d590d0925024341a8947d8f777e0f56be1bc3c772b54bd527ad44eb5da7f7"
     },
     ".codex/agents/research_mapper.toml": {
       "mode": "0644",
-      "sha256": "99ed82c8a94e9a55d5f4c442d2d629dbd02cbd7213958b9d2ff64efc2b18acc7",
-      "size": 459
+      "sha256": "87edf34824b528b165a8f45f13288dba29108fe98aa849f0189042650033fb4b"
+    },
+    ".codex/agents/research_mapper__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "2a2825f1d0c34e6a916a13c271765708474fd23d64b5e23c25e4b46e3d242a33"
+    },
+    ".codex/agents/research_mapper__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "73e50304bec1cfff8afa627af76e98d8ca2e79c5ddb606583ca1bf1ba90e7fff"
+    },
+    ".codex/agents/research_mapper__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "32a42bdd4fa8f89761c7b649a813f6448ca1315f54fc0f3e80f139509dfd681c"
+    },
+    ".codex/agents/research_mapper__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "6d645a279075d7a47d757255f39cf37a1642f963b887d85bebb8ba9a90d357bc"
+    },
+    ".codex/agents/research_mapper__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "96f7861d9e2520e8274c06705e2cd8367f2a0fb478017c43e6df48a22c1c027c"
+    },
+    ".codex/agents/research_mapper__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "23655cc49b345cc661013434809b15fe8db4845c469b8ba6dbd7d66b106a6064"
     },
     ".codex/agents/security_secret_scanner.toml": {
       "mode": "0644",
-      "sha256": "335ff0a3fafd168679041e9cfc83a71fb396eebcc7e7387a9372220d09185b53",
-      "size": 515
+      "sha256": "2b60b2dab146dc6473d784198bcd74c2d90db0cf2b989b6ac9332288cb05433f"
+    },
+    ".codex/agents/security_secret_scanner__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "494dd36947655fee948e64d3e8bd23adfb58e3cc163366ef08634b0c7ddf5b7e"
+    },
+    ".codex/agents/security_secret_scanner__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "063ae102a8fccdcff0335f46b4de10e40a55997f55356d97ea9bf98d1287bfc4"
+    },
+    ".codex/agents/security_secret_scanner__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "85bc18ff90882714cdcb35daa994127a87d26187f29bfb72031dbfbc8cb78799"
+    },
+    ".codex/agents/security_secret_scanner__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "7ca4c954049edfa21fe619333b212d5e2019613ec21860cea1b4bf2c9d156bf5"
     },
     ".codex/agents/source_reliability_reviewer.toml": {
       "mode": "0644",
-      "sha256": "20ba158cd1adbf1209db5f802a583dea0096bcfb1801861a87f5dcd293fdc41f",
-      "size": 506
+      "sha256": "92cd2e5fc578579f8b7e9d3a987e3bad10952cde00f9b4f3f21871a067beaeec"
+    },
+    ".codex/agents/source_reliability_reviewer__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "29ca781753e7f028e01aa0897c3dccf1470649cd0b5b63548270825496cf7c6e"
+    },
+    ".codex/agents/source_reliability_reviewer__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "5cdca2ac2687ad4803630c91feedcc0c9b527c35fa82b9ce9e47fb1431d9fe56"
+    },
+    ".codex/agents/source_reliability_reviewer__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "f6b2eddf1261ea51487e2790ef3868a5f3400c416484a8af88033a3ad6ee0329"
+    },
+    ".codex/agents/source_reliability_reviewer__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "5ecd7a029d534196d6d3165aa7229c4b4128cb60bffbc1c85de3950634cf8f75"
+    },
+    ".codex/agents/source_reliability_reviewer__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "98fee62594a95475a63a07c35198a36d0d2419934cf8d4cbdb54c50e9e48b706"
     },
     ".codex/agents/writing_architect.toml": {
       "mode": "0644",
-      "sha256": "d8a01399dbff9bcc12471cc3c43f05cb9aebcb09b9d851742137e74b21a81f9d",
-      "size": 466
+      "sha256": "045768802d6061423e20a825a1076c6a1acfdd946dabc9db942808604492b5d4"
+    },
+    ".codex/agents/writing_architect__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "84e2fd085f16c6aea0d74e1636b1a00e3f7fa1fdd43a0403c1a3fd3ba0b69509"
+    },
+    ".codex/agents/writing_architect__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "c4c796ddcb7f5c19653536dd0a6494e54da19910ec70cf0a6669a5e72890acc0"
+    },
+    ".codex/agents/writing_architect__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "a8dbbaabf1e29424453844a3f7337ab366be67344e5a3087b9c40f56b2f59101"
+    },
+    ".codex/agents/writing_architect__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "d48d500d027a67c7364034b673daf97d3a665fcfd10dccc2c46c127fd8480d63"
+    },
+    ".codex/agents/writing_architect__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "99dfc644f0299de021a4be91a25086fc1e2a01303fcf9e24003fdd903ea8eb80"
     },
     ".codex/agents/writing_editor.toml": {
       "mode": "0644",
-      "sha256": "f19199ed4370df3e4c73f03a90f238b4a74c5efbb39b57fdcef4d7cf7be92d87",
-      "size": 644
+      "sha256": "0c6b270a9fd4b502f0b2a632f83f3539d0bd9127968f5bcb545bc996957da5fb"
+    },
+    ".codex/agents/writing_editor__astra_high.toml": {
+      "mode": "0644",
+      "sha256": "92d85443f5d5bcae430fc7a4e499b7c4cbe3d4d88d6f15f6dd1a52b9e832c42f"
+    },
+    ".codex/agents/writing_editor__astra_max.toml": {
+      "mode": "0644",
+      "sha256": "6a5fc4a37a90907314002b2f004dadee3cf57d9d58ef884fa422e038838b3ec7"
+    },
+    ".codex/agents/writing_editor__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "8482e1efb34412fd510320f0ebeada2be568fb0bad6574bcf7ebb59dd6ca2f20"
+    },
+    ".codex/agents/writing_editor__sol_max.toml": {
+      "mode": "0644",
+      "sha256": "3d53cde1e6baa1a56b71748a902d616b182833620aa7a0399a838cb2a09e23fc"
+    },
+    ".codex/agents/writing_editor__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "f1a2f6c46e65eb3fae7c7a4af72af7c1b92423a1f5ef1d2dc5175396f1cc6c44"
+    },
+    ".codex/agents/writing_editor__terra_medium.toml": {
+      "mode": "0644",
+      "sha256": "1469817f96ec543cb29c3e06f13e26ff92bc3a3b6932058416a43696abc1bce4"
     },
     ".codex/config.toml": {
       "mode": "0644",
-      "sha256": "954824a37d6cecaf04eaa4e12931a027322e98357eec01b0d3a661a731bac2eb",
-      "size": 6209
+      "sha256": "f527fcf17cc609b6ed2a53bdbd76f8379baa234e24a9fa03c7394bc70ef07ce4"
     },
     "AGENTS.md": {
       "mode": "0644",
-      "sha256": "a90c8baa999fefddfe1155ee53f5a774a296393a51c653d82edd9e05926b3363",
-      "size": 19354
+      "sha256": "e3f9956224b1084c1fc08d10145048c442b8bab3893f6ce55be14e797305310f"
     }
   },
   "profile": "public"

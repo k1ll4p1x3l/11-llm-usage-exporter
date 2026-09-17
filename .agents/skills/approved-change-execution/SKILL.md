@@ -33,8 +33,8 @@ description: Use after real human approval to execute a tightly bounded live cha
 
 ## Stop / Approval Rules
 
-- Never treat a template, action envelope, or assistant summary as approval. Approval must come from a real human decision.
-- Never treat a Git lifecycle approval envelope as authorization for a live,
+- Never treat a template, task note, or assistant summary as approval. Approval must come from a real human decision.
+- Never treat a Git lifecycle approval as authorization for a live,
   production, Homelab, credential, permission, repository-setting, release,
   tag, workflow-dispatch, or destructive-data action. Use a separate exact
   live-change approval for those effects.
