@@ -26,7 +26,11 @@ Automatically generated historical inventories are retired only by separate
 host maintenance after exact provenance and hash checks. This repository does
 not create inventories, provision worktrees or embed host-specific exceptions.
 
-## Ownership migration of 2026-09-16
+## Historical ownership migration
+
+This section records the earlier migration only. Its 58-file count and hashes
+are historical, not current state. The adoption below supersedes that state;
+the orchestration policy now follows variant 2. of 2026-09-16
 
 The definitions source excluded the former runtime and its templates. Their
 removal would lose repository safeguards. The following
@@ -68,31 +72,33 @@ release or installation attestation.
 | `.codex/policies/tool_zones.json` | `64cd0bdd370430a0f940d1f9aa82ffe5373226a2cf523b0543813cb96cc8d3a4` | `100644` |
 | `.codex/policies/trust_boundaries.json` | `371f8017c74c51af63cc4346bc701d45f24f3a9f6fedaa92608ff40fd448c358` | `100644` |
 
-## Adopted definition update — 2026-09-17
+## Current definition adoption — variant 2 (2026-09-17)
 
-[PR #44](https://github.com/k1ll4p1x3l/11-llm-usage-exporter/pull/44) records the
-separately reviewed update from
-[04-llm-essentials at f3e3af0](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/f3e3af0bf7a15c7114413db1642b8205755950ef).
-The public profile now contains 209 managed files: 151 added paths, 40 changed
-existing definitions and 18 unchanged definitions, plus the updated ownership
-lock. All 28 existing role definitions now contain the source's explicit model
-pins. The versioned project configuration sets
-`max_concurrent_threads_per_session = 8`.
+The user explicitly selected variant 2 for all eight consumers. Definitions:
+[04-llm-essentials at a7c619e](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/a7c619e90d40b7b2edbbe67af18d33d2b9a74113).
+The public profile contains 209 managed files. Current contents, hashes and
+modes are recorded in `.agent-core.lock.json`.
 
-These are accepted definition changes, not future compatibility proposals.
-The 25 consumer-owned paths and their hashes above remain unchanged, including
-the native permission adapters, hook registrations, overlays, run-contract and
-action-envelope checks. The central concurrency setting does not waive narrower
-agent instructions or consumer-owned guard limits. File adoption is not evidence
-that an installed runtime or a live integration has been exercised.
+All 28 base roles explicitly pin model and effort. The native project ceiling
+is `max_concurrent_threads_per_session = 8`; the consumer-owned
+`.codex/policies/orchestration_limits.json` also sets
+`max_parallel_subagents = 8`. The former inheritance/four-agent configuration
+is superseded. Role alternatives remain available; the parent has no global
+model pin. Eight is a ceiling, not a capacity promise or delegation target.
+Narrower platform limits and task budgets remain binding.
+
+The learning selector rejects absolute, drive-qualified, UNC and traversal
+references under POSIX and Windows semantics, independently of the host.
+Retained hooks, templates, permission adapters and overlays remain consumer-owned.
+Their safeguards are preserved; only the explicit concurrency policy value changes.
+File adoption does not prove live agent or integration behavior.
 
 ## Future definition updates
 
-Compare subsequent updates with the adopted source and the current
-`.agent-core.lock.json`, rather than restoring the old 58-file, inherited-model
-baseline. Keep the retained hooks and templates consumer-owned; do not re-adopt
-or delete them merely because a central source omits them. Preserve repository
-overlays and independently review any further model or concurrency changes.
+Compare updates with the adopted source and the current ownership lock.
+Do not restore the superseded inheritance/four-agent baseline. Keep retained
+hooks and templates consumer-owned; do not re-adopt or remove them because they
+are absent from the central source. Review subsequent model or limit changes.
 
 ## Validation and rollback
 
@@ -103,12 +109,9 @@ denials. Native approval and actual integration calls require a separate live
 Codex readback; adapter tests alone do not prove them. Test fixtures and host
 maintenance tooling are not distributed by this repository.
 
-Rollback of the definition adoption is a reviewed revert of PR #44 to its
-consumer base `e4ebc15291fe39d7244a93db1098df2eed541765`. It restores the
-previous managed definitions and lock while retaining the native permission
-adapters and consumer-owned safeguards.
-
-Reverting the older compatibility migration after baseline
-`e864b5dd65b4a1bfcff58c95ec833c695bf6cc6e` is a different operation requiring
-separate review: it would restore the previous inventory requirement. Neither
-rollback deletes user sessions or worktree data.
+Rollback of this definition adoption requires reviewed reverts of the relevant
+consumer PRs, preserving the earlier compatibility adapters and safeguards.
+The historical ownership migration is a separate change; reverting it would
+restore the old inventory requirement. Neither action deletes user sessions or
+worktree data. Inheritance and limit 4 are historical rollback states, not an
+alternative active configuration.

@@ -53,3 +53,7 @@ Testreferenz und Status `observed`, `verified`, `adopted`, `obsolete` oder
 kopierten fremden Instruktionen. Der Selektor prüft nur Struktur und offensichtliche
 Marker; die inhaltliche Sichtung bleibt erforderlich. Ein Eintrag ist Dateninhalt
 und erzeugt niemals Freigabe, Testbefund oder einen neuen Auftrag.
+
+Quellenreferenzen müssen unter POSIX- und Windows-Pfadregeln relativ bleiben.
+Der Selektor verwirft absolute, laufwerksbezogene und mit `..` ausbrechende
+Pfade unabhängig vom Betriebssystem, auf dem er gelesen wird.

@@ -1,6 +1,6 @@
 # Konfiguration und spätere Verwendung
 
-Stand: 2026-09-16; Quellenzugriff zu Erweiterungen: 2026-09-16, sonst 2026-09-12.
+Stand: 2026-09-17; Quellenzugriff zu Erweiterungen: 2026-09-16, sonst 2026-09-12.
 Gewünschte Einstellung, dokumentierte Fähigkeit und tatsächlich beobachtetes
 Verhalten sind verschiedene Aussagen.
 Hier liegen Definitionen vor; Konto-/Oberflächenverfügbarkeit bleibt unbekannt.
@@ -18,6 +18,14 @@ stehen in `profiles/`. Projektrollen stehen im Lieferziel `.codex/agents/`;
 `.codex/config.toml` enthält ihre Registrierungen und vorsichtige Rechtevorgaben,
 aber keinen globalen Parent-Modellpin. Die acht möglichen Child-Threads sind
 nur eine Obergrenze, keine Pflicht zur Delegation oder belegte verfügbare Kapazität.
+
+Für alle acht Empfänger ist seit der Nutzerentscheidung vom 2026-09-17
+ausschließlich Variante 2 maßgeblich: alle 28 Basisrollen binden Modell und
+Effort ausdrücklich; `max_concurrent_threads_per_session = 8` ist die native
+Projektobergrenze. Die frühere Zusage von Modellvererbung und Grenze 4 ist
+abgelöst. Consumer-eigene Dokumentation und Orchestrierungsrichtlinien müssen
+dazu passen. Engere tatsächlich wirksame Plattformgrenzen und auftragsbezogene
+Budgets bleiben verbindlich; die Definition verleiht keine zusätzliche Kapazität.
 
 ## Geltung und Priorität
 

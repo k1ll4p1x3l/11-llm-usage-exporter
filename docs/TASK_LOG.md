@@ -1,5 +1,15 @@
 # Task Log
 
+## 2026-09-17 — Variante 2 und Reviewkorrekturen
+
+Feste Modell-/Effortbindungen der 28 Basisrollen und native Obergrenze 8 sind
+für alle Empfänger ausdrücklich bestätigt. Consumer-Richtlinie und Dokumentation
+sind angeglichen. Der zentrale Lernselektor prüft POSIX- und Windows-Pfade auf
+jedem Host; verwaltete Dateien und Eigentumsliste folgen gemeinsam der korrigierten
+Quelle `04-llm-essentials` bei `a7c619e90d40b7b2edbbe67af18d33d2b9a74113`.
+Keine neuen Clones oder Änderungen an Hooks, Secrets und Live-Diensten.
+Consumer-CI und Reviewabschluss vor Merge prüfen; Rücknahme per geprüftem Revert.
+
 ## Central definition sync — 2026-09-17
 
 - Source: `k1ll4p1x3l/04-llm-essentials@f3e3af0bf7a15c7114413db1642b8205755950ef`.

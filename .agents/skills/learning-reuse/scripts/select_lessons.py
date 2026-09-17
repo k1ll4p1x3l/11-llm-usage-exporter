@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import re
 import stat
 import sys
@@ -57,7 +57,9 @@ def read_lessons(path: Path) -> list[dict]:
         if entry["id"] in ids or entry["status"] not in STATES:
             raise ValueError("duplicate ID or invalid lesson status")
         ids.add(entry["id"])
-        if any(Path(ref).is_absolute() or ".." in Path(ref).parts for ref in entry["source_refs"]):
+        if any(path.anchor or ".." in path.parts
+               for ref in entry["source_refs"]
+               for path in (PurePosixPath(ref), PureWindowsPath(ref))):
             raise ValueError("lesson references must be repository-relative")
         if any(MARKERS.search(text) for text in _texts(entry)):
             raise ValueError("lesson contains a forbidden sensitive marker; no values printed")

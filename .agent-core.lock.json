@@ -3,7 +3,7 @@
   "managed_files": {
     ".agent-core/CONFIGURATION.md": {
       "mode": "0644",
-      "sha256": "f12ce94bbd62cef0e4fb261158e2653017cb1aa93c3013a1bd2326f6ce32c0cf"
+      "sha256": "72352d4224ee5e6c9986ae53373a97931457d995001edbff03d64ec5b47a99fd"
     },
     ".agent-core/LICENSE": {
       "mode": "0644",
@@ -123,7 +123,7 @@
     },
     ".agents/skills/learning-reuse/SKILL.md": {
       "mode": "0644",
-      "sha256": "4c322407f9dad2dd405d1ece5d48b593502e455c2bbc7f8129dc743b827899ef"
+      "sha256": "b158efb5ccb27663110611697b5ab38acf954ac060ba8ba0a7e017db8cc9d88c"
     },
     ".agents/skills/learning-reuse/assets/LESSONS.json": {
       "mode": "0644",
@@ -139,7 +139,7 @@
     },
     ".agents/skills/learning-reuse/scripts/select_lessons.py": {
       "mode": "0644",
-      "sha256": "71191b599c73046c3d1e82866d03be13da9d19b83417e9ac63472e225fac2b00"
+      "sha256": "1af18a095e95c3c6532fda612b7fd49ed8c789e2b93a069d18719c9b51b6ea68"
     },
     ".agents/skills/long-running-goal/SKILL.md": {
       "mode": "0644",
