@@ -3,102 +3,33 @@ name: autonomous-run
 description: Use when a task should gather required inputs and approvals early, then run end-to-end autonomously until a result or checkpoint.
 ---
 
-# Autonomous run
+# Selbstständig bis zum vereinbarten Ende
 
-## Trigger
+1. Kläre Ziel, Muss-Punkte, Dateiumfang und gewünschten Endpunkt: Bearbeitung,
+   Prüfung, Integration oder gesonderte Livewirkung. Keine stillen Scopeannahmen.
+2. Unterscheide erlaubte lokale Arbeit, externe Wirkung, technische Fähigkeit
+   und echte Autorisierung. Bündele tatsächlich fehlende Angaben und vorhersehbare
+   Entscheidungen früh; vorhandene gültige Freigaben nicht nochmals erfragen.
+3. Führe erlaubte Schritte selbstständig aus. Jede wesentliche Teilaufgabe dient
+   einem Muss-Punkt oder einer notwendigen Voraussetzung; optionale Ideen separat.
+4. Bei längerer Arbeit genügt ein kurzer aktueller Aufgabenstand nach der
+   gelieferten HANDOFF-Vorlage. Keine Pflicht zu Laufverträgen oder Spezialdateien.
+5. Behandle normale Fehler innerhalb des freigegebenen Scopes weiter. Halte
+   Problem, bisherige Versuche, neue Erkenntnis und nächsten begrenzten Schritt
+   zusammen. Neue Namen, Threads oder Hypothesen setzen Versuche nicht zurück.
+6. Negative Prüfungen blockieren ihre abhängige Stufe, bis passende frische
+   Evidenz vorliegt. Neue Rechte, Zieländerung, unabhängige Daten oder echte
+   Sicherheitsablehnung konkret melden und betroffene Wirkung stoppen.
+7. Gib kurze Statusmeldungen im normalen Chat. Zur vollen Stunde in Europe/Berlin am
+   nächsten sicheren Gesprächspunkt: erledigt, aktuell, offen,
+   Blocker, Zeit/Zeitzone und nötige Nutzeraktion. Grobe Orientierung, bedingte
+   Restzeit oder ehrliches Unbekannt und wesentliche Schätzungsänderung nennen.
+   Nach Resume höchstens den aktuellen Status nachholen; keinen Bericht neben
+   gleichzeitigem Abschluss doppeln. Schätzungen kennzeichnen; keine erfundenen
+   Prozentwerte, Timer, garantierte Offlinezustellung oder Antwortpflicht.
+8. Prüfe die tatsächlichen Muss-Punkte und den erlaubten Gitabschluss. Wenn
+   erfüllt, beenden. Ein Zwischenstand oder verbrauchtes Budget ist kein Erfolg.
 
-- Use when the task is multi-step and would otherwise require repeated user ping-pong.
-- Use when you can bundle missing questions, approvals, files, or credentials up front.
-- Use when the desired behavior is "keep going until done or safely blocked."
-
-## Inputs
-
-- User goal and acceptance criteria.
-- Scope boundaries: allowed paths, systems, repos, and environments.
-- Required approvals for risky, live, external, destructive, or irreversible actions.
-- Existing repo policy, task log, and relevant local conventions.
-
-## Workflow
-
-1. Restate the goal, scope, non-goals, done criteria, evidence classes, and stop conditions in one short check.
-2. Separate four things that must never be conflated:
-   - worktree write permission,
-   - repository task scope,
-   - human authorization for live/external/risky actions,
-   - technical capability or credentials.
-3. Identify all missing must-have inputs and approvals before starting implementation.
-4. Ask for them in one bundled request whenever feasible. Do not drip-feed questions.
-5. For a long or interruption-prone run, copy the managed templates to the ignored
-   `.agent-state/` directory and activate an opt-in `run-contract.json`.
-6. For one bounded repository task, offer a lifecycle approval envelope when
-   the user wants branch, implementation, validation, commits, push, Draft PR,
-   review fixes, Ready, Merge, and selected cleanup to proceed with one early
-   approval. Fill the exact schema-v2 template before asking; never infer an
-   unstated stage.
-7. During `intake` and `planned`, keep `action_envelope_required` false so the
-   local contract and envelope can be prepared. Only after the actual human
-   approval is present and the envelope is valid, set it true and move to
-   `authorized`. This order stages enforcement; it does not weaken it.
-8. After the bundle is resolved, execute independently within scope. Update the
-   contract only to describe state; never use it to invent or widen approval.
-9. Prefer the smallest safe next action that preserves momentum.
-10. Before context compaction, write a matching `checkpoint.json` whose objective
-   is unchanged and whose last result is evidence-backed.
-11. Finish at one of three end states:
-   - completed result,
-   - safe checkpoint with resume prompt,
-   - explicit blocker that cannot be resolved without new user input or approval.
-
-## Contracted state machine
-
-`intake -> planned -> authorized -> executing -> verifying -> completed`
-
-- `blocked` may be entered from any state when a hard stop is reached.
-- `authorized` means an actual human approval exists in the conversation where
-  required; editing the JSON file cannot create that approval.
-- Do not skip from `planned` to `completed` merely because files were changed.
-- A completed state requires current evidence for every declared evidence class.
-
-## Stop / Approval Rules
-
-- Stop before live changes, external side effects, destructive actions, new secrets, or permission changes that were not already approved.
-- Stop if the same missing input or approval blocks progress after one bundled request.
-- Stop if evidence contradicts the original assumption set and scope must change.
-- Stop if an action envelope is absent, expired, mismatched, or broader than the
-  actual human authorization for a live/external/risky action.
-- Stop and invalidate the unfinished lifecycle sequence on base/head/path/PR
-  drift, an unexpected commit, failed check, changes-requested review,
-  unresolved thread, missing mergeability, or ambiguous readback.
-- A repo lifecycle envelope cannot authorize secrets, credentials, permissions,
-  repository settings, release/tag/workflow dispatch, destructive data work,
-  live/production/Homelab changes, or a scope/target expansion.
-- Do not claim completion when validation is missing. A passing status written by
-  the agent is metadata, not independent proof of the underlying result.
-
-## Checks
-
-- Goal and acceptance criteria are explicit.
-- Required approvals were requested as early as possible.
-- The remaining work can proceed without new user turns.
-- Final state is completed or checkpointed, not silently abandoned.
-- Evidence records name the observation time, command/readback, result, and
-  repo-local artifact where applicable.
-
-## Output
-
-```text
-## Goal
-...
-
-## Bundled inputs / approvals
-- ...
-
-## Progress
-- ...
-
-## Validation or checkpoint
-- ...
-
-## Next safe step
-- ...
-```
+Der Hauptagent bleibt Ansprechpartner für Scope, Integration und Freigaben.
+Weitere Einzelverfahren: `git-change-lifecycle`, `long-running-goal` und
+`budget-aware-orchestration`. Diese Regeln schaffen keine technische Fähigkeit.
