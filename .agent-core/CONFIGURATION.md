@@ -1,6 +1,7 @@
 # Konfiguration und spätere Verwendung
 
-Stand: 2026-09-17; Quellenzugriff zu Erweiterungen: 2026-09-16, sonst 2026-09-12.
+Stand: 2026-09-22; Modell- und Speedquellen: 2026-09-22;
+Quellenzugriff zu Erweiterungen: 2026-09-16, sonst 2026-09-12.
 Gewünschte Einstellung, dokumentierte Fähigkeit und tatsächlich beobachtetes
 Verhalten sind verschiedene Aussagen.
 Hier liegen Definitionen vor; Konto-/Oberflächenverfügbarkeit bleibt unbekannt.
@@ -12,6 +13,14 @@ Hier liegen Definitionen vor; Konto-/Oberflächenverfügbarkeit bleibt unbekannt
 Die nativen Dateien sowie [Rollenübersicht](ROLES.md) werden daraus erzeugt.
 Keine automatische Routingengine oder Modellersatzkette. Die Klassen nennen
 nur ausdrücklich wählbare Optionen; Mehrfachzuordnungen erzeugen keine Dubletten.
+Seit #90 verwenden die acht Economy-Basisrollen GPT-6 Luna High und die sechs
+Deep-Basisrollen GPT-6 Sol High; elf Balanced-Rollen bleiben bei GPT-5.6 Terra
+Medium und drei Balanced-Deep-Rollen bei Terra High. Das sind bewusste
+Repository-Vorgaben nach Aufgabe und Risiko, keine Herstellerdefaults oder
+gemessenen Effizienzgewinne. `sol`/`luna` bezeichnen weiterhin GPT-5.6;
+`sol_6`/`luna_6` sind neue eindeutige Schlüssel. Die 5.6-Varianten und Astra
+bleiben explizite Optionen. Die verfügbaren Modell-/Effortpaare stehen nur in
+der Registry; Effortnamen sind zwischen Generationen nicht gleichwertig.
 
 Die normalen und komplexen Parent-Profile sowie Qualitäts- und Reviewoptionen
 stehen in `profiles/`. Projektrollen stehen im Lieferziel `.codex/agents/`;
@@ -148,8 +157,16 @@ Schema belegten Qualitätsoptionen erhalten. Daraus folgt keine Garantie, dass
 jede ältere CLI oder Oberfläche diese Auswahl anbietet.
 
 `service_tier` wird aus dem gewählten Speedmodus erzeugt. Der Standard fordert
-keinen Priority-/Fastmodus an. `execution_mode` und `ultra` sind beschreibende
+keinen Priority-/Fastmodus an. Die Registry hält für einen *nicht aktiven*
+Fastmodus den nativen Codex-Konfigurationswert `service_tier = "fast"` und
+getrennt den Requestwert `priority` fest; letzterer ist kein direkt in TOML
+einzutragender Speedwert. Die tatsächliche Verfügbarkeit und Aktivierung hängen
+von Client, Modell und Konto ab. API-Tokenpreise, zusätzliche ChatGPT-Credits
+und inkludierter Abonnementverbrauch sind verschiedene Größen; aus der
+Modellwahl folgt keine feste Ersparnis oder Nachrichtenmenge.
+`execution_mode` und `ultra` sind beschreibende
 Registry-Metadaten, keine erfundenen nativen Schalter; höchste Reasoningqualität
 ist nicht automatisch Fast oder ein gesonderter Ausführungsmodus.
-Der bisherige Spark-Kandidat bleibt wegen unbelegter Effortkompatibilität ohne
-native Ausgabe. Seine ausdrücklich definierten Alternativen bleiben wählbar.
+Der frühere Spark-Kandidat wurde nach seiner Einstellung aus aktiven
+Auswahlpfaden entfernt. Bisherige dokumentierte 5.6-Alternativen bleiben
+ausdrücklich wählbar, solange der jeweilige Client sie bereitstellt.

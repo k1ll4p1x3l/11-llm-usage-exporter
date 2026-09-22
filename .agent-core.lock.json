@@ -3,7 +3,7 @@
   "managed_files": {
     ".agent-core/CONFIGURATION.md": {
       "mode": "0644",
-      "sha256": "5d020a8faca3a072e050b9aae705cc891bbfa3cbe7ae0f412226d51b7ed2bed3"
+      "sha256": "7a2eb22872347862af40ee1d7fa0e592454727d32a332088e38580e541e440f7"
     },
     ".agent-core/LICENSE": {
       "mode": "0644",
@@ -11,9 +11,13 @@
     },
     ".agent-core/ROLES.md": {
       "mode": "0644",
-      "sha256": "351bfb1755ee3d17d50a948ef511ccf7bb25a59266e3269a8c1f3f76ceaa52c1"
+      "sha256": "4a0c77cb95fbaf24cf1245d80be2c1ff0467a9277d3307ef10ac45a26430ea32"
     },
     ".agent-core/profiles/coordinator_deep.config.toml": {
+      "mode": "0644",
+      "sha256": "d3aa3b57951f3be27360835015a7a06ab5352151fbb0ee247059322a9a2f78ca"
+    },
+    ".agent-core/profiles/coordinator_deep__sol_high.config.toml": {
       "mode": "0644",
       "sha256": "869392a9495b4a620e328b614513e8948429b83f7b3c3f9ea66ddedc31943d79"
     },
@@ -21,9 +25,17 @@
       "mode": "0644",
       "sha256": "7e5b98362336dc03ad2aff27bc52fff40ad7fff45d46dd71c49cb2e5ef949abb"
     },
+    ".agent-core/profiles/coordinator_standard__sol_6_medium.config.toml": {
+      "mode": "0644",
+      "sha256": "61fecca54d49fa0f1eae63535bd748fe5bff286e4c1c4a626f99f871ff158a6a"
+    },
     ".agent-core/profiles/quality_build.config.toml": {
       "mode": "0644",
       "sha256": "ce84bd5cc484eae33a67a7ea3fb27bf556518b59fa9c191919d57b0945a257da"
+    },
+    ".agent-core/profiles/quality_build__sol_6_max.config.toml": {
+      "mode": "0644",
+      "sha256": "1d41a41309922d89e676c366d96d83bfcb0fab592c7356dd9b231cf60df42893"
     },
     ".agent-core/profiles/quality_build__sol_max.config.toml": {
       "mode": "0644",
@@ -31,11 +43,15 @@
     },
     ".agent-core/profiles/review_deep.config.toml": {
       "mode": "0644",
-      "sha256": "869392a9495b4a620e328b614513e8948429b83f7b3c3f9ea66ddedc31943d79"
+      "sha256": "d3aa3b57951f3be27360835015a7a06ab5352151fbb0ee247059322a9a2f78ca"
     },
     ".agent-core/profiles/review_deep__astra_high.config.toml": {
       "mode": "0644",
       "sha256": "153a28b1537629fd75631e633f59dcf963ace8931c5191aaa597b1751c78bd67"
+    },
+    ".agent-core/profiles/review_deep__sol_high.config.toml": {
+      "mode": "0644",
+      "sha256": "869392a9495b4a620e328b614513e8948429b83f7b3c3f9ea66ddedc31943d79"
     },
     ".agent-core/templates/APPROVAL.md": {
       "mode": "0644",
@@ -181,6 +197,14 @@
       "mode": "0644",
       "sha256": "8c70895b0b15d9e183f071e5233988238f0f6ad0fa74e875d639a0955a32edbc"
     },
+    ".codex/agents/automation_planner__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "48088f7aa56d17023fafc160b1c07666167fcb98edb19c8706257ba5178a1542"
+    },
+    ".codex/agents/automation_planner__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "5f57b40dad42492ce5c5152ae10df8b22d7765b685da84529bd7564544230237"
+    },
     ".codex/agents/automation_planner__sol_high.toml": {
       "mode": "0644",
       "sha256": "3469bb6ea609fa3462187ffaf727f67176b425cdbf94fe004bfe50e542a6e57c"
@@ -201,6 +225,18 @@
       "mode": "0644",
       "sha256": "1ce9ae6c7938a233e2c9317e51ed4f143ad006f5ac97e5bad69b6cb9745d6d43"
     },
+    ".codex/agents/ci_cd_worker__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "41b272e35cc0be22d4370570c6f5994c3b1f01357a00440882ad4189165d90f4"
+    },
+    ".codex/agents/ci_cd_worker__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "412c97a3bfe8340b2e8fae14db7246d3dd21958fc03e46632e5c06c16d83e6be"
+    },
+    ".codex/agents/ci_cd_worker__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "a1f41037974f20cd8a3ecff50428ee28a8494a24ae17937a2b81bc9f259dfed5"
+    },
     ".codex/agents/ci_cd_worker__sol_high.toml": {
       "mode": "0644",
       "sha256": "88878ab7e3abeff3cc02f17ce003ebd88ca72fe108832cafa545222b2d1abfa3"
@@ -215,7 +251,7 @@
     },
     ".codex/agents/code_heavy_worker.toml": {
       "mode": "0644",
-      "sha256": "16faf41f012229851b752a66f0f59d5e8de8b0ebcb7f4ccfd5df8ee975a5dc63"
+      "sha256": "9562f31fa024d6e915c922c3caac68db6655fcc09ccb0c3dc2fcae85672d20d9"
     },
     ".codex/agents/code_heavy_worker__astra_high.toml": {
       "mode": "0644",
@@ -225,6 +261,10 @@
       "mode": "0644",
       "sha256": "c1280797c02861fcea0be820637d84f13b1445d92d6a4e321463673773d7f57a"
     },
+    ".codex/agents/code_heavy_worker__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "8cd3d4c0b8f615702d0e3b1cfd23220d39234fcaf42ffe5ecfbd41a958460411"
+    },
     ".codex/agents/code_heavy_worker__sol_high.toml": {
       "mode": "0644",
       "sha256": "ac9122f5d3e97707f608abee366684daf7b8066988892d80f72b0901f696db14"
@@ -233,9 +273,13 @@
       "mode": "0644",
       "sha256": "d69dbf17f77469bdb6f17df7a6971c46d06318ed36f267fefe0ce657c60733db"
     },
+    ".codex/agents/code_heavy_worker__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "eee2908f48a5d854d5da983c4c9e5bf8d2e983d66ebdd38d9bc0f3fe87dcf215"
+    },
     ".codex/agents/code_mapper.toml": {
       "mode": "0644",
-      "sha256": "4f4594df07e95b46f92f3e6e521773c082c9e3e05f99ba08421a63d52e5f747d"
+      "sha256": "74aed6047a095e5ec24727997f4bebf3d811de5b453cc9406b5a4c308881f6c0"
     },
     ".codex/agents/code_mapper__astra_high.toml": {
       "mode": "0644",
@@ -244,6 +288,22 @@
     ".codex/agents/code_mapper__astra_max.toml": {
       "mode": "0644",
       "sha256": "703c9b4f04cde5cef90f7795ff1a7feb8def9341aac502c6d4a6e4d89909b656"
+    },
+    ".codex/agents/code_mapper__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "1bd90a0fdebd4c44cc86facae699182110953b48671318cfda38e7994b70333a"
+    },
+    ".codex/agents/code_mapper__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "28240c5ea104552852a4443b6bb18866cd3288e8adc88057641aab3dd374ac55"
+    },
+    ".codex/agents/code_mapper__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "e17cfe012bfa031fb901ee3f6a00bc08febe3d270dbdf091a22dd037a3863b26"
+    },
+    ".codex/agents/code_mapper__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "4908bf4a900db3d6ae8bd91fa306f28152583be59c0359fece3e9de8991f1e34"
     },
     ".codex/agents/code_mapper__sol_high.toml": {
       "mode": "0644",
@@ -273,6 +333,18 @@
       "mode": "0644",
       "sha256": "38c3e0a116998588e6851badfd1a6f4bd8650c734676adf1e2d0b6b08dae1a23"
     },
+    ".codex/agents/code_medium_worker__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "479e376fb9dc786d270362d022296e6589f40029d75ce7c8cf7a4e2020b22007"
+    },
+    ".codex/agents/code_medium_worker__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "795a7705c532e609b3f530cc30bf45ac84a9ed6b522a7abae02637200d02616f"
+    },
+    ".codex/agents/code_medium_worker__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "09202d7454a85b9dee16b4c7222882f9b7729e2f887c9e6a9f2711b3781e9df4"
+    },
     ".codex/agents/code_medium_worker__sol_high.toml": {
       "mode": "0644",
       "sha256": "0ebd1575abb3de5923d53067d98e96c1424f7314c6a8aa6d7dbdc5015cf37491"
@@ -287,7 +359,7 @@
     },
     ".codex/agents/code_review_gate.toml": {
       "mode": "0644",
-      "sha256": "1a322e90aea60cd67ee0015092511efbe42308565bae65be3b831e8452269ea4"
+      "sha256": "6937b7f625d18792e63d7ad63f0ea21679a431a9323ffd15ec898be5b4411540"
     },
     ".codex/agents/code_review_gate__astra_high.toml": {
       "mode": "0644",
@@ -297,6 +369,10 @@
       "mode": "0644",
       "sha256": "84e0e9aa5d636590e35b832e2271938f3f0ef25c92ee6a7d3a49798123c9289b"
     },
+    ".codex/agents/code_review_gate__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "8c3bec9244c4a63ec3b546454576d10a343d2157f6a56dc3990229c7573a04e7"
+    },
     ".codex/agents/code_review_gate__sol_high.toml": {
       "mode": "0644",
       "sha256": "0986a7c88a7028adb4ce0de48da10c1956d1df5b2740b216a78d9d754b8bb4c1"
@@ -305,9 +381,13 @@
       "mode": "0644",
       "sha256": "cdf4825986198daa26cf7e335f905d0e6828019757b1bbe2f0bb25775c417c70"
     },
+    ".codex/agents/code_review_gate__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "a47f50056288fcef170374ed8cf4d994dd1324b9899611b54a17b6e6741d2d1d"
+    },
     ".codex/agents/code_simple_worker.toml": {
       "mode": "0644",
-      "sha256": "067a54465adee0720479bd7025066182d0ea6af44c38b3a580963ed44c9a1b68"
+      "sha256": "347c9926dbc25e6d3e660c963ad12fc932a34441a5957c4b717e90bd6fd1d017"
     },
     ".codex/agents/code_simple_worker__astra_high.toml": {
       "mode": "0644",
@@ -316,6 +396,22 @@
     ".codex/agents/code_simple_worker__astra_max.toml": {
       "mode": "0644",
       "sha256": "5138e733b3ddbb02477179363c90ab0467380a2e2a600a3f71acdd0bb63fe79e"
+    },
+    ".codex/agents/code_simple_worker__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "aaac802c73445e55eb9773811750207e513681ecc86d5dae81d9926b1a59d2e3"
+    },
+    ".codex/agents/code_simple_worker__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "a4be2f633358683aae468fd3e9b597d2d1e3d68a1576a7c09e5285b5023062d4"
+    },
+    ".codex/agents/code_simple_worker__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "4a52a51b83af5cd95c7f7351057881aba97348e87d8a0f5d635cd7ff5ae96ba7"
+    },
+    ".codex/agents/code_simple_worker__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "c19e1a0d6b29d21c1acce56dc2105ae5129166ae9542b293a5e81e2ab8bb3610"
     },
     ".codex/agents/code_simple_worker__sol_high.toml": {
       "mode": "0644",
@@ -345,6 +441,18 @@
       "mode": "0644",
       "sha256": "052bd0bedd66125f2b9c30fab4f35a6a007f2885abe47893273d477a83632270"
     },
+    ".codex/agents/code_test_triage__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "9c0c720e3199c8f12c3b21b8329228cc88fa3c597d84274067fb1cd3a8b15fc7"
+    },
+    ".codex/agents/code_test_triage__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "8e26da34abccc63377cd2a15e4200e31e75ba28f6f0a20386a946ab9f5263192"
+    },
+    ".codex/agents/code_test_triage__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "682ac4424d9f8adfe0802ed4f96815dbf09a0c4a6ba796e51b6f3a895a42e64a"
+    },
     ".codex/agents/code_test_triage__sol_high.toml": {
       "mode": "0644",
       "sha256": "44fcfce6df3e77b37ca1a6c1615821e95d304b4622018b5e1af79256449bd22e"
@@ -368,6 +476,18 @@
     ".codex/agents/data_analyst__astra_max.toml": {
       "mode": "0644",
       "sha256": "65e7126660cfef08f9936b32098977cf7739f2e2a8bd1ca74a586dfc18f6e593"
+    },
+    ".codex/agents/data_analyst__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "74bd098b479be379d64a2c09df1aebf38e56e0ad1b8d1d28bee401649d01d38f"
+    },
+    ".codex/agents/data_analyst__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "d14b9129609296e1ee6939037bea35dda38fbb320745110e166183cbac0350ed"
+    },
+    ".codex/agents/data_analyst__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "af2e843d4ed8efe731e2d4fae4732f0ed69687cf739b03ab411a34dcdd46278d"
     },
     ".codex/agents/data_analyst__sol_high.toml": {
       "mode": "0644",
@@ -393,6 +513,18 @@
       "mode": "0644",
       "sha256": "f775697c0a2be533c040f203c5333d8ce795ee166d7c21ac01598640989def37"
     },
+    ".codex/agents/data_quality_auditor__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "f90b9e38396a196e5afdc2ff196cee7083ba278b93bea8496886d72491ed9ce5"
+    },
+    ".codex/agents/data_quality_auditor__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "f4bcaa02b637b9c5b95594c0d1eaac0bef96edd25d24162749d2d13acd63a994"
+    },
+    ".codex/agents/data_quality_auditor__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "2d2c91aa596d681f547779bb4e1b0645dcdc696fc29cd9b516dcbb9028248d2d"
+    },
     ".codex/agents/data_quality_auditor__sol_high.toml": {
       "mode": "0644",
       "sha256": "295afe44db1ff3c098a228c2a536833169123e50f4351736f976a8437eb7251c"
@@ -417,6 +549,14 @@
       "mode": "0644",
       "sha256": "ab16e2ad2086e6b7d1cff4593f5e2e11c4ff918c6d184c66904cde9ccd3ff4a4"
     },
+    ".codex/agents/decision_analyst__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "ff7be42a24a70567467c2bbff32786c3fa66fd1acd4b5c13cd32d97ad36f6fb7"
+    },
+    ".codex/agents/decision_analyst__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "886314e4ca3fa68b6b4ec54295b60c06c2cead58778cccc3921dd5ced313c4ec"
+    },
     ".codex/agents/decision_analyst__sol_high.toml": {
       "mode": "0644",
       "sha256": "346488cc83baaa49e05dc2d35749fd9f67d31ee637104bb85c250d59362f5dba"
@@ -427,7 +567,7 @@
     },
     ".codex/agents/docs_writer.toml": {
       "mode": "0644",
-      "sha256": "488b6a6535798c51a32f9ae3cca99d8f55de7fe96a44b161d2924806e618e0c2"
+      "sha256": "e1d2e2c61f9d4ca1b1c52935fc8729d710b312dcc78dd7e8d8b30740c287a95f"
     },
     ".codex/agents/docs_writer__astra_high.toml": {
       "mode": "0644",
@@ -436,6 +576,22 @@
     ".codex/agents/docs_writer__astra_max.toml": {
       "mode": "0644",
       "sha256": "f9126db0634cb8e40f9fb1a13942a423bd7c4ebbbbb3ebe3a43eda7b8eea1fc1"
+    },
+    ".codex/agents/docs_writer__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "14303fabeed10168574e37ec13549439caf4670faa6aa7204cbc6b8361301e9e"
+    },
+    ".codex/agents/docs_writer__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "183215cb3c029d3fd3ecec178f10c5e608410f6c4b53de57f690b448d79a8af7"
+    },
+    ".codex/agents/docs_writer__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "3e810823bdcd3ca4202761e4b87e1ddffb6ff114371a06979f343eb72538cf48"
+    },
+    ".codex/agents/docs_writer__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "c408a40eb3699df2a36e8c507e7ab381aa9b8ca4525fdf31881de7c3e0f0b404"
     },
     ".codex/agents/docs_writer__sol_high.toml": {
       "mode": "0644",
@@ -455,7 +611,7 @@
     },
     ".codex/agents/homelab_critical_patch_author.toml": {
       "mode": "0644",
-      "sha256": "8e12a1fc13b0da0fef9012a187582acc43daeca94beade0c7a2f3cfc7ee6daf8"
+      "sha256": "bea896d29c8db156a46bac646857cda9948f3977f7d98eb98100898afb15d096"
     },
     ".codex/agents/homelab_critical_patch_author__astra_high.toml": {
       "mode": "0644",
@@ -465,13 +621,21 @@
       "mode": "0644",
       "sha256": "e57e366b333b80345156c9244c6e30eecebcd2b05d9b881cf8fc71f65f21c6a0"
     },
+    ".codex/agents/homelab_critical_patch_author__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "908fe438b4faa8aa719dadcecb800eb02af71a64bf959474e3e3109897fbf87f"
+    },
+    ".codex/agents/homelab_critical_patch_author__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "85f6396e060bb74a7f7df478e0d04db8f683cec9ebe865b39d2fcf4e860dfc73"
+    },
     ".codex/agents/homelab_critical_patch_author__sol_max.toml": {
       "mode": "0644",
       "sha256": "0b6018c1d052279efb059c641b78a227c51d8d50e843e2564140318e4516d1fa"
     },
     ".codex/agents/homelab_critical_planner.toml": {
       "mode": "0644",
-      "sha256": "d799e44786b0a07e4a32b9bb81facde02c4961ccc20fb6958e1b2edd14be55de"
+      "sha256": "870464987b9a2c6168eb83b87a3307e33d97490c1b7f0bdd29561283da50d0dc"
     },
     ".codex/agents/homelab_critical_planner__astra_high.toml": {
       "mode": "0644",
@@ -481,13 +645,21 @@
       "mode": "0644",
       "sha256": "5d84b820a819fde16307c0be52b1b3ef0ee004607df00e6a50a045b094af0209"
     },
+    ".codex/agents/homelab_critical_planner__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "913c7ae226fba9b6112bbe4da74291aafc23a6ca32041ceaa1124392140e6c33"
+    },
+    ".codex/agents/homelab_critical_planner__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "cc89e60f965722ce9d85ebf150d7e230b48fb4002d3ff77566784d3ed6bc47ee"
+    },
     ".codex/agents/homelab_critical_planner__sol_max.toml": {
       "mode": "0644",
       "sha256": "bc519ae4c5583aec677deb2829e00e3c1e5c5f7d214fd0ef9cc356a31c1e8dd2"
     },
     ".codex/agents/homelab_inventory.toml": {
       "mode": "0644",
-      "sha256": "760764be532998906aec631d85948b9fe1324551e04a0d794975b3250a4423cd"
+      "sha256": "6a935e8cb3ecec5de2eeabff4b70f917cdc933f7d0ff24d1e1013083ba8ab3b3"
     },
     ".codex/agents/homelab_inventory__astra_high.toml": {
       "mode": "0644",
@@ -496,6 +668,22 @@
     ".codex/agents/homelab_inventory__astra_max.toml": {
       "mode": "0644",
       "sha256": "b6cc7dbbf418765308f8eb327d5f87f5becb2a8aab24a03e6eb5e02ae9d87006"
+    },
+    ".codex/agents/homelab_inventory__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "51f491c434b2fd6d98df9579be658e90f1cf13dacf0b7016cd84515608cc96de"
+    },
+    ".codex/agents/homelab_inventory__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "59ed25a539ac63b6e926e33cf34e6573ef08172ddd8bc71cc7f8c2389e2edccc"
+    },
+    ".codex/agents/homelab_inventory__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "148e280843bf458ead4b04afb250306c6feb5df7bd5934bec7bf2dde81af4f15"
+    },
+    ".codex/agents/homelab_inventory__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "6b33975d9c99a4a5a119fd291cd4d8388e11d6a754700a46a9d19ba728909de0"
     },
     ".codex/agents/homelab_inventory__sol_high.toml": {
       "mode": "0644",
@@ -515,7 +703,7 @@
     },
     ".codex/agents/homelab_light_worker.toml": {
       "mode": "0644",
-      "sha256": "a25a45aa9abce867b55d545fe23a1758106db8d3e59f2f3f234b3a42807ebc71"
+      "sha256": "720144efcda48f9bff632c3c9c344e9201c9c1bed8e51a3bff1f13817a20ee0a"
     },
     ".codex/agents/homelab_light_worker__astra_high.toml": {
       "mode": "0644",
@@ -524,6 +712,22 @@
     ".codex/agents/homelab_light_worker__astra_max.toml": {
       "mode": "0644",
       "sha256": "1e519e273c96c4691b148b5d5d8978b4e98e881c4ec3dc4c2c50fce607bdfc73"
+    },
+    ".codex/agents/homelab_light_worker__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "830b25f5b7d7812beb32963b4efc5926cdd32cc3f29938581351ce1acfe07c13"
+    },
+    ".codex/agents/homelab_light_worker__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "3d51d741acd0c9a5ae10f40a25a363c94640898934fedc7935f6f2159a6d81be"
+    },
+    ".codex/agents/homelab_light_worker__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "c0d4822810abd031b7de5010859b421ccfbaf69b8a2018ffe2ce8268a4d97977"
+    },
+    ".codex/agents/homelab_light_worker__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "bc9d6b683bfc34302e5af12cd3fef840b233d1740c0f915516d8fe9313eb43bf"
     },
     ".codex/agents/homelab_light_worker__sol_high.toml": {
       "mode": "0644",
@@ -553,9 +757,25 @@
       "mode": "0644",
       "sha256": "4081f806f67c04f941363a1c587d4341b3c6c3def7ac6fed3d0d54d590e9ff1c"
     },
+    ".codex/agents/homelab_log_triage__luna_6_high.toml": {
+      "mode": "0644",
+      "sha256": "8a0bea42ebd3e23703da848fc6a6be508c783230609e95764850152388957f6a"
+    },
     ".codex/agents/homelab_log_triage__luna_medium.toml": {
       "mode": "0644",
       "sha256": "c231e33cc7992fbd8d55f66725e0359a1689b8e9a0699861bae6f14418be0fb0"
+    },
+    ".codex/agents/homelab_log_triage__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "c4f08a787444ea140b56c6ee121351ece44c5c526afe8d55c1e4edf47386514f"
+    },
+    ".codex/agents/homelab_log_triage__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "09ab9a1e3d0f7a8b156dec74c63f1a69ff20ddad47bfe871b71684bf8b6d2505"
+    },
+    ".codex/agents/homelab_log_triage__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "2cb7b4c11dbb7195f2c2f8db819aca75def95190634e9813f45fbea160585b8b"
     },
     ".codex/agents/homelab_log_triage__sol_high.toml": {
       "mode": "0644",
@@ -571,7 +791,7 @@
     },
     ".codex/agents/homelab_security_reviewer.toml": {
       "mode": "0644",
-      "sha256": "0b9fbfb08844a2cfbdf0d4996028dd98e75f17e89a85bbc7b2922a5ca5ad70f6"
+      "sha256": "658a1605c8251b9604aca4cb84c9ba75b33dbec6b13313048c70e8ce09407d61"
     },
     ".codex/agents/homelab_security_reviewer__astra_high.toml": {
       "mode": "0644",
@@ -580,6 +800,14 @@
     ".codex/agents/homelab_security_reviewer__astra_max.toml": {
       "mode": "0644",
       "sha256": "e4e48a5640f4ece5514b6371b6cb8b79ada7c15d18cdef650a76f4b6ae002b68"
+    },
+    ".codex/agents/homelab_security_reviewer__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "e31befa230b5ef88e0f1e8eb89a13d31b10ae3ad6d10be405cd17f72604e778e"
+    },
+    ".codex/agents/homelab_security_reviewer__sol_high.toml": {
+      "mode": "0644",
+      "sha256": "18ddcba67d078d167205a3f5409963d5b438c063e77f547d19cf6e28fcdaf0fa"
     },
     ".codex/agents/homelab_security_reviewer__sol_max.toml": {
       "mode": "0644",
@@ -597,6 +825,18 @@
       "mode": "0644",
       "sha256": "6afb6251c2b572c1de5b935050be3aae11965c50e80ad76d0e4dd931a9334b0f"
     },
+    ".codex/agents/homelab_service_worker__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "fba4e762c42cd5d8414e65b588ca6bc87a031dc64c31252371d19d0fb0d56bd7"
+    },
+    ".codex/agents/homelab_service_worker__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "bfb78dc4bb6f5c43bdc4844a3f09d6668e7d997beeb87907d575df87f0476fca"
+    },
+    ".codex/agents/homelab_service_worker__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "7ba00e932a225b9784e42e0e3afc7980971c6cf3f60db1f958acb20ea3175d72"
+    },
     ".codex/agents/homelab_service_worker__sol_high.toml": {
       "mode": "0644",
       "sha256": "14a4e12a87d1cc83d16b40abdfe49e4936c8973d42f6694a073286ca05fe1f15"
@@ -611,7 +851,7 @@
     },
     ".codex/agents/long_context_summarizer.toml": {
       "mode": "0644",
-      "sha256": "04782ab875176223d013ee39b49795efd06b83da77ac41ce4fddb68e7fa3d74c"
+      "sha256": "b3d9e73a74d12492702779be17b8dd326ed307b18d58238a6fa65d6eec744f90"
     },
     ".codex/agents/long_context_summarizer__astra_high.toml": {
       "mode": "0644",
@@ -620,6 +860,22 @@
     ".codex/agents/long_context_summarizer__astra_max.toml": {
       "mode": "0644",
       "sha256": "f78baec03511ac151a5e61aae1241318a4232e764e6e262cd3ffe0dce8572a95"
+    },
+    ".codex/agents/long_context_summarizer__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "b1eb30becfb86213e7b7a385e595c6d12b3dfaa1cbf25add943adc60b9e50c4e"
+    },
+    ".codex/agents/long_context_summarizer__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "344e20a3c7690f17d1cc9bab99ecd9c9326d2e7ee0ae030fa669300b30cb7fce"
+    },
+    ".codex/agents/long_context_summarizer__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "c1918b7eff91809a853e05c434a5327093e29f23d6de934ac6de9ae0bcb42c92"
+    },
+    ".codex/agents/long_context_summarizer__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "826db21631253d2ebf82dd8ca046af92823110be2617795ce3e078cfe409c6d2"
     },
     ".codex/agents/long_context_summarizer__sol_high.toml": {
       "mode": "0644",
@@ -649,6 +905,14 @@
       "mode": "0644",
       "sha256": "5b83f9fb1b506eef45b896de9fd47c4515191078006a477274862f5d4e38a9a8"
     },
+    ".codex/agents/project_planner__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "93d2f8d6c8fb92f70a94dbd2d4da7cbba2b8db0980f0979437228dc7d4acbcf0"
+    },
+    ".codex/agents/project_planner__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "ef82be2e8c062caacc73676ad647e55aabf93be5bd00f22a7a5094c3285d7471"
+    },
     ".codex/agents/project_planner__sol_high.toml": {
       "mode": "0644",
       "sha256": "6f6ba193ddbc5efa33eee3c27b6e95195793b7ce92fed4dfa2397682a137bdb7"
@@ -668,6 +932,18 @@
     ".codex/agents/repo_bootstrapper__astra_max.toml": {
       "mode": "0644",
       "sha256": "185b5b749ca05bb859450602e5d4db1b7dfb43da0833d91f093583bb1606cb82"
+    },
+    ".codex/agents/repo_bootstrapper__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "e3d983322e050a21ecac323c3576f5f83ea2a8180fb5e938f955af4bb12638a6"
+    },
+    ".codex/agents/repo_bootstrapper__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "239023d5816a13237075ffee31da342f22987f84f1b176041cc0aab2a73fdf7e"
+    },
+    ".codex/agents/repo_bootstrapper__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "d5381643cdf787a7f2c05db33298587c2f29c55cda2a3dc355bda52ee8738e35"
     },
     ".codex/agents/repo_bootstrapper__sol_high.toml": {
       "mode": "0644",
@@ -693,6 +969,18 @@
       "mode": "0644",
       "sha256": "cefc0497e0c0e8ec718670efd6f57b81c1298eeeced99d168c70c48ef79a3290"
     },
+    ".codex/agents/requirements_analyst__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "66ae73ab221827024918d63dfead1ad493238772566fe182f4d19558a33d4c4f"
+    },
+    ".codex/agents/requirements_analyst__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "a552d9601761944a961ae83fd43c499656cca489e8a1bc0cbe3a3ff04a130dd8"
+    },
+    ".codex/agents/requirements_analyst__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "24f0a1fa5984323d1ff3cedab56da8f6649bd3754ac9f356a8f238fdb1b9e923"
+    },
     ".codex/agents/requirements_analyst__sol_high.toml": {
       "mode": "0644",
       "sha256": "858082df1f94f22129abac0fc9590d2d6bc9ab7a7f3960fe07f79afef88242fd"
@@ -707,7 +995,7 @@
     },
     ".codex/agents/research_mapper.toml": {
       "mode": "0644",
-      "sha256": "87edf34824b528b165a8f45f13288dba29108fe98aa849f0189042650033fb4b"
+      "sha256": "376594be7221a791339876d17e488303b4a499055b6f2212796790fffc6257f5"
     },
     ".codex/agents/research_mapper__astra_high.toml": {
       "mode": "0644",
@@ -716,6 +1004,22 @@
     ".codex/agents/research_mapper__astra_max.toml": {
       "mode": "0644",
       "sha256": "73e50304bec1cfff8afa627af76e98d8ca2e79c5ddb606583ca1bf1ba90e7fff"
+    },
+    ".codex/agents/research_mapper__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "06f4e274e2828c6f9247d70b84cbb7b5199fff0f3e6498c6eb2e7c126bc254de"
+    },
+    ".codex/agents/research_mapper__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "0737da2375a1ff982180ae2aefa440ce4a65d0ccde869c2a45d89b6822dd77b8"
+    },
+    ".codex/agents/research_mapper__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "5d4aafd92d2c6e764a235a066ea406bb412bc3d04d3f303fbf89c21836625fbd"
+    },
+    ".codex/agents/research_mapper__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "41297be1d5da2fdabcba0de845598b6bb12760278596f2b2bbd4905a6689fa22"
     },
     ".codex/agents/research_mapper__sol_high.toml": {
       "mode": "0644",
@@ -735,7 +1039,7 @@
     },
     ".codex/agents/security_secret_scanner.toml": {
       "mode": "0644",
-      "sha256": "2b60b2dab146dc6473d784198bcd74c2d90db0cf2b989b6ac9332288cb05433f"
+      "sha256": "ea7b97b67514962040514b67b8a5519e26c71f4cfd7a0ba24a2957986c91e5a8"
     },
     ".codex/agents/security_secret_scanner__astra_high.toml": {
       "mode": "0644",
@@ -745,6 +1049,10 @@
       "mode": "0644",
       "sha256": "063ae102a8fccdcff0335f46b4de10e40a55997f55356d97ea9bf98d1287bfc4"
     },
+    ".codex/agents/security_secret_scanner__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "fab22ccd760c051847539466dca2118d49ee625402c1dd509f47eed3ea868fbe"
+    },
     ".codex/agents/security_secret_scanner__sol_high.toml": {
       "mode": "0644",
       "sha256": "85bc18ff90882714cdcb35daa994127a87d26187f29bfb72031dbfbc8cb78799"
@@ -752,6 +1060,10 @@
     ".codex/agents/security_secret_scanner__sol_max.toml": {
       "mode": "0644",
       "sha256": "7ca4c954049edfa21fe619333b212d5e2019613ec21860cea1b4bf2c9d156bf5"
+    },
+    ".codex/agents/security_secret_scanner__terra_high.toml": {
+      "mode": "0644",
+      "sha256": "2930238d2203c3dc8c1a50388814eaf89e5a5c09e7574be725af518f82b891f5"
     },
     ".codex/agents/source_reliability_reviewer.toml": {
       "mode": "0644",
@@ -764,6 +1076,18 @@
     ".codex/agents/source_reliability_reviewer__astra_max.toml": {
       "mode": "0644",
       "sha256": "5cdca2ac2687ad4803630c91feedcc0c9b527c35fa82b9ce9e47fb1431d9fe56"
+    },
+    ".codex/agents/source_reliability_reviewer__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "48ade4e01016c4cd46fa54efba0fb9a69b71133bbdc281d19ea951e7b338f3fa"
+    },
+    ".codex/agents/source_reliability_reviewer__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "d1b27d9ffc4b804b434738a9036673d8c9bd6bc780443f2ef61f565ef9472427"
+    },
+    ".codex/agents/source_reliability_reviewer__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "2863d571606c9fd28ee8033e5afd7f5157b14c4d2858184a9823ce61aded03ab"
     },
     ".codex/agents/source_reliability_reviewer__sol_high.toml": {
       "mode": "0644",
@@ -789,6 +1113,18 @@
       "mode": "0644",
       "sha256": "c4c796ddcb7f5c19653536dd0a6494e54da19910ec70cf0a6669a5e72890acc0"
     },
+    ".codex/agents/writing_architect__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "95252cd4b261a99a98533e8e3313f5f5d2b8bd48f89fa3792a9546f10c60a05e"
+    },
+    ".codex/agents/writing_architect__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "cf03ae18560b0941540ad84f68299fd2b70fb5406e932b027087b032a99617e6"
+    },
+    ".codex/agents/writing_architect__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "9f111d9e792a5bad55f65fb8f114484accb6e60ed17bd69a9ca3cdec88e7349c"
+    },
     ".codex/agents/writing_architect__sol_high.toml": {
       "mode": "0644",
       "sha256": "a8dbbaabf1e29424453844a3f7337ab366be67344e5a3087b9c40f56b2f59101"
@@ -803,7 +1139,7 @@
     },
     ".codex/agents/writing_editor.toml": {
       "mode": "0644",
-      "sha256": "0c6b270a9fd4b502f0b2a632f83f3539d0bd9127968f5bcb545bc996957da5fb"
+      "sha256": "f0ab6dca5192027a8f0df8287c0bd8f60fd3f299aaa51b49cc1c8e2d822053f9"
     },
     ".codex/agents/writing_editor__astra_high.toml": {
       "mode": "0644",
@@ -812,6 +1148,22 @@
     ".codex/agents/writing_editor__astra_max.toml": {
       "mode": "0644",
       "sha256": "6a5fc4a37a90907314002b2f004dadee3cf57d9d58ef884fa422e038838b3ec7"
+    },
+    ".codex/agents/writing_editor__luna_medium.toml": {
+      "mode": "0644",
+      "sha256": "be9ea5ad1652bf19c0d0c2a8fd83efbae655fcf026c3bf685af1dff359b1e740"
+    },
+    ".codex/agents/writing_editor__sol_6_high.toml": {
+      "mode": "0644",
+      "sha256": "edd0958d5439e56033822873a4f8074b30e8631ad59b4d177d3c3468a88f41f4"
+    },
+    ".codex/agents/writing_editor__sol_6_max.toml": {
+      "mode": "0644",
+      "sha256": "e068df70c2de41c68daba9125be17519b3e5dfd8decd8e947b4d1900e38ff5a5"
+    },
+    ".codex/agents/writing_editor__sol_6_medium.toml": {
+      "mode": "0644",
+      "sha256": "908fbbd04c9622128c998d7fe25fe6ee7d75f7730b041e04277fa18b73a0f34f"
     },
     ".codex/agents/writing_editor__sol_high.toml": {
       "mode": "0644",
@@ -831,7 +1183,7 @@
     },
     ".codex/config.toml": {
       "mode": "0644",
-      "sha256": "f527fcf17cc609b6ed2a53bdbd76f8379baa234e24a9fa03c7394bc70ef07ce4"
+      "sha256": "9c80cd8d17bceb8e33eade6cb610236ab828bea89970fcddbbc81ddea4af2290"
     },
     "AGENTS.md": {
       "mode": "0644",

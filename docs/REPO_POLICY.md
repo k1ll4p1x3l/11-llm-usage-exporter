@@ -67,8 +67,15 @@ Managed-by-source: no
   per archive before the publishing job can start.
 - Normal full gate: `./scripts/check.sh` with the tool versions documented in
   `VERSIONS.md`.
-- Agent Core changes additionally require central `verify-consumer`, a second
-  sync returning `noop`, public-safety scanning, and Hosted CI.
+- Agent Core changes require a pinned central source commit and the `public`
+  delivery profile. Compare every delivered path, byte content, SHA-256 hash,
+  and Git executable mode with that source, and verify the complete ownership
+  lock. Preserve all unmanaged files and local overlays outside explicitly
+  approved companion changes. Run the current central sync helper a second
+  time on the resulting clean checkout; it must report `0 changes; dry-run`.
+  This is the current evidence path for the former `verify-consumer` and
+  idempotent-sync safeguards. Public-safety and secret scans plus Hosted CI
+  remain required.
 - Release work additionally follows `docs/release.md` and requires verified
   artifacts, checksums, SBOMs, tags, and GitHub release readback.
 - A checkpoint is acceptable only when a missing external environment,
