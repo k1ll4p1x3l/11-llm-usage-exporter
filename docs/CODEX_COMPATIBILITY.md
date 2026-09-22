@@ -72,12 +72,16 @@ release or installation attestation.
 | `.codex/policies/tool_zones.json` | `64cd0bdd370430a0f940d1f9aa82ffe5373226a2cf523b0543813cb96cc8d3a4` | `100644` |
 | `.codex/policies/trust_boundaries.json` | `371f8017c74c51af63cc4346bc701d45f24f3a9f6fedaa92608ff40fd448c358` | `100644` |
 
-## Current definition adoption — variant 2 (2026-09-17)
+## Current definition adoption — variant 2 (2026-09-23)
 
-The user explicitly selected variant 2 for all eight consumers. Definitions:
-[04-llm-essentials at 927131f](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/927131f2c6d0e32072942073dc5d315a1e2c0e85).
-The public profile contains 209 managed files. Current contents, hashes and
-modes are recorded in `.agent-core.lock.json`.
+The user explicitly selected variant 2 for all eight consumers. The earlier
+adoption used [04-llm-essentials at 927131f](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/927131f2c6d0e32072942073dc5d315a1e2c0e85).
+The current definitions are pinned to
+[04-llm-essentials at 937e047](https://github.com/k1ll4p1x3l/04-llm-essentials/tree/937e047057217a1dc9a7bf18304a3df35562f54b).
+The public profile contains 297 managed files. Current contents, hashes and
+modes are recorded in `.agent-core.lock.json`; the source adds GPT-6 Sol and
+Luna options and removes Spark entries without changing the 28 base roles.
+No model availability or live behavior is claimed.
 
 All 28 base roles explicitly pin model and effort. The native project ceiling
 is `max_concurrent_threads_per_session = 8`; the consumer-owned
