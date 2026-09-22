@@ -95,7 +95,9 @@ URI schemes, control characters and surrounding whitespace are also rejected.
 The learning selector rejects absolute, drive-qualified, UNC and traversal
 references under POSIX and Windows semantics, independently of the host.
 Retained hooks, templates, permission adapters and overlays remain consumer-owned.
-Their safeguards are preserved; only the explicit concurrency policy value changes.
+Their safeguards are preserved. The earlier variant 2 adoption set the
+concurrency ceiling to 8; the later `937e047` update changes default model
+selections and available variants without changing that consumer-owned ceiling.
 File adoption does not prove live agent or integration behavior.
 
 The reviewed selector also rejects SCP/colon references and Unicode control/format characters, uses ASCII-safe JSON, rejects over-nested input generically, and detects known GitHub PAT/AWS key markers. Detection is heuristic; content review remains required.
