@@ -16,6 +16,12 @@ Consumer-CI und Reviewabschluss vor Merge prüfen; Rücknahme per geprüftem Rev
 
 ## Unreleased
 
+- Sync the public Agent Core from `04-llm-essentials` at
+  `937e047057217a1dc9a7bf18304a3df35562f54b` with the reviewed 28-role
+  model definitions. Update the consumer validation contract to check the
+  complete pinned payload, ownership lock, executable modes, public safety,
+  and an unchanged second dry-run.
+
 - Update the centrally managed public agent definitions from
   `04-llm-essentials` at `f3e3af0bf7a1` (209 managed files).
 

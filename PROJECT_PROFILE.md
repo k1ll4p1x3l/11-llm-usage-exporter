@@ -61,8 +61,10 @@ Managed-by-source: no
 - Public-safety and secret scans pass before publication.
 - Race detection and the six-platform archive/checksum/SBOM contract pass in
   Hosted CI before release publication.
-- Agent Core changes pass central `verify-consumer`, an idempotent second sync,
-  Consumer CI, and an independent worktree-gate readback.
+- Agent Core changes pass a complete comparison against the pinned public
+  source profile (paths, bytes, SHA-256, Git modes, and ownership lock),
+  preservation of unmanaged files, a `0 changes; dry-run` second sync,
+  public-safety scanning, Consumer CI, and an independent worktree-gate readback.
 - User-visible or operational changes update README/CHANGELOG and relevant
   runbooks.
 
