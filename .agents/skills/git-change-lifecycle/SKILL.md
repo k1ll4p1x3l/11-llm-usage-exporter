@@ -15,16 +15,22 @@ description: Use for any repository-writing task and for branch creation, milest
    Explizite Pfade stagen; keine fremden Änderungen, Secrets oder wissentlich
    defekten Zwischenstände einschließen. Lokale Implementierungsfreigabe deckt
    notwendige Task-Branches und lokale Commits, sofern nicht ausgeschlossen.
-4. Push, PR, Merge und Cleanup sind unterscheidbare Wirkungen. Eine konkrete
-   bestehende Stufenfreigabe nutzen; bei fehlender Autorisierung den vorbereiteten
-   Diff und die gewünschten Schritte gebündelt vorlegen. Kein obligatorischer
-   JSON-Vertrag, keine feste künstliche Frist und keine Selbstfreigabe durch Hashes.
+4. Ein reiner Analyse-/Reviewauftrag bleibt read-only. Ein konkreter
+   Implementierungsauftrag umfasst ohne engeren Nutzerendpunkt den normalen
+   Push des eigenen Topic-Branches und einen prüfbereiten Draft-PR. Push, PR,
+   Merge und Cleanup bleiben unterscheidbare Wirkungen: Merge und Cleanup
+   brauchen ihre eigene konkrete Freigabe oder einen diese Stufen ausdrücklich
+   umfassenden Auftrag. Fehlende Freigaben gebündelt am vorbereiteten Diff
+   klären; gültige Freigaben bei normalen Korrekturen weiter nutzen. Kein
+   obligatorischer JSON-Vertrag und keine Selbstfreigabe durch Hashes.
 5. Vor Push Ziel und vollständigen Diff prüfen. Kein Force-Push oder direkter
    Default-Branch-Push. Erste PR bevorzugt als Draft; Ziel, Head und Ergebnis
    nachlesen. Beschreibungen erklären Problem, Änderung, Prüfung und Grenzen.
-6. Vor Merge PR-Identität, aktuellen Head, Base, Checks, vorgeschriebene Reviews,
-   offene Threads und Mergefähigkeit frisch lesen. Nur bei gültiger Freigabe
-   und erfüllten Anforderungen integrieren; SHA-gebundene Mergeoption verwenden.
+6. Vor Merge PR-Identität, aktuellen Head, Base, vollständigen Diff, Checks,
+   vorgeschriebene Reviews, offene Threads und Mergefähigkeit frisch lesen.
+   Ein ausdrücklich autorisierter Merge ist auch nach einem Draft-Default
+   möglich, aber nur bei erfüllten Anforderungen; SHA-gebundene Mergeoption
+   verwenden. Ungefragter Consumer-Fanout und ungeprüfter Merge bleiben aus.
 7. Normale Scopefehler mit bestehender Freigabe korrigieren und betroffene
    Checks erneuern. Negative Checks, verlangte menschliche Reviews und offene
    Threads bleiben Gates. Native Ablehnungen nicht umgehen.
@@ -36,3 +42,6 @@ description: Use for any repository-writing task and for branch creation, milest
 Abschluss nennt Worktree/Branch, Commit, Remote-/PR-Stand, Prüfung, verbleibende
 Grenze und nächsten Schritt. Ein Commit ist Wiederherstellbarkeit, kein
 Korrektheits- oder Freigabenachweis. Eine Tasknotiz dokumentiert Rechte nur.
+Verfügbare Plugins, Apps, MCP-Werkzeuge oder Skills erteilen für einzelne
+Aktionen keine Autorisierung. Neue Live-, Credential-, Kosten- oder fremde
+Repositorywirkungen benötigen eine konkrete Freigabe.

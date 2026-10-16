@@ -2,13 +2,11 @@
 # Consumer project defaults; no parent model pin or hook/runtime dependency.
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
-approvals_reviewer = "user"
 
 [sandbox_workspace_write]
 network_access = false
 
 [apps._default]
-approvals_reviewer = "user"
 default_tools_approval_mode = "writes"
 destructive_enabled = false
 open_world_enabled = false
@@ -22,6 +20,11 @@ max_concurrent_threads_per_session = 8
 [agents.automation_planner]
 description = "Plant CI/CD und Automation read-only mit Idempotenz, Guardrails und Rollback."
 config_file = "agents/automation_planner.toml"
+nickname_candidates = ["Bulma"]
+
+[agents.automation_planner__terra_high]
+description = "Plant CI/CD und Automation read-only mit Idempotenz, Guardrails und Rollback."
+config_file = "agents/automation_planner__terra_high.toml"
 nickname_candidates = ["Bulma"]
 
 [agents.automation_planner__sol_6_high]
@@ -44,6 +47,11 @@ description = "Plant CI/CD und Automation read-only mit Idempotenz, Guardrails u
 config_file = "agents/automation_planner__astra_max.toml"
 nickname_candidates = ["Bulma"]
 
+[agents.automation_planner__sol_6_1_max]
+description = "Plant CI/CD und Automation read-only mit Idempotenz, Guardrails und Rollback."
+config_file = "agents/automation_planner__sol_6_1_max.toml"
+nickname_candidates = ["Bulma"]
+
 [agents.automation_planner__sol_6_max]
 description = "Plant CI/CD und Automation read-only mit Idempotenz, Guardrails und Rollback."
 config_file = "agents/automation_planner__sol_6_max.toml"
@@ -59,9 +67,19 @@ description = "Implementiert GitHub Actions, lokale Skripte und CI/CD im zugewie
 config_file = "agents/ci_cd_worker.toml"
 nickname_candidates = ["Vegeta"]
 
+[agents.ci_cd_worker__terra_medium]
+description = "Implementiert GitHub Actions, lokale Skripte und CI/CD im zugewiesenen Scope."
+config_file = "agents/ci_cd_worker__terra_medium.toml"
+nickname_candidates = ["Vegeta"]
+
 [agents.ci_cd_worker__sol_6_medium]
 description = "Implementiert GitHub Actions, lokale Skripte und CI/CD im zugewiesenen Scope."
 config_file = "agents/ci_cd_worker__sol_6_medium.toml"
+nickname_candidates = ["Vegeta"]
+
+[agents.ci_cd_worker__sol_6_1_high]
+description = "Implementiert GitHub Actions, lokale Skripte und CI/CD im zugewiesenen Scope."
+config_file = "agents/ci_cd_worker__sol_6_1_high.toml"
 nickname_candidates = ["Vegeta"]
 
 [agents.ci_cd_worker__terra_high]
@@ -89,6 +107,11 @@ description = "Implementiert GitHub Actions, lokale Skripte und CI/CD im zugewie
 config_file = "agents/ci_cd_worker__astra_max.toml"
 nickname_candidates = ["Vegeta"]
 
+[agents.ci_cd_worker__sol_6_1_max]
+description = "Implementiert GitHub Actions, lokale Skripte und CI/CD im zugewiesenen Scope."
+config_file = "agents/ci_cd_worker__sol_6_1_max.toml"
+nickname_candidates = ["Vegeta"]
+
 [agents.ci_cd_worker__sol_6_max]
 description = "Implementiert GitHub Actions, lokale Skripte und CI/CD im zugewiesenen Scope."
 config_file = "agents/ci_cd_worker__sol_6_max.toml"
@@ -102,6 +125,11 @@ nickname_candidates = ["Vegeta"]
 [agents.code_heavy_worker]
 description = "Bearbeitet komplexe Logik, Refactorings und Migrationen im zugewiesenen Scope."
 config_file = "agents/code_heavy_worker.toml"
+nickname_candidates = ["Broly"]
+
+[agents.code_heavy_worker__sol_6_high]
+description = "Bearbeitet komplexe Logik, Refactorings und Migrationen im zugewiesenen Scope."
+config_file = "agents/code_heavy_worker__sol_6_high.toml"
 nickname_candidates = ["Broly"]
 
 [agents.code_heavy_worker__sol_high]
@@ -122,6 +150,11 @@ nickname_candidates = ["Broly"]
 [agents.code_heavy_worker__astra_max]
 description = "Bearbeitet komplexe Logik, Refactorings und Migrationen im zugewiesenen Scope."
 config_file = "agents/code_heavy_worker__astra_max.toml"
+nickname_candidates = ["Broly"]
+
+[agents.code_heavy_worker__sol_6_1_max]
+description = "Bearbeitet komplexe Logik, Refactorings und Migrationen im zugewiesenen Scope."
+config_file = "agents/code_heavy_worker__sol_6_1_max.toml"
 nickname_candidates = ["Broly"]
 
 [agents.code_heavy_worker__sol_6_max]
@@ -149,9 +182,19 @@ description = "Erkundet Codebase, Einstiegspunkte, Tests, Abhaengigkeiten und Ri
 config_file = "agents/code_mapper__luna_medium.toml"
 nickname_candidates = ["Trunks"]
 
+[agents.code_mapper__sol_6_1_medium]
+description = "Erkundet Codebase, Einstiegspunkte, Tests, Abhaengigkeiten und Risiken read-only."
+config_file = "agents/code_mapper__sol_6_1_medium.toml"
+nickname_candidates = ["Trunks"]
+
 [agents.code_mapper__sol_6_medium]
 description = "Erkundet Codebase, Einstiegspunkte, Tests, Abhaengigkeiten und Risiken read-only."
 config_file = "agents/code_mapper__sol_6_medium.toml"
+nickname_candidates = ["Trunks"]
+
+[agents.code_mapper__sol_6_1_high]
+description = "Erkundet Codebase, Einstiegspunkte, Tests, Abhaengigkeiten und Risiken read-only."
+config_file = "agents/code_mapper__sol_6_1_high.toml"
 nickname_candidates = ["Trunks"]
 
 [agents.code_mapper__terra_high]
@@ -179,6 +222,11 @@ description = "Erkundet Codebase, Einstiegspunkte, Tests, Abhaengigkeiten und Ri
 config_file = "agents/code_mapper__astra_max.toml"
 nickname_candidates = ["Trunks"]
 
+[agents.code_mapper__sol_6_1_max]
+description = "Erkundet Codebase, Einstiegspunkte, Tests, Abhaengigkeiten und Risiken read-only."
+config_file = "agents/code_mapper__sol_6_1_max.toml"
+nickname_candidates = ["Trunks"]
+
 [agents.code_mapper__sol_6_max]
 description = "Erkundet Codebase, Einstiegspunkte, Tests, Abhaengigkeiten und Risiken read-only."
 config_file = "agents/code_mapper__sol_6_max.toml"
@@ -194,9 +242,19 @@ description = "Implementiert normale Features und Bugfixes im zugewiesenen Scope
 config_file = "agents/code_medium_worker.toml"
 nickname_candidates = ["Gohan"]
 
+[agents.code_medium_worker__terra_medium]
+description = "Implementiert normale Features und Bugfixes im zugewiesenen Scope."
+config_file = "agents/code_medium_worker__terra_medium.toml"
+nickname_candidates = ["Gohan"]
+
 [agents.code_medium_worker__sol_6_medium]
 description = "Implementiert normale Features und Bugfixes im zugewiesenen Scope."
 config_file = "agents/code_medium_worker__sol_6_medium.toml"
+nickname_candidates = ["Gohan"]
+
+[agents.code_medium_worker__sol_6_1_high]
+description = "Implementiert normale Features und Bugfixes im zugewiesenen Scope."
+config_file = "agents/code_medium_worker__sol_6_1_high.toml"
 nickname_candidates = ["Gohan"]
 
 [agents.code_medium_worker__terra_high]
@@ -224,6 +282,11 @@ description = "Implementiert normale Features und Bugfixes im zugewiesenen Scope
 config_file = "agents/code_medium_worker__astra_max.toml"
 nickname_candidates = ["Gohan"]
 
+[agents.code_medium_worker__sol_6_1_max]
+description = "Implementiert normale Features und Bugfixes im zugewiesenen Scope."
+config_file = "agents/code_medium_worker__sol_6_1_max.toml"
+nickname_candidates = ["Gohan"]
+
 [agents.code_medium_worker__sol_6_max]
 description = "Implementiert normale Features und Bugfixes im zugewiesenen Scope."
 config_file = "agents/code_medium_worker__sol_6_max.toml"
@@ -237,6 +300,11 @@ nickname_candidates = ["Gohan"]
 [agents.code_review_gate]
 description = "Prueft Diffs read-only auf Korrektheit, Regressionen, Security und Testluecken."
 config_file = "agents/code_review_gate.toml"
+nickname_candidates = ["Piccolo"]
+
+[agents.code_review_gate__sol_6_high]
+description = "Prueft Diffs read-only auf Korrektheit, Regressionen, Security und Testluecken."
+config_file = "agents/code_review_gate__sol_6_high.toml"
 nickname_candidates = ["Piccolo"]
 
 [agents.code_review_gate__sol_high]
@@ -257,6 +325,11 @@ nickname_candidates = ["Piccolo"]
 [agents.code_review_gate__astra_max]
 description = "Prueft Diffs read-only auf Korrektheit, Regressionen, Security und Testluecken."
 config_file = "agents/code_review_gate__astra_max.toml"
+nickname_candidates = ["Piccolo"]
+
+[agents.code_review_gate__sol_6_1_max]
+description = "Prueft Diffs read-only auf Korrektheit, Regressionen, Security und Testluecken."
+config_file = "agents/code_review_gate__sol_6_1_max.toml"
 nickname_candidates = ["Piccolo"]
 
 [agents.code_review_gate__sol_6_max]
@@ -284,9 +357,19 @@ description = "Implementiert kleine, klar begrenzte Code- oder Textaenderungen m
 config_file = "agents/code_simple_worker__luna_medium.toml"
 nickname_candidates = ["Goten"]
 
+[agents.code_simple_worker__sol_6_1_medium]
+description = "Implementiert kleine, klar begrenzte Code- oder Textaenderungen mit Tests."
+config_file = "agents/code_simple_worker__sol_6_1_medium.toml"
+nickname_candidates = ["Goten"]
+
 [agents.code_simple_worker__sol_6_medium]
 description = "Implementiert kleine, klar begrenzte Code- oder Textaenderungen mit Tests."
 config_file = "agents/code_simple_worker__sol_6_medium.toml"
+nickname_candidates = ["Goten"]
+
+[agents.code_simple_worker__sol_6_1_high]
+description = "Implementiert kleine, klar begrenzte Code- oder Textaenderungen mit Tests."
+config_file = "agents/code_simple_worker__sol_6_1_high.toml"
 nickname_candidates = ["Goten"]
 
 [agents.code_simple_worker__terra_high]
@@ -314,6 +397,11 @@ description = "Implementiert kleine, klar begrenzte Code- oder Textaenderungen m
 config_file = "agents/code_simple_worker__astra_max.toml"
 nickname_candidates = ["Goten"]
 
+[agents.code_simple_worker__sol_6_1_max]
+description = "Implementiert kleine, klar begrenzte Code- oder Textaenderungen mit Tests."
+config_file = "agents/code_simple_worker__sol_6_1_max.toml"
+nickname_candidates = ["Goten"]
+
 [agents.code_simple_worker__sol_6_max]
 description = "Implementiert kleine, klar begrenzte Code- oder Textaenderungen mit Tests."
 config_file = "agents/code_simple_worker__sol_6_max.toml"
@@ -329,9 +417,19 @@ description = "Analysiert Testfehler, Logs und Stacktraces read-only."
 config_file = "agents/code_test_triage.toml"
 nickname_candidates = ["Android 17"]
 
+[agents.code_test_triage__terra_medium]
+description = "Analysiert Testfehler, Logs und Stacktraces read-only."
+config_file = "agents/code_test_triage__terra_medium.toml"
+nickname_candidates = ["Android 17"]
+
 [agents.code_test_triage__sol_6_medium]
 description = "Analysiert Testfehler, Logs und Stacktraces read-only."
 config_file = "agents/code_test_triage__sol_6_medium.toml"
+nickname_candidates = ["Android 17"]
+
+[agents.code_test_triage__sol_6_1_high]
+description = "Analysiert Testfehler, Logs und Stacktraces read-only."
+config_file = "agents/code_test_triage__sol_6_1_high.toml"
 nickname_candidates = ["Android 17"]
 
 [agents.code_test_triage__terra_high]
@@ -359,6 +457,11 @@ description = "Analysiert Testfehler, Logs und Stacktraces read-only."
 config_file = "agents/code_test_triage__astra_max.toml"
 nickname_candidates = ["Android 17"]
 
+[agents.code_test_triage__sol_6_1_max]
+description = "Analysiert Testfehler, Logs und Stacktraces read-only."
+config_file = "agents/code_test_triage__sol_6_1_max.toml"
+nickname_candidates = ["Android 17"]
+
 [agents.code_test_triage__sol_6_max]
 description = "Analysiert Testfehler, Logs und Stacktraces read-only."
 config_file = "agents/code_test_triage__sol_6_max.toml"
@@ -374,9 +477,19 @@ description = "Erstellt reproduzierbare Datenanalysen, Skripte, Tabellen und Vis
 config_file = "agents/data_analyst.toml"
 nickname_candidates = ["Buu"]
 
+[agents.data_analyst__terra_medium]
+description = "Erstellt reproduzierbare Datenanalysen, Skripte, Tabellen und Visualisierungen."
+config_file = "agents/data_analyst__terra_medium.toml"
+nickname_candidates = ["Buu"]
+
 [agents.data_analyst__sol_6_medium]
 description = "Erstellt reproduzierbare Datenanalysen, Skripte, Tabellen und Visualisierungen."
 config_file = "agents/data_analyst__sol_6_medium.toml"
+nickname_candidates = ["Buu"]
+
+[agents.data_analyst__sol_6_1_high]
+description = "Erstellt reproduzierbare Datenanalysen, Skripte, Tabellen und Visualisierungen."
+config_file = "agents/data_analyst__sol_6_1_high.toml"
 nickname_candidates = ["Buu"]
 
 [agents.data_analyst__terra_high]
@@ -404,6 +517,11 @@ description = "Erstellt reproduzierbare Datenanalysen, Skripte, Tabellen und Vis
 config_file = "agents/data_analyst__astra_max.toml"
 nickname_candidates = ["Buu"]
 
+[agents.data_analyst__sol_6_1_max]
+description = "Erstellt reproduzierbare Datenanalysen, Skripte, Tabellen und Visualisierungen."
+config_file = "agents/data_analyst__sol_6_1_max.toml"
+nickname_candidates = ["Buu"]
+
 [agents.data_analyst__sol_6_max]
 description = "Erstellt reproduzierbare Datenanalysen, Skripte, Tabellen und Visualisierungen."
 config_file = "agents/data_analyst__sol_6_max.toml"
@@ -419,9 +537,19 @@ description = "Prueft strukturierte Daten read-only auf Qualitaet, Plausibilitae
 config_file = "agents/data_quality_auditor.toml"
 nickname_candidates = ["Android 18"]
 
+[agents.data_quality_auditor__terra_medium]
+description = "Prueft strukturierte Daten read-only auf Qualitaet, Plausibilitaet und Leakage."
+config_file = "agents/data_quality_auditor__terra_medium.toml"
+nickname_candidates = ["Android 18"]
+
 [agents.data_quality_auditor__sol_6_medium]
 description = "Prueft strukturierte Daten read-only auf Qualitaet, Plausibilitaet und Leakage."
 config_file = "agents/data_quality_auditor__sol_6_medium.toml"
+nickname_candidates = ["Android 18"]
+
+[agents.data_quality_auditor__sol_6_1_high]
+description = "Prueft strukturierte Daten read-only auf Qualitaet, Plausibilitaet und Leakage."
+config_file = "agents/data_quality_auditor__sol_6_1_high.toml"
 nickname_candidates = ["Android 18"]
 
 [agents.data_quality_auditor__terra_high]
@@ -449,6 +577,11 @@ description = "Prueft strukturierte Daten read-only auf Qualitaet, Plausibilitae
 config_file = "agents/data_quality_auditor__astra_max.toml"
 nickname_candidates = ["Android 18"]
 
+[agents.data_quality_auditor__sol_6_1_max]
+description = "Prueft strukturierte Daten read-only auf Qualitaet, Plausibilitaet und Leakage."
+config_file = "agents/data_quality_auditor__sol_6_1_max.toml"
+nickname_candidates = ["Android 18"]
+
 [agents.data_quality_auditor__sol_6_max]
 description = "Prueft strukturierte Daten read-only auf Qualitaet, Plausibilitaet und Leakage."
 config_file = "agents/data_quality_auditor__sol_6_max.toml"
@@ -462,6 +595,11 @@ nickname_candidates = ["Android 18"]
 [agents.decision_analyst]
 description = "Vergleicht Optionen, Kriterien, Trade-offs und Risiken read-only."
 config_file = "agents/decision_analyst.toml"
+nickname_candidates = ["Whis"]
+
+[agents.decision_analyst__terra_high]
+description = "Vergleicht Optionen, Kriterien, Trade-offs und Risiken read-only."
+config_file = "agents/decision_analyst__terra_high.toml"
 nickname_candidates = ["Whis"]
 
 [agents.decision_analyst__sol_6_high]
@@ -482,6 +620,11 @@ nickname_candidates = ["Whis"]
 [agents.decision_analyst__astra_max]
 description = "Vergleicht Optionen, Kriterien, Trade-offs und Risiken read-only."
 config_file = "agents/decision_analyst__astra_max.toml"
+nickname_candidates = ["Whis"]
+
+[agents.decision_analyst__sol_6_1_max]
+description = "Vergleicht Optionen, Kriterien, Trade-offs und Risiken read-only."
+config_file = "agents/decision_analyst__sol_6_1_max.toml"
 nickname_candidates = ["Whis"]
 
 [agents.decision_analyst__sol_6_max]
@@ -509,9 +652,19 @@ description = "Pflegt README, Changelog, Nutzerdoku und knappe technische Erklae
 config_file = "agents/docs_writer__luna_medium.toml"
 nickname_candidates = ["Pan"]
 
+[agents.docs_writer__sol_6_1_medium]
+description = "Pflegt README, Changelog, Nutzerdoku und knappe technische Erklaerungen."
+config_file = "agents/docs_writer__sol_6_1_medium.toml"
+nickname_candidates = ["Pan"]
+
 [agents.docs_writer__sol_6_medium]
 description = "Pflegt README, Changelog, Nutzerdoku und knappe technische Erklaerungen."
 config_file = "agents/docs_writer__sol_6_medium.toml"
+nickname_candidates = ["Pan"]
+
+[agents.docs_writer__sol_6_1_high]
+description = "Pflegt README, Changelog, Nutzerdoku und knappe technische Erklaerungen."
+config_file = "agents/docs_writer__sol_6_1_high.toml"
 nickname_candidates = ["Pan"]
 
 [agents.docs_writer__terra_high]
@@ -539,6 +692,11 @@ description = "Pflegt README, Changelog, Nutzerdoku und knappe technische Erklae
 config_file = "agents/docs_writer__astra_max.toml"
 nickname_candidates = ["Pan"]
 
+[agents.docs_writer__sol_6_1_max]
+description = "Pflegt README, Changelog, Nutzerdoku und knappe technische Erklaerungen."
+config_file = "agents/docs_writer__sol_6_1_max.toml"
+nickname_candidates = ["Pan"]
+
 [agents.docs_writer__sol_6_max]
 description = "Pflegt README, Changelog, Nutzerdoku und knappe technische Erklaerungen."
 config_file = "agents/docs_writer__sol_6_max.toml"
@@ -552,6 +710,11 @@ nickname_candidates = ["Pan"]
 [agents.homelab_critical_patch_author]
 description = "Bereitet kritische Homelab-Patches im Repo vor, wendet sie aber nicht live an."
 config_file = "agents/homelab_critical_patch_author.toml"
+nickname_candidates = ["Jiren"]
+
+[agents.homelab_critical_patch_author__sol_6_high]
+description = "Bereitet kritische Homelab-Patches im Repo vor, wendet sie aber nicht live an."
+config_file = "agents/homelab_critical_patch_author__sol_6_high.toml"
 nickname_candidates = ["Jiren"]
 
 [agents.homelab_critical_patch_author__sol_high]
@@ -569,6 +732,11 @@ description = "Bereitet kritische Homelab-Patches im Repo vor, wendet sie aber n
 config_file = "agents/homelab_critical_patch_author__astra_max.toml"
 nickname_candidates = ["Jiren"]
 
+[agents.homelab_critical_patch_author__sol_6_1_max]
+description = "Bereitet kritische Homelab-Patches im Repo vor, wendet sie aber nicht live an."
+config_file = "agents/homelab_critical_patch_author__sol_6_1_max.toml"
+nickname_candidates = ["Jiren"]
+
 [agents.homelab_critical_patch_author__sol_6_max]
 description = "Bereitet kritische Homelab-Patches im Repo vor, wendet sie aber nicht live an."
 config_file = "agents/homelab_critical_patch_author__sol_6_max.toml"
@@ -584,6 +752,11 @@ description = "Plant kritische Firewall-, DNS-, IAM-, Storage- und Backup-Aender
 config_file = "agents/homelab_critical_planner.toml"
 nickname_candidates = ["Beerus"]
 
+[agents.homelab_critical_planner__sol_6_high]
+description = "Plant kritische Firewall-, DNS-, IAM-, Storage- und Backup-Aenderungen read-only."
+config_file = "agents/homelab_critical_planner__sol_6_high.toml"
+nickname_candidates = ["Beerus"]
+
 [agents.homelab_critical_planner__sol_high]
 description = "Plant kritische Firewall-, DNS-, IAM-, Storage- und Backup-Aenderungen read-only."
 config_file = "agents/homelab_critical_planner__sol_high.toml"
@@ -597,6 +770,11 @@ nickname_candidates = ["Beerus"]
 [agents.homelab_critical_planner__astra_max]
 description = "Plant kritische Firewall-, DNS-, IAM-, Storage- und Backup-Aenderungen read-only."
 config_file = "agents/homelab_critical_planner__astra_max.toml"
+nickname_candidates = ["Beerus"]
+
+[agents.homelab_critical_planner__sol_6_1_max]
+description = "Plant kritische Firewall-, DNS-, IAM-, Storage- und Backup-Aenderungen read-only."
+config_file = "agents/homelab_critical_planner__sol_6_1_max.toml"
 nickname_candidates = ["Beerus"]
 
 [agents.homelab_critical_planner__sol_6_max]
@@ -624,9 +802,19 @@ description = "Erfasst Hardware, Dienste, Netzwerk, Storage und Backups read-onl
 config_file = "agents/homelab_inventory__luna_medium.toml"
 nickname_candidates = ["Tien"]
 
+[agents.homelab_inventory__sol_6_1_medium]
+description = "Erfasst Hardware, Dienste, Netzwerk, Storage und Backups read-only."
+config_file = "agents/homelab_inventory__sol_6_1_medium.toml"
+nickname_candidates = ["Tien"]
+
 [agents.homelab_inventory__sol_6_medium]
 description = "Erfasst Hardware, Dienste, Netzwerk, Storage und Backups read-only."
 config_file = "agents/homelab_inventory__sol_6_medium.toml"
+nickname_candidates = ["Tien"]
+
+[agents.homelab_inventory__sol_6_1_high]
+description = "Erfasst Hardware, Dienste, Netzwerk, Storage und Backups read-only."
+config_file = "agents/homelab_inventory__sol_6_1_high.toml"
 nickname_candidates = ["Tien"]
 
 [agents.homelab_inventory__terra_high]
@@ -654,6 +842,11 @@ description = "Erfasst Hardware, Dienste, Netzwerk, Storage und Backups read-onl
 config_file = "agents/homelab_inventory__astra_max.toml"
 nickname_candidates = ["Tien"]
 
+[agents.homelab_inventory__sol_6_1_max]
+description = "Erfasst Hardware, Dienste, Netzwerk, Storage und Backups read-only."
+config_file = "agents/homelab_inventory__sol_6_1_max.toml"
+nickname_candidates = ["Tien"]
+
 [agents.homelab_inventory__sol_6_max]
 description = "Erfasst Hardware, Dienste, Netzwerk, Storage und Backups read-only."
 config_file = "agents/homelab_inventory__sol_6_max.toml"
@@ -679,9 +872,19 @@ description = "Bearbeitet risikoarme Homelab-Doku, Templates und Hilfsskripte."
 config_file = "agents/homelab_light_worker__luna_medium.toml"
 nickname_candidates = ["Krillin"]
 
+[agents.homelab_light_worker__sol_6_1_medium]
+description = "Bearbeitet risikoarme Homelab-Doku, Templates und Hilfsskripte."
+config_file = "agents/homelab_light_worker__sol_6_1_medium.toml"
+nickname_candidates = ["Krillin"]
+
 [agents.homelab_light_worker__sol_6_medium]
 description = "Bearbeitet risikoarme Homelab-Doku, Templates und Hilfsskripte."
 config_file = "agents/homelab_light_worker__sol_6_medium.toml"
+nickname_candidates = ["Krillin"]
+
+[agents.homelab_light_worker__sol_6_1_high]
+description = "Bearbeitet risikoarme Homelab-Doku, Templates und Hilfsskripte."
+config_file = "agents/homelab_light_worker__sol_6_1_high.toml"
 nickname_candidates = ["Krillin"]
 
 [agents.homelab_light_worker__terra_high]
@@ -709,6 +912,11 @@ description = "Bearbeitet risikoarme Homelab-Doku, Templates und Hilfsskripte."
 config_file = "agents/homelab_light_worker__astra_max.toml"
 nickname_candidates = ["Krillin"]
 
+[agents.homelab_light_worker__sol_6_1_max]
+description = "Bearbeitet risikoarme Homelab-Doku, Templates und Hilfsskripte."
+config_file = "agents/homelab_light_worker__sol_6_1_max.toml"
+nickname_candidates = ["Krillin"]
+
 [agents.homelab_light_worker__sol_6_max]
 description = "Bearbeitet risikoarme Homelab-Doku, Templates und Hilfsskripte."
 config_file = "agents/homelab_light_worker__sol_6_max.toml"
@@ -724,9 +932,19 @@ description = "Ordnet Homelab-Logs und Servicefehler read-only ein."
 config_file = "agents/homelab_log_triage.toml"
 nickname_candidates = ["Chiaotzu"]
 
+[agents.homelab_log_triage__terra_medium]
+description = "Ordnet Homelab-Logs und Servicefehler read-only ein."
+config_file = "agents/homelab_log_triage__terra_medium.toml"
+nickname_candidates = ["Chiaotzu"]
+
 [agents.homelab_log_triage__sol_6_medium]
 description = "Ordnet Homelab-Logs und Servicefehler read-only ein."
 config_file = "agents/homelab_log_triage__sol_6_medium.toml"
+nickname_candidates = ["Chiaotzu"]
+
+[agents.homelab_log_triage__sol_6_1_high]
+description = "Ordnet Homelab-Logs und Servicefehler read-only ein."
+config_file = "agents/homelab_log_triage__sol_6_1_high.toml"
 nickname_candidates = ["Chiaotzu"]
 
 [agents.homelab_log_triage__terra_high]
@@ -754,6 +972,11 @@ description = "Ordnet Homelab-Logs und Servicefehler read-only ein."
 config_file = "agents/homelab_log_triage__astra_max.toml"
 nickname_candidates = ["Chiaotzu"]
 
+[agents.homelab_log_triage__sol_6_1_max]
+description = "Ordnet Homelab-Logs und Servicefehler read-only ein."
+config_file = "agents/homelab_log_triage__sol_6_1_max.toml"
+nickname_candidates = ["Chiaotzu"]
+
 [agents.homelab_log_triage__sol_6_max]
 description = "Ordnet Homelab-Logs und Servicefehler read-only ein."
 config_file = "agents/homelab_log_triage__sol_6_max.toml"
@@ -779,6 +1002,11 @@ description = "Prueft Homelab-Konfigurationen read-only auf Exposition, Secrets 
 config_file = "agents/homelab_security_reviewer.toml"
 nickname_candidates = ["Android 16"]
 
+[agents.homelab_security_reviewer__sol_6_high]
+description = "Prueft Homelab-Konfigurationen read-only auf Exposition, Secrets und Betriebsrisiken."
+config_file = "agents/homelab_security_reviewer__sol_6_high.toml"
+nickname_candidates = ["Android 16"]
+
 [agents.homelab_security_reviewer__sol_high]
 description = "Prueft Homelab-Konfigurationen read-only auf Exposition, Secrets und Betriebsrisiken."
 config_file = "agents/homelab_security_reviewer__sol_high.toml"
@@ -792,6 +1020,11 @@ nickname_candidates = ["Android 16"]
 [agents.homelab_security_reviewer__astra_max]
 description = "Prueft Homelab-Konfigurationen read-only auf Exposition, Secrets und Betriebsrisiken."
 config_file = "agents/homelab_security_reviewer__astra_max.toml"
+nickname_candidates = ["Android 16"]
+
+[agents.homelab_security_reviewer__sol_6_1_max]
+description = "Prueft Homelab-Konfigurationen read-only auf Exposition, Secrets und Betriebsrisiken."
+config_file = "agents/homelab_security_reviewer__sol_6_1_max.toml"
 nickname_candidates = ["Android 16"]
 
 [agents.homelab_security_reviewer__sol_6_max]
@@ -809,9 +1042,19 @@ description = "Bearbeitet Compose, Ansible, Monitoring und lokale Automation ohn
 config_file = "agents/homelab_service_worker.toml"
 nickname_candidates = ["Goku"]
 
+[agents.homelab_service_worker__terra_medium]
+description = "Bearbeitet Compose, Ansible, Monitoring und lokale Automation ohne kritische Live-Aktion."
+config_file = "agents/homelab_service_worker__terra_medium.toml"
+nickname_candidates = ["Goku"]
+
 [agents.homelab_service_worker__sol_6_medium]
 description = "Bearbeitet Compose, Ansible, Monitoring und lokale Automation ohne kritische Live-Aktion."
 config_file = "agents/homelab_service_worker__sol_6_medium.toml"
+nickname_candidates = ["Goku"]
+
+[agents.homelab_service_worker__sol_6_1_high]
+description = "Bearbeitet Compose, Ansible, Monitoring und lokale Automation ohne kritische Live-Aktion."
+config_file = "agents/homelab_service_worker__sol_6_1_high.toml"
 nickname_candidates = ["Goku"]
 
 [agents.homelab_service_worker__terra_high]
@@ -839,6 +1082,11 @@ description = "Bearbeitet Compose, Ansible, Monitoring und lokale Automation ohn
 config_file = "agents/homelab_service_worker__astra_max.toml"
 nickname_candidates = ["Goku"]
 
+[agents.homelab_service_worker__sol_6_1_max]
+description = "Bearbeitet Compose, Ansible, Monitoring und lokale Automation ohne kritische Live-Aktion."
+config_file = "agents/homelab_service_worker__sol_6_1_max.toml"
+nickname_candidates = ["Goku"]
+
 [agents.homelab_service_worker__sol_6_max]
 description = "Bearbeitet Compose, Ansible, Monitoring und lokale Automation ohne kritische Live-Aktion."
 config_file = "agents/homelab_service_worker__sol_6_max.toml"
@@ -864,9 +1112,19 @@ description = "Pflegt Checkpoints, Task-Logs und Resume-Plaene fuer lange Laeufe
 config_file = "agents/long_context_summarizer__luna_medium.toml"
 nickname_candidates = ["Roshi"]
 
+[agents.long_context_summarizer__sol_6_1_medium]
+description = "Pflegt Checkpoints, Task-Logs und Resume-Plaene fuer lange Laeufe."
+config_file = "agents/long_context_summarizer__sol_6_1_medium.toml"
+nickname_candidates = ["Roshi"]
+
 [agents.long_context_summarizer__sol_6_medium]
 description = "Pflegt Checkpoints, Task-Logs und Resume-Plaene fuer lange Laeufe."
 config_file = "agents/long_context_summarizer__sol_6_medium.toml"
+nickname_candidates = ["Roshi"]
+
+[agents.long_context_summarizer__sol_6_1_high]
+description = "Pflegt Checkpoints, Task-Logs und Resume-Plaene fuer lange Laeufe."
+config_file = "agents/long_context_summarizer__sol_6_1_high.toml"
 nickname_candidates = ["Roshi"]
 
 [agents.long_context_summarizer__terra_high]
@@ -894,6 +1152,11 @@ description = "Pflegt Checkpoints, Task-Logs und Resume-Plaene fuer lange Laeufe
 config_file = "agents/long_context_summarizer__astra_max.toml"
 nickname_candidates = ["Roshi"]
 
+[agents.long_context_summarizer__sol_6_1_max]
+description = "Pflegt Checkpoints, Task-Logs und Resume-Plaene fuer lange Laeufe."
+config_file = "agents/long_context_summarizer__sol_6_1_max.toml"
+nickname_candidates = ["Roshi"]
+
 [agents.long_context_summarizer__sol_6_max]
 description = "Pflegt Checkpoints, Task-Logs und Resume-Plaene fuer lange Laeufe."
 config_file = "agents/long_context_summarizer__sol_6_max.toml"
@@ -907,6 +1170,11 @@ nickname_candidates = ["Roshi"]
 [agents.project_planner]
 description = "Plant Meilensteine, Abhaengigkeiten, Reviewpunkte und risikoarme Reihenfolge."
 config_file = "agents/project_planner.toml"
+nickname_candidates = ["Shenron"]
+
+[agents.project_planner__terra_high]
+description = "Plant Meilensteine, Abhaengigkeiten, Reviewpunkte und risikoarme Reihenfolge."
+config_file = "agents/project_planner__terra_high.toml"
 nickname_candidates = ["Shenron"]
 
 [agents.project_planner__sol_6_high]
@@ -929,6 +1197,11 @@ description = "Plant Meilensteine, Abhaengigkeiten, Reviewpunkte und risikoarme 
 config_file = "agents/project_planner__astra_max.toml"
 nickname_candidates = ["Shenron"]
 
+[agents.project_planner__sol_6_1_max]
+description = "Plant Meilensteine, Abhaengigkeiten, Reviewpunkte und risikoarme Reihenfolge."
+config_file = "agents/project_planner__sol_6_1_max.toml"
+nickname_candidates = ["Shenron"]
+
 [agents.project_planner__sol_6_max]
 description = "Plant Meilensteine, Abhaengigkeiten, Reviewpunkte und risikoarme Reihenfolge."
 config_file = "agents/project_planner__sol_6_max.toml"
@@ -944,9 +1217,19 @@ description = "Erstellt eine sichere, generische Arbeitsbasis fuer neue oder unk
 config_file = "agents/repo_bootstrapper.toml"
 nickname_candidates = ["Cabba"]
 
+[agents.repo_bootstrapper__terra_medium]
+description = "Erstellt eine sichere, generische Arbeitsbasis fuer neue oder unklare Repositories."
+config_file = "agents/repo_bootstrapper__terra_medium.toml"
+nickname_candidates = ["Cabba"]
+
 [agents.repo_bootstrapper__sol_6_medium]
 description = "Erstellt eine sichere, generische Arbeitsbasis fuer neue oder unklare Repositories."
 config_file = "agents/repo_bootstrapper__sol_6_medium.toml"
+nickname_candidates = ["Cabba"]
+
+[agents.repo_bootstrapper__sol_6_1_high]
+description = "Erstellt eine sichere, generische Arbeitsbasis fuer neue oder unklare Repositories."
+config_file = "agents/repo_bootstrapper__sol_6_1_high.toml"
 nickname_candidates = ["Cabba"]
 
 [agents.repo_bootstrapper__terra_high]
@@ -974,6 +1257,11 @@ description = "Erstellt eine sichere, generische Arbeitsbasis fuer neue oder unk
 config_file = "agents/repo_bootstrapper__astra_max.toml"
 nickname_candidates = ["Cabba"]
 
+[agents.repo_bootstrapper__sol_6_1_max]
+description = "Erstellt eine sichere, generische Arbeitsbasis fuer neue oder unklare Repositories."
+config_file = "agents/repo_bootstrapper__sol_6_1_max.toml"
+nickname_candidates = ["Cabba"]
+
 [agents.repo_bootstrapper__sol_6_max]
 description = "Erstellt eine sichere, generische Arbeitsbasis fuer neue oder unklare Repositories."
 config_file = "agents/repo_bootstrapper__sol_6_max.toml"
@@ -989,9 +1277,19 @@ description = "Klaert Ziel, Scope, Annahmen, Akzeptanzkriterien und gebuendelte 
 config_file = "agents/requirements_analyst.toml"
 nickname_candidates = ["Videl"]
 
+[agents.requirements_analyst__terra_medium]
+description = "Klaert Ziel, Scope, Annahmen, Akzeptanzkriterien und gebuendelte Rueckfragen."
+config_file = "agents/requirements_analyst__terra_medium.toml"
+nickname_candidates = ["Videl"]
+
 [agents.requirements_analyst__sol_6_medium]
 description = "Klaert Ziel, Scope, Annahmen, Akzeptanzkriterien und gebuendelte Rueckfragen."
 config_file = "agents/requirements_analyst__sol_6_medium.toml"
+nickname_candidates = ["Videl"]
+
+[agents.requirements_analyst__sol_6_1_high]
+description = "Klaert Ziel, Scope, Annahmen, Akzeptanzkriterien und gebuendelte Rueckfragen."
+config_file = "agents/requirements_analyst__sol_6_1_high.toml"
 nickname_candidates = ["Videl"]
 
 [agents.requirements_analyst__terra_high]
@@ -1019,6 +1317,11 @@ description = "Klaert Ziel, Scope, Annahmen, Akzeptanzkriterien und gebuendelte 
 config_file = "agents/requirements_analyst__astra_max.toml"
 nickname_candidates = ["Videl"]
 
+[agents.requirements_analyst__sol_6_1_max]
+description = "Klaert Ziel, Scope, Annahmen, Akzeptanzkriterien und gebuendelte Rueckfragen."
+config_file = "agents/requirements_analyst__sol_6_1_max.toml"
+nickname_candidates = ["Videl"]
+
 [agents.requirements_analyst__sol_6_max]
 description = "Klaert Ziel, Scope, Annahmen, Akzeptanzkriterien und gebuendelte Rueckfragen."
 config_file = "agents/requirements_analyst__sol_6_max.toml"
@@ -1044,9 +1347,19 @@ description = "Plant Suchstrategie, Primaerquellen und Evidenzpfade read-only."
 config_file = "agents/research_mapper__luna_medium.toml"
 nickname_candidates = ["Yamcha"]
 
+[agents.research_mapper__sol_6_1_medium]
+description = "Plant Suchstrategie, Primaerquellen und Evidenzpfade read-only."
+config_file = "agents/research_mapper__sol_6_1_medium.toml"
+nickname_candidates = ["Yamcha"]
+
 [agents.research_mapper__sol_6_medium]
 description = "Plant Suchstrategie, Primaerquellen und Evidenzpfade read-only."
 config_file = "agents/research_mapper__sol_6_medium.toml"
+nickname_candidates = ["Yamcha"]
+
+[agents.research_mapper__sol_6_1_high]
+description = "Plant Suchstrategie, Primaerquellen und Evidenzpfade read-only."
+config_file = "agents/research_mapper__sol_6_1_high.toml"
 nickname_candidates = ["Yamcha"]
 
 [agents.research_mapper__terra_high]
@@ -1074,6 +1387,11 @@ description = "Plant Suchstrategie, Primaerquellen und Evidenzpfade read-only."
 config_file = "agents/research_mapper__astra_max.toml"
 nickname_candidates = ["Yamcha"]
 
+[agents.research_mapper__sol_6_1_max]
+description = "Plant Suchstrategie, Primaerquellen und Evidenzpfade read-only."
+config_file = "agents/research_mapper__sol_6_1_max.toml"
+nickname_candidates = ["Yamcha"]
+
 [agents.research_mapper__sol_6_max]
 description = "Plant Suchstrategie, Primaerquellen und Evidenzpfade read-only."
 config_file = "agents/research_mapper__sol_6_max.toml"
@@ -1087,6 +1405,11 @@ nickname_candidates = ["Yamcha"]
 [agents.security_secret_scanner]
 description = "Prueft read-only auf Secrets, riskante Defaults und versehentliche Exposition."
 config_file = "agents/security_secret_scanner.toml"
+nickname_candidates = ["Cell"]
+
+[agents.security_secret_scanner__sol_6_high]
+description = "Prueft read-only auf Secrets, riskante Defaults und versehentliche Exposition."
+config_file = "agents/security_secret_scanner__sol_6_high.toml"
 nickname_candidates = ["Cell"]
 
 [agents.security_secret_scanner__sol_high]
@@ -1109,6 +1432,11 @@ description = "Prueft read-only auf Secrets, riskante Defaults und versehentlich
 config_file = "agents/security_secret_scanner__astra_max.toml"
 nickname_candidates = ["Cell"]
 
+[agents.security_secret_scanner__sol_6_1_max]
+description = "Prueft read-only auf Secrets, riskante Defaults und versehentliche Exposition."
+config_file = "agents/security_secret_scanner__sol_6_1_max.toml"
+nickname_candidates = ["Cell"]
+
 [agents.security_secret_scanner__sol_6_max]
 description = "Prueft read-only auf Secrets, riskante Defaults und versehentliche Exposition."
 config_file = "agents/security_secret_scanner__sol_6_max.toml"
@@ -1124,9 +1452,19 @@ description = "Bewertet Quellen read-only nach Autoritaet, Aktualitaet und Wider
 config_file = "agents/source_reliability_reviewer.toml"
 nickname_candidates = ["Frieza"]
 
+[agents.source_reliability_reviewer__terra_medium]
+description = "Bewertet Quellen read-only nach Autoritaet, Aktualitaet und Widerspruechen."
+config_file = "agents/source_reliability_reviewer__terra_medium.toml"
+nickname_candidates = ["Frieza"]
+
 [agents.source_reliability_reviewer__sol_6_medium]
 description = "Bewertet Quellen read-only nach Autoritaet, Aktualitaet und Widerspruechen."
 config_file = "agents/source_reliability_reviewer__sol_6_medium.toml"
+nickname_candidates = ["Frieza"]
+
+[agents.source_reliability_reviewer__sol_6_1_high]
+description = "Bewertet Quellen read-only nach Autoritaet, Aktualitaet und Widerspruechen."
+config_file = "agents/source_reliability_reviewer__sol_6_1_high.toml"
 nickname_candidates = ["Frieza"]
 
 [agents.source_reliability_reviewer__terra_high]
@@ -1154,6 +1492,11 @@ description = "Bewertet Quellen read-only nach Autoritaet, Aktualitaet und Wider
 config_file = "agents/source_reliability_reviewer__astra_max.toml"
 nickname_candidates = ["Frieza"]
 
+[agents.source_reliability_reviewer__sol_6_1_max]
+description = "Bewertet Quellen read-only nach Autoritaet, Aktualitaet und Widerspruechen."
+config_file = "agents/source_reliability_reviewer__sol_6_1_max.toml"
+nickname_candidates = ["Frieza"]
+
 [agents.source_reliability_reviewer__sol_6_max]
 description = "Bewertet Quellen read-only nach Autoritaet, Aktualitaet und Widerspruechen."
 config_file = "agents/source_reliability_reviewer__sol_6_max.toml"
@@ -1169,9 +1512,19 @@ description = "Plant Outline, Argumentationsbogen und Konsistenz langer Texte re
 config_file = "agents/writing_architect.toml"
 nickname_candidates = ["Caulifla"]
 
+[agents.writing_architect__terra_medium]
+description = "Plant Outline, Argumentationsbogen und Konsistenz langer Texte read-only."
+config_file = "agents/writing_architect__terra_medium.toml"
+nickname_candidates = ["Caulifla"]
+
 [agents.writing_architect__sol_6_medium]
 description = "Plant Outline, Argumentationsbogen und Konsistenz langer Texte read-only."
 config_file = "agents/writing_architect__sol_6_medium.toml"
+nickname_candidates = ["Caulifla"]
+
+[agents.writing_architect__sol_6_1_high]
+description = "Plant Outline, Argumentationsbogen und Konsistenz langer Texte read-only."
+config_file = "agents/writing_architect__sol_6_1_high.toml"
 nickname_candidates = ["Caulifla"]
 
 [agents.writing_architect__terra_high]
@@ -1199,6 +1552,11 @@ description = "Plant Outline, Argumentationsbogen und Konsistenz langer Texte re
 config_file = "agents/writing_architect__astra_max.toml"
 nickname_candidates = ["Caulifla"]
 
+[agents.writing_architect__sol_6_1_max]
+description = "Plant Outline, Argumentationsbogen und Konsistenz langer Texte read-only."
+config_file = "agents/writing_architect__sol_6_1_max.toml"
+nickname_candidates = ["Caulifla"]
+
 [agents.writing_architect__sol_6_max]
 description = "Plant Outline, Argumentationsbogen und Konsistenz langer Texte read-only."
 config_file = "agents/writing_architect__sol_6_max.toml"
@@ -1224,9 +1582,19 @@ description = "Bearbeitet Abschnitte und Langtexte im zugewiesenen Scope."
 config_file = "agents/writing_editor__luna_medium.toml"
 nickname_candidates = ["Kale"]
 
+[agents.writing_editor__sol_6_1_medium]
+description = "Bearbeitet Abschnitte und Langtexte im zugewiesenen Scope."
+config_file = "agents/writing_editor__sol_6_1_medium.toml"
+nickname_candidates = ["Kale"]
+
 [agents.writing_editor__sol_6_medium]
 description = "Bearbeitet Abschnitte und Langtexte im zugewiesenen Scope."
 config_file = "agents/writing_editor__sol_6_medium.toml"
+nickname_candidates = ["Kale"]
+
+[agents.writing_editor__sol_6_1_high]
+description = "Bearbeitet Abschnitte und Langtexte im zugewiesenen Scope."
+config_file = "agents/writing_editor__sol_6_1_high.toml"
 nickname_candidates = ["Kale"]
 
 [agents.writing_editor__terra_high]
@@ -1252,6 +1620,11 @@ nickname_candidates = ["Kale"]
 [agents.writing_editor__astra_max]
 description = "Bearbeitet Abschnitte und Langtexte im zugewiesenen Scope."
 config_file = "agents/writing_editor__astra_max.toml"
+nickname_candidates = ["Kale"]
+
+[agents.writing_editor__sol_6_1_max]
+description = "Bearbeitet Abschnitte und Langtexte im zugewiesenen Scope."
+config_file = "agents/writing_editor__sol_6_1_max.toml"
 nickname_candidates = ["Kale"]
 
 [agents.writing_editor__sol_6_max]
