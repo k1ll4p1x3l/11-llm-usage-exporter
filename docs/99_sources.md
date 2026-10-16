@@ -72,3 +72,6 @@
 - actionlint releases — https://github.com/rhysd/actionlint/releases/tag/v1.7.12 (checked 2026-05-31)
 - Prometheus Go client v1.24.1 — https://github.com/prometheus/client_golang/releases/tag/v1.24.1 (checked 2026-09-01; signed bugfix release)
 - go-toml v2.4.2 — https://github.com/pelletier/go-toml/releases/tag/v2.4.2 (checked 2026-09-01; verified bugfix release)
+
+- Go 1.26.9 release history — https://go.dev/doc/devel/release#go1.26.9 (released 2026-10-08; checked 2026-10-16; current security baseline)
+- Go vulnerability database — https://pkg.go.dev/vuln/GO-2026-6617 (checked 2026-10-16; representative current finding fixed in Go 1.26.9; hosted govulncheck validates all seven findings)

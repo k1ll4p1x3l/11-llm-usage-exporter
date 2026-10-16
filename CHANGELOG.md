@@ -10,6 +10,11 @@ and existing host/project overrides determine the effective reviewer.
 No new blanket reviewer setting. Parent examples remain inactive; no host
 activation or agent/model execution. Account/client availability is unverified.
 
+Raise the existing CI, security, release-preparation and developer Go baseline
+from `1.26.6` to `1.26.9` to address the seven standard-library findings in
+hosted govulncheck. Preserve workflow triggers, permissions and scanner versions;
+no release or host activation. Official release evidence is in `docs/99_sources.md`.
+
 ## 2026-09-17 — Variante 2 und Reviewkorrekturen
 
 Feste Modell-/Effortbindungen der 28 Basisrollen und native Obergrenze 8 sind

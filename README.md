@@ -126,7 +126,7 @@ Useful docs:
 
 ## Development
 
-- Maintainer security baseline: Go `1.26.6` with govulncheck `v1.1.4`.
+- Maintainer security baseline: Go `1.26.9` with govulncheck `v1.1.4`.
 - `scripts/dev-env-check.sh`
 - `scripts/check.sh`
 - `go test ./...`
