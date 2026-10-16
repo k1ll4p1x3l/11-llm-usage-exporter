@@ -10,6 +10,10 @@ description: Use when a task should gather required inputs and approvals early, 
 2. Unterscheide erlaubte lokale Arbeit, externe Wirkung, technische Fähigkeit
    und echte Autorisierung. Bündele tatsächlich fehlende Angaben und vorhersehbare
    Entscheidungen früh; vorhandene gültige Freigaben nicht nochmals erfragen.
+   Ein Analyse-/Reviewauftrag bleibt read-only. Ein konkreter
+   Implementierungsauftrag reicht ohne engeren Endpunkt bis zum prüfbereiten
+   Draft-PR; ausdrücklich freigegebener Merge bleibt nach seinen frischen
+   Gates möglich. Verfügbare Erweiterungen sind keine Aktionsfreigabe.
 3. Führe erlaubte Schritte selbstständig aus. Jede wesentliche Teilaufgabe dient
    einem Muss-Punkt oder einer notwendigen Voraussetzung; optionale Ideen separat.
 4. Bei längerer Arbeit genügt ein kurzer aktueller Aufgabenstand nach der
@@ -18,8 +22,9 @@ description: Use when a task should gather required inputs and approvals early, 
    Problem, bisherige Versuche, neue Erkenntnis und nächsten begrenzten Schritt
    zusammen. Neue Namen, Threads oder Hypothesen setzen Versuche nicht zurück.
 6. Negative Prüfungen blockieren ihre abhängige Stufe, bis passende frische
-   Evidenz vorliegt. Neue Rechte, Zieländerung, unabhängige Daten oder echte
-   Sicherheitsablehnung konkret melden und betroffene Wirkung stoppen.
+   Evidenz vorliegt. Neue Rechte, Zieländerung, unabhängige Daten, nicht
+   abgedeckte Live-/Credential-/Kostenwirkung oder echte Sicherheitsablehnung
+   konkret melden und betroffene Wirkung stoppen.
 7. Gib kurze Statusmeldungen im normalen Chat. Zur vollen Stunde in Europe/Berlin am
    nächsten sicheren Gesprächspunkt: erledigt, aktuell, offen,
    Blocker, Zeit/Zeitzone und nötige Nutzeraktion. Grobe Orientierung, bedingte

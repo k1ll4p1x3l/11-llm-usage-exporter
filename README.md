@@ -42,6 +42,13 @@ Project-specific purpose, commands, and immutable boundaries remain locally
 owned in `PROJECT_PROFILE.md`, `docs/REPO_POLICY.md`, and the existing project
 documentation.
 
+Current adoption: `04-llm-essentials@eec27d472b8b26f7f59fab4094f3a979b6bdbec1`,
+public profile (376 managed files). The 28 base roles use 8 Luna 6 High,
+11 Sol 6.1 Medium and 9 Sol 6.1 High; explicit older variants remain repository choices.
+Source PR #92 also removes blanket reviewer overrides. Native defaults and
+existing host/project overrides determine the effective reviewer; repository
+adoption does not activate user profiles or running sessions.
+
 Do not edit managed files directly. Agent Core updates arrive as reviewable
 sync pull requests and must pass lock/hash verification, this repository's CI,
 and public-safety checks. Optional templates under `.agent-core/templates/`
@@ -119,7 +126,7 @@ Useful docs:
 
 ## Development
 
-- Maintainer security baseline: Go `1.26.6` with govulncheck `v1.1.4`.
+- Maintainer security baseline: Go `1.26.9` with govulncheck `v1.1.4`.
 - `scripts/dev-env-check.sh`
 - `scripts/check.sh`
 - `go test ./...`

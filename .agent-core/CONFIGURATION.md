@@ -1,6 +1,7 @@
 # Konfiguration und spätere Verwendung
 
-Stand: 2026-09-22; Modell- und Speedquellen: 2026-09-22;
+Stand: 2026-10-16; Quellen zu Sol 6.1 und Subagenten: 2026-10-16;
+übrige Modell- und Speedquellen: 2026-09-22;
 Quellenzugriff zu Erweiterungen: 2026-09-16, sonst 2026-09-12.
 Gewünschte Einstellung, dokumentierte Fähigkeit und tatsächlich beobachtetes
 Verhalten sind verschiedene Aussagen.
@@ -13,13 +14,19 @@ Hier liegen Definitionen vor; Konto-/Oberflächenverfügbarkeit bleibt unbekannt
 Die nativen Dateien sowie [Rollenübersicht](ROLES.md) werden daraus erzeugt.
 Keine automatische Routingengine oder Modellersatzkette. Die Klassen nennen
 nur ausdrücklich wählbare Optionen; Mehrfachzuordnungen erzeugen keine Dubletten.
-Seit #90 verwenden die acht Economy-Basisrollen GPT-6 Luna High und die sechs
-Deep-Basisrollen GPT-6 Sol High; elf Balanced-Rollen bleiben bei GPT-5.6 Terra
-Medium und drei Balanced-Deep-Rollen bei Terra High. Das sind bewusste
+Seit #93 verwenden die acht Economy-Basisrollen weiterhin GPT-6 Luna High;
+elf Balanced-Rollen verwenden GPT-6.1 Sol Medium und drei Balanced-Deep- sowie
+sechs Deep-Rollen GPT-6.1 Sol High. Balanced-Deep und Deep bleiben fachlich
+getrennte Klassen. Das sind bewusste
 Repository-Vorgaben nach Aufgabe und Risiko, keine Herstellerdefaults oder
 gemessenen Effizienzgewinne. `sol`/`luna` bezeichnen weiterhin GPT-5.6;
-`sol_6`/`luna_6` sind neue eindeutige Schlüssel. Die 5.6-Varianten und Astra
-bleiben explizite Optionen. Die verfügbaren Modell-/Effortpaare stehen nur in
+`sol_6`/`luna_6` bleiben GPT-6, `sol_6_1` bezeichnet GPT-6.1 Sol.
+Bestehende qualifizierte Dateinamen behalten ihr Modell-/Effortpaar;
+frühere Basisdefaults bleiben als ausdrücklich benannte Varianten erreichbar.
+Terra, 5.6- und GPT-6-Sol-Varianten sowie Astra bleiben explizite Optionen.
+Sol 6.1 unterstützt `low`, `medium`, `high`, `xhigh` und `max`, aber weder
+`none` noch `minimal`; sein API-Default `medium` legt unsere Rollen nicht fest.
+Die verfügbaren Modell-/Effortpaare stehen nur in
 der Registry; Effortnamen sind zwischen Generationen nicht gleichwertig.
 
 Die normalen und komplexen Parent-Profile sowie Qualitäts- und Reviewoptionen
@@ -27,6 +34,11 @@ stehen in `profiles/`. Projektrollen stehen im Lieferziel `.codex/agents/`;
 `.codex/config.toml` enthält ihre Registrierungen und vorsichtige Rechtevorgaben,
 aber keinen globalen Parent-Modellpin. Die acht möglichen Child-Threads sind
 nur eine Obergrenze, keine Pflicht zur Delegation oder belegte verfügbare Kapazität.
+`coordinator_standard` verwendet Sol 6.1 Medium; `coordinator_deep` und
+`review_deep` verwenden Sol 6.1 High. Die ausdrückliche Astra-High-Reviewoption
+bleibt erhalten. `quality_build` bevorzugt Astra Max und bietet zusätzlich
+Sol 6.1 Max sowie die bisherigen Sol-Max-Varianten. Ein Astra-Parent ändert
+die ausdrücklich gepinnten Child-Modelle nicht automatisch.
 
 Für alle acht Empfänger ist seit der Nutzerentscheidung vom 2026-09-17
 ausschließlich Variante 2 maßgeblich: alle 28 Basisrollen binden Modell und
@@ -70,18 +82,23 @@ für denselben Benutzer dasselbe `CODEX_HOME` verwenden. Projektregeln und die
 oben beschriebene Konfigurationspriorität bleiben wirksam.
 
 Installation und sichtbarer Werkzeugkatalog sind keine Handlungsfreigabe.
-Die gelieferte Projektbasis behält `workspace-write`, `on-request`, Reviewer
-`user` und bei Apps `writes`; destruktive und Open-World-Werkzeuge sind zunächst
-gesperrt. Ein ausdrücklich genehmigter Hoststandard gehört in die
-Benutzerkonfiguration. Er darf nicht ungefragt zum allgemeinen Consumerdefault
-werden. Ob konkrete Projekt- oder Werkzeugregeln ihn übersteuern, muss die
-zuständige Umgebung anhand der wirksamen Konfiguration prüfen.
+Die gelieferte Projektbasis behält `workspace-write`, `on-request` und bei Apps
+`writes`; destruktive und Open-World-Werkzeuge sind zunächst gesperrt. Sie
+setzt keinen pauschalen `approvals_reviewer`-Wert. Ohne irgendeinen wirksamen
+Reviewer-Override greift der versionsbezogene Built-in-Default. Vorhandene
+Host- und höher priorisierte Overrides können anders entscheiden; bewusst
+gesetzte projektspezifische Einschränkungen bleiben möglich. Das Entfernen
+des Felds konfiguriert daher nicht alle Hosts gleich. Einen ausdrücklich
+genehmigten Hoststandard nur in dessen Benutzerkonfiguration setzen und die
+wirksame Konfiguration dort prüfen.
 
 Die [native Konfigurationsreferenz](https://learn.chatgpt.com/docs/config-file/config-reference)
 unterscheidet App-Aktivierung, Werkzeugfreigabe und Reviewer. Bei ausdrücklich
 genehmigten Apps können `destructive_enabled` und `open_world_enabled` gezielt
-aktiviert werden; benötigte menschliche Aktionsfreigaben weiterhin mit Reviewer
-`user` vorsehen. App- und Werkzeugoverrides mitprüfen.
+aktiviert werden. Werkzeugkatalog und Reviewer sind getrennte Einstellungen:
+Verfügbarkeit erteilt keine einzelne Aktionsfreigabe. App- und
+Werkzeugoverrides sowie die für eine konkrete Aktion wirksame native Prüfung
+mitprüfen.
 
 [MCP-Richtlinien](https://learn.chatgpt.com/docs/extend/mcp) gehören für eigene
 Server unter `mcp_servers.<server>`, für Pluginserver unter
@@ -156,8 +173,14 @@ listet teils nur Werte bis `xhigh`. Hier bleiben die anhand Modellseite und
 Schema belegten Qualitätsoptionen erhalten. Daraus folgt keine Garantie, dass
 jede ältere CLI oder Oberfläche diese Auswahl anbietet.
 
-`service_tier` wird aus dem gewählten Speedmodus erzeugt. Der Standard fordert
-keinen Priority-/Fastmodus an. Die Registry hält für einen *nicht aktiven*
+`service_tier` wird aus dem gewählten Speedmodus erzeugt. Die Parent-
+Profildateien behalten `service_tier = "default"` für Standard-Speed.
+Nach der aktuellen [Subagentenreferenz](https://learn.chatgpt.com/docs/agent-configuration/subagents)
+folgt der Service-Tier der Root-Sitzung. Die vorhandenen generierten
+Child-Einträge `service_tier = "default"` erzwingen deshalb keinen unabhängigen
+Standardmodus gegen einen Fast-Parent und sind keine Sicherheits- oder
+Kostengarantie. Für Standard-Speed die Root-Sitzung entsprechend wählen.
+Die Registry hält für einen *nicht aktiven*
 Fastmodus den nativen Codex-Konfigurationswert `service_tier = "fast"` und
 getrennt den Requestwert `priority` fest; letzterer ist kein direkt in TOML
 einzutragender Speedwert. Die tatsächliche Verfügbarkeit und Aktivierung hängen
@@ -166,7 +189,8 @@ und inkludierter Abonnementverbrauch sind verschiedene Größen; aus der
 Modellwahl folgt keine feste Ersparnis oder Nachrichtenmenge.
 `execution_mode` und `ultra` sind beschreibende
 Registry-Metadaten, keine erfundenen nativen Schalter; höchste Reasoningqualität
-ist nicht automatisch Fast oder ein gesonderter Ausführungsmodus.
+(`max`) ist weder Fast noch Ultra. Fast, Ultrafast und Ultra werden durch
+diese Definitionen nicht aktiviert.
 Der frühere Spark-Kandidat wurde nach seiner Einstellung aus aktiven
-Auswahlpfaden entfernt. Bisherige dokumentierte 5.6-Alternativen bleiben
+Auswahlpfaden entfernt. Bisherige dokumentierte 5.6- und GPT-6-Alternativen bleiben
 ausdrücklich wählbar, solange der jeweilige Client sie bereitstellt.

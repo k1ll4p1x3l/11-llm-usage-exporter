@@ -1131,3 +1131,15 @@ after fresh all-green readbacks at each stage.
 - No check is waived. Ready, merge, and cleanup remain fail closed until the
   new head has a successful CodeQL comparison check and every other applicable
   gate is successful.
+
+
+## 2026-10-16 — DIST94 approved security baseline correction
+
+Source issue #94 and the user's explicit dependency/toolchain extension authorize
+Go `1.26.6` → `1.26.9` for the seven current hosted govulncheck findings
+GO-2026-6617/6613/6612/6611/6608/6607/6603. CI, security, release preparation,
+developer checks and active version documentation use the same patch baseline.
+Historical checkpoints remain historical. No workflow trigger, permission,
+scanner, module compatibility directive, provider or release action changes.
+Static diff/shell checks precede push; fresh native PR and main CI remain gates.
+No local toolchain installation, provider access or host activation performed.
