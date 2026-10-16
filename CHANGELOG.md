@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-16 — Central Sol 6.1 definitions (DIST94-20261016-R1)
+
+Adopt managed definitions from `04-llm-essentials@eec27d472b8b26f7f59fab4094f3a979b6bdbec1`:
+8 Luna 6 High base roles, 11 Sol 6.1 Medium and 9 Sol 6.1 High. Astra and
+explicit older variants remain repository choices. This includes source PR #92's
+rules: no blanket `approvals_reviewer = "user"` overrides; native defaults
+and existing host/project overrides determine the effective reviewer.
+No new blanket reviewer setting. Parent examples remain inactive; no host
+activation or agent/model execution. Account/client availability is unverified.
+
 ## 2026-09-17 — Variante 2 und Reviewkorrekturen
 
 Feste Modell-/Effortbindungen der 28 Basisrollen und native Obergrenze 8 sind
