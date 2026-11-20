@@ -28,6 +28,16 @@ Consumer-eigene Projektregeln und Fachwissen bleiben lokale Quellen.
   Höhere Qualität, andere Rolle oder Modellwechsel erweitert keine Rechte.
   Native Einstellungen und verfügbare Kapazität beachten, keine Probeaufrufe
   allein zum Beweisen einer Modellwahl voraussetzen.
+- Für Subagenten und T3-Delegation `budget-aware-orchestration` und die passende
+  Rolle aus [ROLES.md](.agent-core/ROLES.md) lesen. Wenn der native Weg angeboten
+  und nach den wirksamen Provideranweisungen zulässig ist, die konkrete Rolle
+  als `agent_type` wählen. Bei T3 `delegate_task` Providerinstanz ausdrücklich
+  aus den Fähigkeiten wählen und Modell, Reasoning sowie vollständige
+  Rolleninstruktionen aus der gewählten nativen Datei übertragen. T3s generisches
+  `role` lädt keine Codex-Rolle; fehlende Werte nicht still vom Parent übernehmen.
+  Kontext, passende Skillpfade, Quellenstand, Schreibzuständigkeit und Ergebnis
+  im Teilauftrag nennen. [T3-Ablauf und Grenzen](.agent-core/CONFIGURATION.md#t3-code-und-delegierte-aufgaben)
+  beachten; fehlende Fähigkeiten oder Rechte nicht durch einen anderen Weg umgehen.
 - Passende Prüfungen der Consumer-Software nach Auftrag und Projektregeln
   durchführen. Eng beginnen; breiter nur bei Anlass. Negative Befunde bleiben
   offen, bis passende neue Evidenz vorliegt. Optionale Ideen separat festhalten.
