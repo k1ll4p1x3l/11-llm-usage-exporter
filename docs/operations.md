@@ -86,10 +86,16 @@ Run the full local check gate:
 ./scripts/check.sh
 ```
 
-The project expects Go `1.26.9`, GoReleaser `v2.16.0`, Syft `v1.44.0` for release SBOM
+The project expects Go `1.26.11`, GoReleaser `v2.16.0`, Syft `v1.44.0` for release SBOM
 generation, Gitleaks `v8.30.1`, actionlint `v1.7.12`, and govulncheck
 `v1.1.4`. The full check creates only an unpublished snapshot and verifies it
 with `scripts/verify_release_artifacts.py`.
+
+The Agent Core checkpoint runs `scripts/verify_agent_core.py`: it requires the
+current `essentials-files-v1` public lock and checks every declared file hash
+and Git executable mode, with invalid paths and symlinks failing closed.
+Consumer-owned files remain outside that ownership map. Complete source-pinned
+adoption checks follow `docs/REPO_POLICY.md`.
 
 ## Milestone practice
 

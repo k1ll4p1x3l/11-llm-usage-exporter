@@ -126,9 +126,10 @@ Useful docs:
 
 ## Development
 
-- Maintainer security baseline: Go `1.26.9` with govulncheck `v1.1.4`.
+- Maintainer security baseline: Go `1.26.11` with govulncheck `v1.1.4`.
 - `scripts/dev-env-check.sh`
 - `scripts/check.sh`
+- `python3 scripts/verify_agent_core.py` for public Agent Core lock integrity
 - `go test ./...`
 - `go test -race ./...`
 - `go vet ./...`

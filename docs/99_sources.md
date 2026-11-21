@@ -75,3 +75,12 @@
 
 - Go 1.26.9 release history — https://go.dev/doc/devel/release#go1.26.9 (released 2026-10-08; checked 2026-10-16; current security baseline)
 - Go vulnerability database — https://pkg.go.dev/vuln/GO-2026-6617 (checked 2026-10-16; representative current finding fixed in Go 1.26.9; hosted govulncheck validates all seven findings)
+
+
+## Go 1.26.11 security baseline (2026-11-21)
+
+- Go 1.26.11 release history — https://go.dev/doc/devel/release#go1.26.11 (released 2026-11-10; checked 2026-11-21; the current 1.26 patch release includes the remaining `net/http` fix).
+- Go vulnerability database — https://pkg.go.dev/vuln/GO-2026-6859 (checked 2026-11-21; affected `net/http` versions before Go 1.26.11, matching the hosted finding under Go 1.26.9).
+- Go vulnerability database — https://pkg.go.dev/vuln/GO-2026-6809 (checked 2026-11-21; affected `crypto/x509` versions before Go 1.26.10, also fixed by the cumulative Go 1.26.11 baseline).
+- Official Go download metadata — https://go.dev/dl/?mode=json&include=all (checked 2026-11-21; used to verify the scoped Linux amd64 Go 1.26.11 archive before local validation).
+- Pinned central sync implementation — https://github.com/k1ll4p1x3l/04-llm-essentials/blob/111caf0d31fbf3f277c22616d38a8d02dd46844a/scripts/sync_files.py (checked 2026-11-21; authoritative `essentials-files-v1` lock shape, public namespaces, SHA-256 records and canonical Git executable modes).
