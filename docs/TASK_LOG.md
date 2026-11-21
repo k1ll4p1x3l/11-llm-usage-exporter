@@ -1143,3 +1143,75 @@ Historical checkpoints remain historical. No workflow trigger, permission,
 scanner, module compatibility directive, provider or release action changes.
 Static diff/shell checks precede push; fresh native PR and main CI remain gates.
 No local toolchain installation, provider access or host activation performed.
+
+
+## 2026-11-21 — Agent Core rollout companion: Go 1.26.11
+
+### Bound scope and evidence
+
+- The current Agent Core sync PR #51 is based on source
+  `111caf0d31fbf3f277c22616d38a8d02dd46844a`; its current head is
+  `6a2e67335d466cba8835b046c0f1f63b54327771`.
+- The hosted security job `136005920637` failed under Go `1.26.9` with
+  reachable standard-library findings `GO-2026-6859` and `GO-2026-6809`.
+  Their published fixed versions are Go `1.26.11` and `1.26.10` respectively.
+- This companion change updates the existing Go patch-version pins and
+  their active documentation to `1.26.11`, with source and changelog evidence.
+  The existing consumer-owned Agent Core source/count fields in `VERSIONS.md`
+  are corrected to the delivered public source above and 558 managed files.
+  Historical checkpoints remain historical. No module dependency, compatibility
+  directive, scanner version, workflow trigger/permission, or managed Agent
+  Core file changes are part of this patch.
+- Work is isolated in a linked worktree from the exact sync-PR head. The
+  official Linux amd64 Go archive was verified against its published SHA-256
+  before use in the task-scoped validation environment.
+
+### Consumer lock compatibility correction
+
+- The existing local full gate still expected the obsolete `schema`, `version`,
+  and `source_commit` lock fields and rejected the newly delivered lock.
+- No existing consumer checker validated this format. Replace that obsolete
+  block with `scripts/verify_agent_core.py`, reusing the existing stable file
+  reader. Require `essentials-files-v1` and the public profile; verify every
+  declared hash and Git executable mode. Require the `AGENTS.md` ownership entry and reject even undeclared content
+  in the reserved private area. Reject unsafe, private, non-managed, duplicate,
+  case-colliding, symlinked, or malformed entries and missing declared files.
+- The verifier preserves unmanaged consumer files and does not replace the
+  required independent comparison against the complete pinned source manifest.
+  No ownership lock or centrally managed file was changed.
+- Ten focused regression tests cover valid public content and unmanaged
+  preservation, changed/missing files, executable modes, unknown format,
+  private profile, empty ownership, invalid/extra paths, malformed metadata,
+  duplicate keys, case collisions, symbolic links, omitted `AGENTS.md` ownership,
+  and undeclared private content.
+
+### Validation and remaining integration
+
+- Go formatting, tests, race detection, vet, and govulncheck passed with
+  Go `1.26.11` and govulncheck `v1.1.4`; the vulnerability scan found no findings.
+  actionlint and Gitleaks also passed. Existing public-safety/artifact tests and
+  the ten new lock regression tests passed; the actual 558-file lock passed.
+- An initial local snapshot exposed Go VCS discovery of a parent repository
+  instead of the linked worktree. The bounded process environment now names
+  the actual Git directory and worktree obtained from `git rev-parse`.
+  A fresh build retained VCS stamping and verified the real base revision above
+  with `vcs.modified=true`. No VCS check or worktree guard was disabled.
+- The final `scripts/check.sh` passed completely with that verified process
+  environment: formatting, Go tests/race/vet, govulncheck (zero findings),
+  actionlint/ShellCheck, Gitleaks, all 558 declared hashes/modes, public safety,
+  all 25 Python tests, and GoReleaser health/configuration/snapshot checks.
+- The unpublished snapshot contains all six Linux/macOS/Windows amd64/arm64
+  archives and six SBOMs; the independent archive/checksum/SBOM contract passed.
+  Every built binary retains Go `1.26.11`, the actual base VCS revision, and
+  `vcs.modified=true`. No release or tag was published.
+- Independent review identified and closed two verifier gaps: the required
+  `AGENTS.md` entry and undeclared content in the reserved private area.
+  Their regression tests and the actual public payload were independently
+  rechecked successfully. Fresh native CI and final remote integration
+  readbacks remain required for integration.
+- Existing milestone `0.5-beta` (number 5) is the established milestone for
+  recent consumer Agent Core and Go-security updates. The primary integrator assigned it to PR #51 and verified number 5/open
+  through a fresh GitHub readback.
+- No remote mutation, release, tag, repository-setting change, provider access,
+  credential operation, or host activation has been performed by this local
+  patch. Rollback is the revert of this bounded toolchain/documentation diff.

@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-11-21 — Go 1.26.11 security baseline
+
+Raise the existing CI, security, release-preparation, and developer Go baseline
+from `1.26.9` to `1.26.11` to address the reachable standard-library findings
+`GO-2026-6859` (`net/http`) and `GO-2026-6809` (`crypto/x509`) reported by the
+Agent Core sync pull request's hosted `govulncheck` job. Keep the Go `1.25.0`
+module compatibility directive, dependencies, scanner versions, workflow
+triggers, permissions, and all validation gates unchanged. This toolchain
+correction does not publish a release or activate a local provider or host.
+Official release and advisory evidence is recorded in `docs/99_sources.md`.
+
+Refresh the existing consumer Agent Core source/count fields to the delivered
+public payload at `111caf0d31fbf3f277c22616d38a8d02dd46844a` (558 managed
+files). The ownership lock remains authoritative; no runtime activation is
+claimed by this documentation correction.
+
+Replace the obsolete Agent Core lock metadata check with fail-closed validation
+of the current `essentials-files-v1` public lock, every declared file hash and
+Git executable mode, and safe public ownership paths. Preserve consumer-owned
+files and the separate complete pinned-source adoption checks.
+
 ## 2026-10-16 — Central Sol 6.1 definitions (DIST94-20261016-R1)
 
 Adopt managed definitions from `04-llm-essentials@eec27d472b8b26f7f59fab4094f3a979b6bdbec1`:
