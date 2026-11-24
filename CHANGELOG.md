@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-24 — Agent Core 3.0.1
+
+Adopt the public Agent Core configuration from Essentials 3.0.1 at
+`80e615709e9a2414ef4b7ad716e2e6c6d173d89b`. The sync delivers 79 managed files,
+removes 480 retired managed paths, and updates the ownership lock.
+
 ## 2026-11-21 — Go 1.26.11 security baseline
 
 Raise the existing CI, security, release-preparation, and developer Go baseline
