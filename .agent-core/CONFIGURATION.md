@@ -1,313 +1,248 @@
 # Konfiguration und spätere Verwendung
 
-Stand: 2026-11-19; Quellen zu Sol/Astra 6.2, Terra 6.1, Skills und T3: 2026-11-19;
-historische Modell- und Speedquellen: 2026-09-22/2026-10-16;
-Quellenzugriff zu Erweiterungen: 2026-09-16, sonst 2026-09-12.
-Gewünschte Einstellung, dokumentierte Fähigkeit und tatsächlich beobachtetes
-Verhalten sind verschiedene Aussagen.
-Hier liegen Definitionen vor; Konto-/Oberflächenverfügbarkeit bleibt unbekannt.
+Quellenstand 23.11.2026. Der Produktvergleich bezieht sich auf Codex 0.171.0
+und T3 Stable v0.1.11, Commit `59651c1761f6c63e9b6056839067066968e6a406`.
+Die tatsächlich laufende Host-/Clientkonfiguration ist gesondert zu prüfen.
 
 ## Quellen und Dateien
 
-`orchestration/roles/*.json` pflegt Rolle, Alias, Aufgabe und Modellklassen;
-`orchestration/registry.v1.json` pflegt Modelle, Efforts, Speedmodus und Profile.
-Die nativen Dateien sowie [Rollenübersicht](ROLES.md) werden daraus erzeugt.
-Keine automatische Routingengine oder Modellersatzkette. Die Klassen nennen
-nur ausdrücklich wählbare Optionen; Mehrfachzuordnungen erzeugen keine Dubletten.
-Mit #99 verwenden die acht Economy-Basisrollen weiterhin GPT-6 Luna High;
-elf Balanced-Rollen verwenden GPT-6.2 Sol Medium und drei Balanced-Deep- sowie
-sechs Deep-Rollen GPT-6.2 Sol High. Balanced-Deep und Deep bleiben fachlich
-getrennte Klassen. Das sind bewusste
-Repository-Vorgaben nach Aufgabe und Risiko, keine Herstellerdefaults oder
-gemessenen Effizienzgewinne. `sol`/`luna` bezeichnen weiterhin GPT-5.6;
-`sol_6`/`luna_6` bleiben GPT-6, `sol_6_1` bezeichnet GPT-6.1 Sol.
-`sol_6_2`, `astra_6_2` und `terra_6_1` sind neue generationseindeutige Schlüssel;
-`astra` und `terra` behalten ihre bisherigen Modell-IDs.
-Bestehende qualifizierte Dateinamen behalten ihr Modell-/Effortpaar;
-frühere Basisdefaults bleiben als ausdrücklich benannte Varianten erreichbar.
-Die aktuellen Terra- und Astra-Optionen ergänzen die historischen Varianten.
-Die [Modellauswahl](https://learn.chatgpt.com/docs/model-selection) nennt Sol 6.2
-für normale Arbeit und Astra 6.2 für komplexe Projekte; die konkrete
-Rollenverteilung ist eine Repositoryentscheidung. API-Modellseiten und ein
-einzelner T3-Katalog beweisen keine Verfügbarkeit in jedem Client/Konto.
-Die verfügbaren Modell-/Effortpaare stehen nur in
-der Registry; Effortnamen sind zwischen Generationen nicht gleichwertig.
+Im Autorenrepository liegen Rolle, Alias, Aufgabe und konkrete Variantenwahl
+unter `orchestration/roles/`. Die Registry enthält den Modellkatalog und die
+festen Parentprofile. Die kurze [Rollenübersicht](ROLES.md) führt zur jeweiligen
+nativen Definition und zur Begründung der angebotenen Auswahl.
 
-Die normalen und komplexen Parent-Profile sowie Qualitäts- und Reviewoptionen
-stehen in `profiles/`. Projektrollen stehen im Lieferziel `.codex/agents/`;
-`.codex/config.toml` enthält ihre Registrierungen und vorsichtige Rechtevorgaben,
-aber keinen globalen Parent-Modellpin. Die acht möglichen Child-Threads sind
-nur eine Obergrenze, keine Pflicht zur Delegation oder belegte verfügbare Kapazität.
-`coordinator_standard` verwendet Sol 6.2 Medium; `coordinator_deep` und
-`review_deep` verwenden Sol 6.2 High. Die ausdrückliche Astra-6.2-High-Reviewoption
-ergänzt die bisherige Astra-Option. `quality_build` bevorzugt Astra 6.2 Max und
-bietet zusätzlich Sol 6.2 Max sowie die bisherigen Astra-/Sol-Max-Varianten.
-Ein Astra-Parent ändert
-die ausdrücklich gepinnten Child-Modelle nicht automatisch.
+Die Lieferung enthält 28 fachliche Basisrollen und gezielte Varianten in
+`.codex/agents/`. Die Projektbasis `.codex/config.toml` hält die aktiven
+Registrierungen und die nativen Child-Einstellungen, einschließlich der
+Projektobergrenze von acht parallelen Children. Verwende nur die für die
+Aufgabe erforderliche Parallelität innerhalb der tatsächlichen Limits.
 
-Für die Consumer ist seit der Nutzerentscheidung vom 2026-09-17
-ausschließlich Variante 2 maßgeblich: alle 28 Basisrollen binden Modell und
-Effort ausdrücklich; `max_concurrent_threads_per_session = 8` ist die native
-Projektobergrenze. Die frühere Zusage von Modellvererbung und Grenze 4 ist
-abgelöst. Consumer-eigene Dokumentation und Orchestrierungsrichtlinien müssen
-dazu passen. Engere tatsächlich wirksame Plattformgrenzen und auftragsbezogene
-Budgets bleiben verbindlich; die Definition verleiht keine zusätzliche Kapazität.
+Die Parentprofile in `profiles/` sind inaktive Beispiele. Für eine bewusst
+gewählte Benutzerkonfiguration unterstützt Codex separate Dateien
+`<profil>.config.toml` im Codex-Benutzerverzeichnis und die Auswahl mit
+`--profile`. Die Projektbasis setzt keinen Parent-Modellpin.
+[Codex-Profile](https://learn.chatgpt.com/docs/config-file/config-advanced)
 
 ## Geltung und Priorität
 
-Nach der [Konfigurationsdokumentation](https://learn.chatgpt.com/docs/config-file/config-basic)
-gelten CLI-Overrides vor vertrauenswürdiger Projektkonfiguration, danach das
-gewählte Benutzerprofil, Benutzerkonfiguration, Cloud-/Systemdefaults und
-Built-ins. Native erzwungene Richtlinien sind davon getrennt und bleiben wirksam.
-Ein Skill kann keinen Desktop-Picker korrigieren.
+CLI-Overrides haben Vorrang vor vertrauenswürdiger Projektkonfiguration,
+danach folgen gewähltes Benutzerprofil, Benutzerkonfiguration und Defaults.
+Erzwungene native Richtlinien bleiben wirksam.
+[Konfigurationspriorität](https://learn.chatgpt.com/docs/config-file/config-basic)
 
-[Profile](https://learn.chatgpt.com/docs/config-file/config-advanced) sind seit
-Codex 0.134.0 separate `<profil>.config.toml`-Dateien im Codex-Benutzerverzeichnis;
-`--profile <profil>` wählt sie aus. Die hier gelieferten Dateien sind Beispiele
-im Repository, keine aktivierte Benutzerinstallation. Eine spätere bewusste
-Übernahme in die Benutzerebene liegt beim Nutzer; vorhandene Konfiguration und
-explizite Auswahl nicht überschreiben. Alte `[profiles.name]`-Tabellen entfallen.
-
-Bei [Custom Agents](https://learn.chatgpt.com/docs/agent-configuration/subagents)
-gewinnt ein Modell-/Effortwert in der Agentendatei vor dem zuvor aus Spawnwert,
-`agents`-Default und Parent ermittelten Wert. Deshalb pinnt jede gewählte
-Rollenvariante Modell und Effort zusammen. Für eine abweichende ausdrückliche
-Wahl eine passende Variante auswählen; keinen stillen Override behaupten.
-`name`, `description` und `developer_instructions` sind erforderlich.
-Live-Rechte des Parents werden erneut angewendet: eine read-only-Vorgabe im
-Rollenfile ist deshalb keine alleinige Sicherheitsgarantie.
+Codex berücksichtigt die Werte `model` und `model_reasoning_effort` der
+gewählten Agentendatei nach der Auswahl aus Spawnwert, `agents`-Default und
+Parent. Der Pin in der Datei hat Vorrang. Verwende für eine abweichende Wahl
+eine passende angebotene Variante. `name`, `description` und
+`developer_instructions` beschreiben die native Rolle. Childdateien binden
+Modell und Effort. Die Root-Sitzung bestimmt die wirksamen nativen Grenzen
+und den Service-Tier der Children.
+[Subagentenreferenz](https://learn.chatgpt.com/docs/agent-configuration/subagents)
 
 ## T3 Code und delegierte Aufgaben
 
-Quellcodeabgleich: T3 v0.1.10, Revision
-`7d32075e3757ded707914e2450c3e392a9665765`, gelesen am 2026-11-19.
-Die folgenden Regeln beschreiben diese Schnittstelle; bei anderen Versionen
-gelten die tatsächlich angebotenen Werkzeuge und wirksamen Anweisungen.
-Es wurde keine lokale Provider-/Agentenausführung geprüft.
+Der Skill `budget-aware-orchestration` führt den operativen Ablauf. Die
+T3-`role`-Kategorien laden keine Codex-Rollendateien. `delegate_task` übernimmt
+keine Parent-Historie und erstellt die Child-Nachricht mit leeren Attachments.
+Freigaben, benötigte Quellen und zugängliche Bilder müssen im Teilauftrag
+konkret zugeordnet sein. Ein Child-Worktree beginnt am Parent-Commit.
+[MCP-Vertrag](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/packages/contracts/src/orchestratorMcp.ts),
+[Delegationsserver](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/mcp/OrchestratorMcpService.ts),
+[Orchestrierungsanweisungen](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/packages/provider-core/src/server/orchestrationInstructions.ts)
 
-### Den angebotenen Delegationsweg verwenden
+Fehlt `target.model`, kann die gleiche Instanz die Parentauswahl übernehmen,
+eine andere Instanz eine eigene Vorgabe. Optionen werden abhängig von
+Instanz und Modell geerbt oder überschrieben. Ein explizit leeres Optionsobjekt
+löscht sie. Beim nächsten Turn werden ausgewählte Werte nach den tatsächlich
+unterstützten Update-Regeln angewandt. Beim Nutzer-Steering reicht T3 die
+Pickerwahl an den Adapter weiter. Der Payload von `turn/steer` enthält die
+Eingabe und die Ziel-IDs, aber keine Modell- oder Effortwerte. Im unterstützten
+manuellen Codex-Pfad kann der Adapter zuvor einen gesetzten Service-Tier per
+`thread/settings/update` übermitteln. Schlägt das Update fehl, protokolliert
+der Adapter eine Warnung und setzt das Steering fort. Pickerwahl, bestätigte
+Übermittlung und tatsächliche Anwendung auf einen Request sind getrennt zu
+belegen. Daraus folgt keine rückwirkende Änderung bearbeiteter Requests oder
+ihrer Kosten. Custom Models und angebotene allgemeine
+Optionswerte sind Auswahlhinweise. Prüfe bei konkretem Bedarf die tatsächliche
+Providerantwort und beobachtete Ausführung getrennt.
+[Delegationsserver](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/mcp/OrchestratorMcpService.ts),
+[Nutzer-Steering](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/orchestration-v2/Orchestrator.ts#L6522-L6565),
+[Manualadapter](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/provider/Drivers/CodexDriver.ts#L243-L258),
+[Tier-Update](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.ts#L7931-L7957),
+[Steering-Aufruf](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.ts#L8245-L8263),
+[Composer](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/composer.md)
 
-Die [T3-Orchestrierungsanweisungen](https://github.com/pingdotgg/t3code/blob/7d32075e3757ded707914e2450c3e392a9665765/packages/provider-core/src/server/orchestrationInstructions.ts)
-sehen native Subagenten vor, wenn Provider, angebotenes Modell und Einstellungen
-dazu passen. Für andere Provider, ausdrücklich gewünschte Einstellungen,
-getrennte Worktrees, Hintergrundaufträge oder ausdrücklich verlangte T3-Delegation
-verwenden sie `delegate_task`. Keine native Fähigkeit erzwingen oder einen
-gesperrten Weg über CLI, zusätzliche Threads oder andere Konten ersetzen.
-Bei nativer Auswahl die angebotene Rollen-ID als `agent_type` verwenden;
-die Rollenvariante bestimmt Modell und Effort.
+### Providerpfad und Rechte
 
-Für T3 vor dem ersten `delegate_task` im Thread `orchestrator_capabilities`
-lesen, erneut nur nach Fehler oder ausdrücklich geändertem Provider. Eine
-kurze Modellauswahl ist kein vollständiger Katalog; bei Bedarf die angebotene
-Modellsuche verwenden. Instanz-ID und unterstützte Optionen aus diesem
-Ergebnis nehmen. Ein nicht angebotenes Modell nicht ungefragt ersetzen.
+Managed- und Manual-Instanzen können unterschiedliche Binaries, Benutzerstände
+und Startparameter nutzen. Prüfe bei einem konkreten Betriebsproblem die im
+Thread gewählte Instanz, deren tatsächlich gestartete Binary und Version,
+`CODEX_HOME` beziehungsweise Shadow-Home, den Projektpfad und die
+Launch-Overrides. Shell-`codex`, GUI-Updateanzeige und T3-Serverversion
+belegen diese Angaben einzeln nicht. Änderungen am Providerstart gelten
+für entsprechend neu gestartete Sitzungen.
+[Codex-Provider](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/providers-codex.md)
 
-### Die gewählte Codex-Rolle ausdrücklich übertragen
+Im geprüften verwalteten Startpfad setzt T3 beide nativen Multi-Agent-Flags
+auf `false`. Je nach Runtime-Modus gibt der Adapter ausdrückliche
+Approval-/Sandboxwerte an den App-Server weiter. Prüfe den angebotenen Weg
+und effektive Rechte der konkreten Instanz. Mandat, native Approval- und
+Sandboxgrenzen sowie tatsächliche Dienstrechte gelten unabhängig voneinander.
+`never` erweitert keine Sandbox. Eine Sitzungserlaubnis begründet kein
+dauerhaftes Mandat. Stimmen Laufzeit-Overrides und Permission Profiles nicht
+nachweislich zusammen, erzwinge ihre Kombination nicht. Native Auto-Reviews
+und technische Ablehnungen bleiben wirksam.
+[Verwalteter Startpfad](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/provider/CodexManagedRuntime.ts),
+[Codex-Adapter](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.ts)
 
-Die generierte [Basistabelle](ROLES.md#basisrollen-für-native-auswahl-und-t3)
-zeigt die Defaults; für eine Variante deren `.codex/agents/<name>.toml` lesen.
-Die [T3-Schnittstelle](https://github.com/pingdotgg/t3code/blob/7d32075e3757ded707914e2450c3e392a9665765/packages/contracts/src/orchestratorMcp.ts)
-hat keinen `agent_type`-/`config_file`-Parameter. Das generische `role` ersetzt
-keine native Rolle. Die Zuordnung folgt diesen Quellen:
+### Modell, Tempo und Verbrauch
 
-| T3-Feld / Auftragsinhalt | Verbindliche Herkunft |
+Standardtempo bleibt die Ausgangseinstellung. `service_tier = "default"`
+in den Parentbeispielen konfiguriert die Root-Sitzung, sofern das Profil
+bewusst gewählt wird. Codex-TOML `fast` entspricht dem Request-/T3-
+Optionswert `priority`. Setze abweichendes Tempo nur bei ausdrücklicher
+Auswahl und tatsächlicher Verfügbarkeit. `max` bezeichnet einen
+modellabhängigen Effort. Beschreibungen von Ausführungsmodi ergeben
+keine zusätzlichen nativen Schalter.
+[Konfigurationsreferenz](https://learn.chatgpt.com/docs/config-file/config-reference),
+[Codex-Adapter](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.ts)
+
+Angeforderte Auswahl, optionales `executedModel` aus der Providerantwort
+und nachgewiesene Anwendung sind getrennte Angaben. T3s Codex-Turnwert
+`usageScope: main_agent` ist auf den Hauptagenten bezogen. `hasSubagents`
+kennzeichnet die Beteiligung weiterer Agenten. Für die Usage-Ansicht
+zählt die tatsächlich verfügbare Historie. API-äquivalente Schätzung,
+zusätzliche Zahlung und Abonnementverbrauch sind unterschiedliche Größen.
+Ohne geeignete Daten bleibt der Gesamtverbrauch unbekannt.
+[Turnverbrauch](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/provider/CodexTurnTokenUsage.ts#L136-L170),
+[Usage](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/usage.md)
+
+### Native Goals und Wiederaufnahme
+
+`/goal <Zieltext>` setzt in einer unterstützten Codex-Konstellation ein Ziel,
+`/goal` zeigt seinen Status. Codex unterstützt `/goal pause`, `/goal resume`
+und `/goal clear`. Der geprüfte Slash-Pfad begrenzt Ziele auf 4.000
+Unicode-Zeichen, behandelt eine Nachricht mit Anhängen als gewöhnlichen
+Prompt und übermittelt kein frei gewähltes Tokenbudget. Umfangreiche
+Spezifikationen oder Bilder vorher zugänglich machen und im separaten
+knappen Goal auf die maßgeblichen Quellen verweisen. Der native Schemaweg
+kennt Budgetdaten. Ein Plan-Goal bleibt im Plan-Modus. Wenn keine weitere
+native Fortsetzung erfolgt, kann ein offenes Ziel pausieren. Prüfe den
+tatsächlichen Status und die verfügbare Oberfläche.
+[Composer](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/composer.md#goals),
+[Codex-Adapter](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.ts),
+[Codex-Goals](https://learn.chatgpt.com/use-cases/follow-goals)
+
+| Mechanismus | Reichweite im verglichenen Stand |
 | --- | --- |
-| `target.providerInstanceId` | Gewählte verfügbare Instanz aus den Fähigkeiten; keine Host-ID im Standard hinterlegen |
-| `target.model` | `model` der gewählten nativen Rollendatei |
-| `target.options.reasoningEffort` | `model_reasoning_effort` derselben Datei, sofern für dieses Modell angeboten |
-| `target.options.serviceTier` | Standard-Speed: `default`, sofern angeboten; ausdrückliche andere Nutzerwahl erhalten |
-| `role` | Passende T3-Kategorie: `general`, `implementation`, `research`, `review`, `design` oder `test`; keine Essentials-Rollen-ID |
-| `task` | Vollständige `developer_instructions` der Rolle plus konkreter Auftrag, Muss-Punkte, Dateien/Quellenstand, nötiger Kontext, Skills, Freigaben, Schreibzuständigkeit und Ergebnisformat |
-| `isolation` | Bewusst gewähltes gemeinsames Checkout oder von T3 erzeugter Worktree |
+| Continue threads after restarts | Standardmäßig ein. Erfordert den erneut gestarteten Hostserver und passende Provider-Resume-Daten. Wartende Freigaben, Antworten oder Secrets und archivierte, gesnoozte oder settled Threads können die Fortsetzung verhindern. Nach drei aufeinanderfolgenden Crash-Recoveries desselben offenen Turns ist eine Nachricht nötig. Ein beendeter Turn oder geplanter Shutdown setzt den Zähler zurück. |
+| Resume nach Usage-Limit | Option standardmäßig aus. Benötigt einen geeigneten vom Provider gemeldeten Reset und einen verfügbaren Server. Die native Quote bleibt wirksam. |
+| Clientdisconnect | Ein geschlossener Remote-Client lässt den Hostserver separat bestehen. Für Serverbetrieb außerhalb des Clients gibt es den nativen Hintergrunddienst. |
+| `/compact` | Unterstützte Kontextreduktion. Wichtige Entscheidungen gehören in den verfügbaren aktuellen Aufgabenstand. |
+| Restart agent session | Die nächste Nachricht startet die Providersitzung mit dem vorgesehenen Setup im fortgesetzten Gespräch. Prüfe bei Bedarf die tatsächlich wirksamen Einstellungen. |
+| `/clear` | Neuer Providerkontext. In der GUI verbleibende historische Nachrichten sind dem neuen Providerkontext nicht automatisch bekannt. |
+| Children und Hintergrundarbeit | Nach Abbruch tatsächliche Zustände prüfen. T3-verwaltete Delegation und native Child-/Shellprozesse folgen ihrem jeweiligen Lebenszyklus. |
+| Timeouts | Grenzen für Setup, Toolwartezeit, Inaktivität oder Retry beziehen sich auf den jeweiligen Vorgang. |
 
-Der [T3-Server](https://github.com/pingdotgg/t3code/blob/7d32075e3757ded707914e2450c3e392a9665765/apps/server/src/mcp/OrchestratorMcpService.ts)
-übernimmt ohne `target.model` bei derselben Instanz das Parent-Modell; bei einer
-anderen Instanz kann er das erste angebotene Modell wählen. Optionen werden
-nur bei gleicher Instanz und gleichem Modell vererbt, einzelne Angaben ergänzen
-oder überschreiben sie; ein leeres Optionsobjekt löscht sie. Modell und Effort
-deshalb beide setzen. Allein der Wechsel des Modells überträgt den gewünschten
-Effort nicht. Fehlende/unzulässige Werte offenlegen, keine stillen Fallbacks.
+Vor erneuter Mutation tatsächliche Effekte und laufende Arbeit nachlesen.
+Die Wiederaufnahme folgt `long-running-goal` und dem
+[aktuellen Aufgabenstand](templates/HANDOFF.md).
+[Restart-Recovery](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/updating.md#before-you-update),
+[Usage](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/usage.md),
+[Hintergrunddienst](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/background-service.md),
+[Composer](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/composer.md)
 
-Der [Codex-Adapter](https://github.com/pingdotgg/t3code/blob/7d32075e3757ded707914e2450c3e392a9665765/apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.ts)
-verwendet `reasoningEffort` und `serviceTier`. TOML-`service_tier = "fast"`
-nicht als T3-Wert kopieren; ein gewünschter anderer Speed braucht die tatsächlich
-angebotene T3-Option. Sonstige geerbte Optionen nicht als geprüft oder geändert
-darstellen. Kein automatisches Fast, Ultrafast, Ultra oder Daybreak.
+### Lokaler Hauptstand und native Bereinigung
 
-### Kontext, Skills und Checkout
+`Automatically pull` aktualisiert optional geeignete saubere
+Default-Checkouts per Fast-forward vom konfigurierten Upstream. Abweichende
+Branches, ungetrackte oder geänderte Dateien und unabhängige Commits werden
+übersprungen. Prüfe den vereinbarten lokalen Hauptstand nach der Integration.
+[Projekteinstellungen](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/project-settings.md#keep-the-default-branch-current)
 
-Laut [T3-Orchestrierungsdokumentation](https://github.com/pingdotgg/t3code/blob/7d32075e3757ded707914e2450c3e392a9665765/docs/orchestration-v2/orchestrator-mcp-server.md)
-erhält das Child den übergebenen Auftrag und eine optionale Rollenanweisung,
-aber keine kopierte Parent-Historie. Deshalb den fachlichen Auftrag einschließlich
-vorhandener Freigaben selbstständig verständlich formulieren. Passende Skills
-mit ihrem im Zielprojekt zugänglichen Pfad nennen und gezielt lesen lassen;
-eine bloße Nennung ist kein Nachweis erfolgreicher Aktivierung.
+Der native `t3_thread_organize`-Aufruf mit Aktion `settle` kann für den
+eigenen laufenden Thread `settlesWhenTurnEnds` melden. Das bildet die
+Vormerkung ab. Die optionale automatische Bereinigung ist standardmäßig
+aus und erfasst bekannte T3-verwaltete Worktrees. Aktive Sessions, Terminals,
+geteilte Kontexte und andere Guards können die Entfernung verzögern.
+Trigger umfassen Start, Policyänderung und stündliche Sweeps. Null Tage
+Retentionsdauer bedeutet den nächsten zulässigen Sweep. Prüfe auch
+benötigte ignorierte Inhalte wie `.env` vor Freigabe. Branches und
+Threadhistorie bleiben erhalten, ebenso nicht zugeordnete Orphanverzeichnisse.
+[Toolvertrag](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/mcp/toolkits/thread/tools.ts#L33-L55),
+[Cleanupguards](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/storageCleanup.ts#L1277-L1428),
+[Entfernung](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/storageCleanup.ts#L1630-L1642),
+[Projekteinstellungen](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/project-settings.md)
 
-Codex [führt gleichnamige Skills nicht zusammen](https://learn.chatgpt.com/docs/build-skills).
-Bei identischen globalen und projektbezogenen Kopien im Consumer die passende
-Projektquelle eindeutig per Pfad verwenden, sofern keine ausdrückliche andere
-Auswahl gilt. Bei abweichendem Inhalt Herkunft und Stand klären. Globale Kopien
-nicht ungefragt löschen, deaktivieren oder mit Projektwissen überschreiben.
-Ein global installierter Skill löst die oben genannten Projektpfade gegen das
-aktive Projekt auf. Ein T3-Worktree benötigt die dort vorhandenen Projektdateien;
-nicht auf absolute Parent- oder Installationspfade vertrauen.
-
-`shared` verwendet das Parent-Checkout: Zuständigkeiten dürfen sich beim
-Schreiben nicht überschneiden. `worktree` lässt T3 ein separates Checkout
-aus dem Parent-Commit erzeugen; uncommittete Änderungen bleiben außen vor.
-Abhängige Arbeit braucht den tatsächlichen benötigten Stand. Child-Worktrees
-nicht im Shellauftrag anlegen. Ein Integrator prüft die Ergebnisse; keine
-weitere Delegation im Child ohne Auftrag. Dem zurückgegebenen `next` folgen,
-statt laufende Delegationen durch Polling oder neue Threads zu begleiten.
-
-### Provider, Rechte und Ergebnis unterscheiden
-
-Die [Providerdokumentation](https://github.com/pingdotgg/t3code/blob/7d32075e3757ded707914e2450c3e392a9665765/docs/user/providers-codex.md)
-unterscheidet verwaltete ChatGPT-Verbindungen und manuell konfigurierte
-Codex-Instanzen. Eine CLI-Anmeldung wechselt nicht automatisch eine verwaltete
-Verbindung. Bei einer gezielten späteren Betriebsprüfung die im Thread gewählte
-Instanz, deren tatsächliche Binary/Version, `CODEX_HOME`/gegebenenfalls Shadow-Home,
-Projektpfad und Launch-Overrides abgleichen. T3-Serverversion, Shell-`codex`
-und eine zufällig sichtbare Sandboxversion sind keine austauschbaren Belege.
-Launch-Argumente gelten für danach gestartete Sitzungen. Keine automatischen
-Provider-, Login- oder Hoständerungen aus diesen Definitionsdateien ableiten.
-
-Der [verwaltete T3-Startpfad](https://github.com/pingdotgg/t3code/blob/7d32075e3757ded707914e2450c3e392a9665765/apps/server/src/provider/CodexManagedRuntime.ts)
-setzt in dieser Version beide nativen Multi-Agent-Flags auf `false`; daraus
-folgt keine allgemeine Deaktivierung in jeder T3-Instanz. Der Codex-Adapter
-übergibt je nach Runtime-Modus ausdrückliche Approval-/Sandboxwerte an den
-App-Server. Projekt-TOMLs und textliche Rollenregeln beweisen daher nicht allein
-die effektiv wirksamen Rechte. Eine T3-Reviewkategorie ist keine eigene Sandbox;
-der Auftrag erweitert weder Berechtigungen noch Nutzerfreigaben.
-
-Bei der Ergebnisprüfung angeforderte Rolle, Modell und Effort festhalten und
-mit der vorhandenen Rückmeldung vergleichen. `model` bezeichnet die Auswahl;
-das optionale `executedModel` ist eine Providermeldung zur Ausführung und kann
-abweichen oder fehlen. Fehlende Evidenz bleibt unbekannt. Die Modellselbstauskunft
-des Childs ist kein technischer Nachweis. Diese Definitionen verbessern die
-Anweisungen und Nachvollziehbarkeit, erzwingen aber keine T3-seitige Rollenladung.
+Der Bericht unter Settings → Worktrees → Cleanup → Last run ist flüchtig,
+begrenzt und wird beim nächsten Lauf ersetzt. Für verifizierten
+Löschvollzug prüft ein vorhandener externer Kontext den tatsächlichen
+Bestand. Vor Turnende kann der aktive Thread den eingerichteten Nachlauf
+veranlassen und seine offene Verifikation benennen. `runOnSettle` und
+`stopOnSettle` betreffen zugeordnete Projektaktionen. Eigenständige
+Remote-Dateien, Prozesse, Branches und Sicherungen bleiben beim
+Aufgabenabschluss einzeln zu prüfen. Ein gesettelter oder archivierter
+Thread bezeichnet einen Threadzustand.
+[Cleanupbericht und Trigger](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/server/src/storageCleanup.ts#L1907-L2027),
+[Last-run-Anzeige](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/apps/web/src/components/settings/StorageSettings.tsx#L509-L558),
+[Settle und Projektaktionen](https://github.com/pingdotgg/t3code/blob/59651c1761f6c63e9b6056839067066968e6a406/docs/user/thread-sidebar.md)
 
 ## Benutzerweite Erweiterungen und Aktionsfreigaben
 
-Bereits installierte, verbundene und unterstützte Plugins, Apps und Skills
-werden über die nativen Benutzereinstellungen verwaltet. Für neue Chats oder
-Worktrees verlangt diese Definitionsquelle kein zusätzliches Tool-Inventar und
-keine erneute Kopie der Pluginregistrierung. Wenn SSH, Terminal und eine manuelle
-T3-Instanz denselben Benutzerstand verwenden sollen, ihr wirksames `CODEX_HOME`
-gezielt abgleichen; bewusst getrennte Instanzen getrennt lassen. Projektregeln und die
-oben beschriebene Konfigurationspriorität bleiben wirksam.
+Bereits installierte und verbundene Erweiterungen bleiben in der nativen
+Benutzerkonfiguration. Untersuche Probleme am konkret wirksamen Pfad.
+Codex führt gleichnamige Skills getrennt. Nutze die einschlägige Quelle
+explizit und erhalte unabhängige lokale oder globale Kopien.
+[Skills](https://learn.chatgpt.com/docs/build-skills)
 
-Installation und sichtbarer Werkzeugkatalog sind keine Handlungsfreigabe.
-Die gelieferte Projektbasis behält `workspace-write`, `on-request` und bei Apps
-`writes`; destruktive und Open-World-Werkzeuge sind zunächst gesperrt. Sie
-setzt keinen pauschalen `approvals_reviewer`-Wert. Ohne irgendeinen wirksamen
-Reviewer-Override greift der versionsbezogene Built-in-Default. Vorhandene
-Host- und höher priorisierte Overrides können anders entscheiden; bewusst
-gesetzte projektspezifische Einschränkungen bleiben möglich. Das Entfernen
-des Felds konfiguriert daher nicht alle Hosts gleich. Einen ausdrücklich
-genehmigten Hoststandard nur in dessen Benutzerkonfiguration setzen und die
-wirksame Konfiguration dort prüfen.
+Die Projektbasis setzt `workspace-write` und `on-request`. App-Writes
+fordern standardmäßig Freigabe. Open-World- und destruktive App-Werkzeuge
+sind in der Basis gesperrt. Ein wirksamer Reviewer ergibt sich aus der
+Host-/Projektpriorität oder dem versionsbezogenen Built-in-Default.
+Prüfe für eine konkrete Aktion native App- und Tooloverrides und die
+geltende Nutzerfreigabe. `mcp_servers.<server>` gilt für eigene Server,
+`plugins.<plugin>.mcp_servers.<server>` für Pluginserver. Prüfe den
+wirksamen Ort und verwende bei unklarer Klassifikation oder besonders
+sensibler Aktion die erforderliche native Prüfung.
+[Konfigurationsreferenz](https://learn.chatgpt.com/docs/config-file/config-reference),
+[MCP](https://learn.chatgpt.com/docs/extend/mcp)
 
-Die [native Konfigurationsreferenz](https://learn.chatgpt.com/docs/config-file/config-reference)
-unterscheidet App-Aktivierung, Werkzeugfreigabe und Reviewer. Bei ausdrücklich
-genehmigten Apps können `destructive_enabled` und `open_world_enabled` gezielt
-aktiviert werden. Werkzeugkatalog und Reviewer sind getrennte Einstellungen:
-Verfügbarkeit erteilt keine einzelne Aktionsfreigabe. App- und
-Werkzeugoverrides sowie die für eine konkrete Aktion wirksame native Prüfung
-mitprüfen.
-
-[MCP-Richtlinien](https://learn.chatgpt.com/docs/extend/mcp) gehören für eigene
-Server unter `mcp_servers.<server>`, für Pluginserver unter
-`plugins.<plugin>.mcp_servers.<server>`. Plugintransporte nicht doppelt anlegen.
-`default_tools_approval_mode = "writes"` fragt für nicht als read-only markierte
-Werkzeuge; bei unklarer Klassifikation oder besonders sensiblen Aktionen
-`prompt` ausdrücklich setzen. Vorhandene native Werkzeuglisten und
-projektspezifische Einschränkungen erhalten. Frühere Zusatzinventare erst nach
-Zuordnung ihrer Regeln ablösen; unklare Einschränkungen nicht still verwerfen.
-
-Die zuständige Betriebsumgebung prüft bei einer Umstellung tatsächliche
-Leseaufrufe sowie Ablehnung und fehlenden Freigabekanal mit einem unschädlichen
-Schreibtest. Das gilt auch für direkte Aufrufe und Code Mode, falls verwendet.
-Diese Sourceprüfung führt selbst keine Agentenprobe aus.
-[Hooks](https://learn.chatgpt.com/docs/hooks) ersetzen native Freigaben nicht:
-`PreToolUse` mit `permissionDecision = "ask"` ist laut aktuellem Dokumentationsstand
-nicht unterstützt; der Hookfehler hält den Werkzeugaufruf nicht zuverlässig auf.
+Eine beauftragte spätere Betriebsprüfung kann anhand unschädlicher
+Aktionen lesen, Ablehnung und fehlende Freigabekanäle verifizieren.
+Beim Hook `PreToolUse` ist `permissionDecision = "ask"` in der
+referenzierten Dokumentation nicht unterstützt. Die nativen Gates
+und das [Nutzermandat](templates/REPO_POLICY.md) bleiben maßgeblich.
+[Hooks](https://learn.chatgpt.com/docs/hooks)
 
 ## Headless-Betrieb und Verfügbarkeitsgrenzen
 
-Für einen Headless-Host ohne nutzbaren Schlüsselbund ist
-`mcp_oauth_credentials_store = "file"` eine unterstützte explizite Benutzeroption
-([Referenz](https://learn.chatgpt.com/docs/config-file/config-reference)).
-Den Anmeldespeicher nur für den Betriebsbenutzer zugänglich halten.
-Credentials, OAuth-Zustand, Plugininstallation und Cache gehören nicht in den
-Consumer-Dateisync; die Betriebsumgebung verwaltet sie separat.
+Auf Hosts ohne nutzbaren Schlüsselbund ist
+`mcp_oauth_credentials_store = "file"` eine explizite Benutzeroption.
+Schütze den Speicher für den Betriebsbenutzer und trenne Credentials,
+OAuth-Zustand, Installation und Cache vom Dateitransport.
+[Konfigurationsreferenz](https://learn.chatgpt.com/docs/config-file/config-reference)
 
-Nach [Plugininstallation](https://learn.chatgpt.com/docs/plugins) eine neue
-CLI-Sitzung starten; eine externe Verbindung kann zusätzlich erforderlich sein.
-Die IDE-Erweiterung unterstützt Plugins derzeit nicht. Codex CLI im
-IDE-Terminal bleibt eine eigene Oberfläche. Plattformgebundene Plugins und
-Desktopfunktionen sind kein zugesicherter Umfang eines Linux-Hosts.
-Eine widerrufene Verbindung kann erneute Anmeldung verlangen.
-
-Abweichungen konkret benennen: verfügbar, bewusst eingeschränkt, Verbindung
-erforderlich, auf dieser Plattform nicht unterstützt oder Anbieterfehler.
-Ein geladener Katalog oder erfolgreicher Diagnosecheck allein beweist keine
-Nutzbarkeit und keine wirksame Aktionsfreigabe.
+Nach einer autorisierten Plugininstallation unterstützt Codex eine neu
+gestartete CLI-Sitzung. Abhängig vom Plugin ist eine externe Verbindung nötig.
+Die Verfügbarkeit hängt von Oberfläche, Host und Provider ab. Melde konkrete
+Einschränkungen und nutze nur bereits erlaubte verfügbare Optionen.
+[Plugins](https://learn.chatgpt.com/docs/plugins)
 
 ## Start und Fortsetzung im Consumer
 
-1. Ziel, Scope, lokale Projektregeln und aktuellen Aufgabenstand lesen.
-2. Explizite Profil-/Modellwahl erhalten. Ohne solche Wahl ein zur Aufgabe
-   passendes Profil aus der Rollenübersicht vorschlagen oder im freigegebenen
-   Umfang wählen. Modell, Reasoning-Effort und Speed sind getrennte Einstellungen.
-3. Nur tatsächlich verfügbare Hinweise über die Sitzung verwenden; Unbekanntes
-   offen nennen. Keine Pflicht zu Quotenexporter, Kontoabfrage oder Modellprobe.
-4. Fehlende oder inkompatible Wahl: nur eine bereits erlaubte passende Option
-   nutzen, sonst die konkrete Einschränkung melden. Keine Quoten-/Safetyumgehung
-   und kein bezahlter API-Fallback.
-5. Bei Resume Ziel, Commit/Dateien, offene Punkte und bestehende Freigaben
-   abgleichen. Ein neuer Thread setzt Problemversuche oder Budget nicht zurück.
+Lies Auftrag, lokale Regeln und aktuellen Stand. Erhalte explizite
+Modell-, Effort- und Tempowahlen. Nutze nur tatsächlich sichtbare
+Sitzungsinformationen. Wende bei Fortsetzung `long-running-goal` an.
+Offene Wirkungen und laufende Arbeit müssen vor Wiederholung nachgelesen werden.
 
 ## Kompatibilitätsgrenzen
 
-Das am 2026-09-17 erneut gelesene aktuelle
-[Config-Schema](https://learn.chatgpt.com/docs/config-schema.json) definiert
-`enabled`, `interrupt_message` und `max_concurrent_threads_per_session` als
-skalare Eigenschaften von `AgentsToml`; Rollen bleiben zusätzliche Tabellen.
-Die [Referenz](https://learn.chatgpt.com/docs/config-file/config-reference)
-bestätigt diese Platzierung unter `agents`. Hinweise älterer Consumer-Beispiele
-zu Codex 0.137/0.144 sind keine Vorgabe für diese aktuelle Konfiguration.
-Eine ältere CLI, die diese Felder als Rollen interpretiert, ist damit inkompatibel;
-eine aktuelle passende Version verwenden. Es wird keine getestete Mindestversion
-oder lokale Agentenausführung behauptet.
-
-Das [Config-Schema](https://learn.chatgpt.com/docs/config-schema.json) akzeptiert
-vom Modell angebotene nichtleere Effortstrings. Die offiziellen Modellseiten
-führen `max` für die vorhandenen Qualitätsoptionen auf; die allgemeine
-[Config-Referenz](https://learn.chatgpt.com/docs/config-file/config-reference)
-listet teils nur Werte bis `xhigh`. Hier bleiben die anhand Modellseite und
-Schema belegten Qualitätsoptionen erhalten. Daraus folgt keine Garantie, dass
-jede ältere CLI oder Oberfläche diese Auswahl anbietet.
-
-`service_tier` wird aus dem gewählten Speedmodus erzeugt. Die Parent-
-Profildateien behalten `service_tier = "default"` für Standard-Speed.
-Nach der aktuellen [Subagentenreferenz](https://learn.chatgpt.com/docs/agent-configuration/subagents)
-folgt der Service-Tier der Root-Sitzung. Die vorhandenen generierten
-Child-Einträge `service_tier = "default"` erzwingen deshalb keinen unabhängigen
-Standardmodus gegen einen Fast-Parent und sind keine Sicherheits- oder
-Kostengarantie. Für Standard-Speed die Root-Sitzung entsprechend wählen.
-Die Registry hält für einen *nicht aktiven*
-Fastmodus den nativen Codex-Konfigurationswert `service_tier = "fast"` und
-getrennt den Requestwert `priority` fest; letzterer ist kein direkt in TOML
-einzutragender Speedwert. Die tatsächliche Verfügbarkeit und Aktivierung hängen
-von Client, Modell und Konto ab. API-Tokenpreise, zusätzliche ChatGPT-Credits
-und inkludierter Abonnementverbrauch sind verschiedene Größen; aus der
-Modellwahl folgt keine feste Ersparnis oder Nachrichtenmenge.
-`execution_mode` und `ultra` sind beschreibende
-Registry-Metadaten, keine erfundenen nativen Schalter. Der Profilwert `max`
-aktiviert weder Fast noch Ultra; zusätzlich angebotene UI-/Moduswerte nicht
-ungeprüft in native Effortwerte übersetzen. Fast, Ultrafast und Ultra werden durch
-diese Definitionen nicht aktiviert.
-Der frühere Spark-Kandidat wurde nach seiner Einstellung aus aktiven
-Auswahlpfaden entfernt. Bisherige dokumentierte 5.6- und GPT-6-Alternativen bleiben
-ausdrücklich wählbar, solange der jeweilige Client sie bereitstellt.
+Das native Schema führt `enabled`, `interrupt_message` und
+`max_concurrent_threads_per_session` als skalare Felder unter `agents`.
+Rollenregistrierungen stehen in separaten Tabellen. Eine ältere CLI, die
+solche Felder als Rollen interpretiert, braucht einen passenden neueren
+Codex-Stand. Effortstrings sind modellbezogen. Verwende für `max` das
+konkret angebotene, dokumentierte Modellpaar und die tatsächliche
+Providerunterstützung.
+[Konfigurationsschema](https://learn.chatgpt.com/docs/config-schema.json),
+[Referenz](https://learn.chatgpt.com/docs/config-file/config-reference)

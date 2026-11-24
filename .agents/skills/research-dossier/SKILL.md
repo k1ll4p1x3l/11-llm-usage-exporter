@@ -19,7 +19,8 @@ description: Use for structured research on current, technical, legal, scientifi
 
 1. Define the question precisely before searching.
 2. Prefer primary sources, then official secondary sources, then reputable third parties.
-3. Record publication date and access date for time-sensitive claims.
+3. Record publication date and access date for time-sensitive claims. State
+   the relevant date, region and version context.
 4. Compare conflicting sources and identify what is confirmed, inferred, or uncertain.
 5. Separate findings, interpretation, and recommendation.
 6. End with sources that a reviewer can open directly.
@@ -38,6 +39,10 @@ description: Use for structured research on current, technical, legal, scientifi
 - Recommendation follows from the evidence actually gathered.
 
 ## Output
+
+For a focused question, answer directly with credible sources and any relevant
+limits or conflicting evidence. Use sections from this outline when they help
+the reader assess a larger investigation.
 
 ```text
 ## Executive summary

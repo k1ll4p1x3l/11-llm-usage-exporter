@@ -1,12 +1,15 @@
 # Aktueller Aufgabenstand
 
-- Ziel und Muss-Punkte:
+- Ziel, Muss-Punkte, Ausschlüsse und vereinbarter Endpunkt:
 - Erledigt / noch offen:
 - Dateien, Branch, Commit:
-- Relevante Befunde und tatsächlich erfolgte Prüfungen:
-- Echte Freigaben und ihre Grenzen (Gesprächsreferenz):
-- Probleme, bisherige Versuche, neue Erkenntnis / vereinbarte Grenzen:
+- Beobachtete externe Wirkungen, laufende Arbeiten und tatsächlich erfolgte Prüfungen:
+- Geltende Freigaben mit Quelle, Wirkungsspielraum und Grenzen:
+- Probleme, kumulative Versuche, neue Erkenntnisse und vereinbarte Grenzen:
+- Wichtige eigene temporäre Ressourcen mit Host, Pfad/ID, Zweck, nötiger
+  Erhaltungsbedingung und offenem Bereinigungsrest:
 - Nächster sicherer Schritt:
 
-Nur aktuelle relevante Informationen, keine Secrets oder Vollhistorie.
-Diese Notiz dokumentiert Tatsachen und erzeugt keine Freigabe.
+Halte nur aktuelle relevante Informationen ohne Secrets fest. Unterscheide
+Nutzerangabe, Beobachtung und Schlussfolgerung. Vor Fortsetzung tatsächliche
+Zustände nachlesen. Die Notiz dokumentiert bestehende Freigaben.

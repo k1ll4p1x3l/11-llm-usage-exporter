@@ -32,8 +32,10 @@ description: Use when a task should gather required inputs and approvals early, 
    Nach Resume höchstens den aktuellen Status nachholen; keinen Bericht neben
    gleichzeitigem Abschluss doppeln. Schätzungen kennzeichnen; keine erfundenen
    Prozentwerte, Timer, garantierte Offlinezustellung oder Antwortpflicht.
-8. Prüfe die tatsächlichen Muss-Punkte und den erlaubten Gitabschluss. Wenn
-   erfüllt, beenden. Ein Zwischenstand oder verbrauchtes Budget ist kein Erfolg.
+8. Prüfe die tatsächlichen Muss-Punkte und den vereinbarten Abschluss nach
+   Consumer-AGENTS. Bei Git-Aufträgen führt `git-change-lifecycle` durch
+   Integration, lokalen Hauptstand und gedeckte Bereinigung. Für
+   Wiederaufnahme verwende `long-running-goal`.
 
 Der Hauptagent bleibt Ansprechpartner für Scope, Integration und Freigaben.
 Weitere Einzelverfahren: `git-change-lifecycle`, `long-running-goal` und

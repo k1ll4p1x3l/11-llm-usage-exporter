@@ -23,7 +23,8 @@ description: Use for long-form writing, editing, documentation suites, and struc
 3. Draft or edit in sections that can be reviewed independently.
 4. Track terms, claims, and tone consistency across sections.
 5. Mark factual claims that need sourcing.
-6. End with change notes and the next recommended section.
+6. Deliver the requested text or revision. Include change notes where useful
+   and a next writing step only when the agreed work is still open.
 
 ## Stop / Approval Rules
 
@@ -36,7 +37,8 @@ description: Use for long-form writing, editing, documentation suites, and struc
 - Audience and tone are explicit.
 - Structure exists before long drafting.
 - Claims needing research are marked.
-- The next writing step is clear.
+- The text reaches the agreed endpoint. For unfinished work, identify the
+  next writing step when useful.
 
 ## Output
 
@@ -53,6 +55,6 @@ description: Use for long-form writing, editing, documentation suites, and struc
 ## Consistency / fact gaps
 - ...
 
-## Next section
+## Next section (only for ongoing work)
 - ...
 ```

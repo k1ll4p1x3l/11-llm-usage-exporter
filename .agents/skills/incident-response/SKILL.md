@@ -32,7 +32,11 @@ description: Use for an incident lifecycle from preparation and detection throug
 
 - Never destroy evidence before capturing what is needed for diagnosis and accountability.
 - Never claim compromise, recovery, or root cause without evidence.
-- Never perform broad containment that creates larger outage risk unless the human owner explicitly approves it.
+- Perform broad containment with substantial outage risk only with the human
+  owner's explicit approval. An existing human-approved incident mandate can
+  satisfy this requirement if it covers the exact target, concrete outage
+  effects and recovery route. Follow `approved-change-execution`. Keep native
+  denials, uncovered effects and actions dependent on a failed check blocked.
 - Never mix speculation and fact in the incident record.
 
 ## Checks
