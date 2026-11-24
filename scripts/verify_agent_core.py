@@ -19,6 +19,7 @@ LOCK_NAME = ".agent-core.lock.json"
 PUBLIC_FILES = {
     "AGENTS.md", ".codex/config.toml", ".agent-core/LICENSE",
     ".agent-core/CONFIGURATION.md", ".agent-core/ROLES.md",
+    ".agent-core/VARIANTS.md",
 }
 PUBLIC_PREFIXES = (
     ".agents/skills/", ".codex/agents/", ".agent-core/templates/",
