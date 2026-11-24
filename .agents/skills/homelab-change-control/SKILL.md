@@ -19,16 +19,22 @@ description: Use for infrastructure, homelab, and operations work that must sepa
 ## Workflow
 
 1. Start with inventory and evidence, not mutation.
-2. Classify the work:
-   - low: docs, labels, local validation helpers;
-   - medium: offline config patches not yet applied;
-   - critical: firewall, routing, DNS, auth, storage, backup, TLS, VPN, productive deploy.
+2. Classify the actual consequences. Check the affected data and dependent
+   services, access paths, tolerable downtime and recoverability. Size the
+   technical controls to these findings. For example, assess whether a DNS
+   change affects a disposable test host or a shared resolver.
 3. Route incident work through `incident-response` when live impact, evidence capture, or containment are central.
 4. Route backup and recovery readiness through `backup-restore-validation` when restore-tested evidence is needed.
 5. Route monitoring, alerts, and operator guidance through `observability-and-runbooks`.
 6. For critical change work, require a plan before any patching.
-7. Prepare rollback and validation before proposing execution.
-8. Use `approved-change-execution` only after real human approval for a specific live action. Execution must stay tightly limited to the reviewed target set and include preflight, preview, readback, and abort rules.
+7. Prepare validation and a recovery path the executor can actually reach.
+   If the change affects its only access route, verify independent access
+   before applying it, or identify the specific assistance required.
+8. Use `approved-change-execution` for live actions. Verify that a human
+   decision covers the exact target, effect and recovery path. An applicable
+   human-approved area mandate can already cover all three. Identify the
+   executor and retain required reviews, native approvals, preflight,
+   preview, abort conditions and independent readback.
 9. Keep secrets redacted and private topology out of public-safe outputs.
 
 ## Stop / Approval Rules
@@ -36,7 +42,10 @@ description: Use for infrastructure, homelab, and operations work that must sepa
 - No live changes without explicit user approval.
 - Stop before restarts, deploys, firewall edits, DNS changes, storage actions, credential changes, or backup mutations unless already approved.
 - Never treat a plan, patch, or template as human approval for live execution.
-- Stop if rollback is missing or evidence is too thin.
+- Block the dependent action if recovery is missing, a check fails or
+  evidence is insufficient. Continue authorized diagnosis, preparation
+  and correction, then repeat the affected check. An uncovered effect or
+  native denial remains blocked.
 
 ## Checks
 

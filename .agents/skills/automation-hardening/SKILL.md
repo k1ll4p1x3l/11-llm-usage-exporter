@@ -28,7 +28,11 @@ description: Use for CI, scripts, cron, agent workflows, and other automation th
 
 ## Stop / Approval Rules
 
-- Stop before enabling production deployment, destructive cleanup, or external integrations without approval.
+- Require human approval before enabling production deployment, destructive
+  cleanup or external integrations. An existing human-approved area mandate can
+  satisfy this requirement only when it covers the exact target, concrete
+  effects and recovery route. Keep native denials, uncovered effects and actions
+  dependent on a failed check blocked.
 - Stop if the automation cannot explain its own state transitions or recovery path.
 - Do not hardcode secrets or assume network availability silently.
 

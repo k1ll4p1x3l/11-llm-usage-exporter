@@ -3,8 +3,8 @@
 Status: optional local working copy
 Managed-by-source: no
 
-Use this only to document a human-reviewed change. This file is not approval by
-itself and must not be used to manufacture permission.
+Use this optional record to map a human approval or existing area mandate
+to a proposed change. The authority comes from the referenced human decision.
 
 ## Summary
 
@@ -16,7 +16,9 @@ itself and must not be used to manufacture permission.
 
 ## Preconditions
 
-- Human approval reference:
+- Human decision or applicable area mandate, scope and exclusions:
+- Exact effects covered, responsible executor and reserved decisions:
+- Required reviews, native approvals and technical controls for the expected impact:
 - Maintenance window:
 - Preconditions that must still be true:
 
@@ -39,6 +41,6 @@ itself and must not be used to manufacture permission.
 
 ## Rollback
 
-- Rollback path:
+- Rollback path reachable by the executor, including independent access if needed:
 - Rollback trigger:
 - Evidence to capture before rollback:

@@ -34,6 +34,23 @@ description: Use for restore-tested backup and recovery planning with RPO, RTO, 
 - Never hide missing dependencies such as IAM, DNS, or keys behind a green backup label.
 - Never overwrite primary data during validation unless explicitly approved and sandboxed.
 
+## Recovery for a specific task
+
+Before a consequential change, verify that the executor can reach and use
+the needed recovery source, credentials and tooling. If the change can sever
+network, DNS or identity access, verify an independent route. Prepare the
+missing prerequisite within the current mandate. A tested rebuild can be
+adequate for a resource explicitly designated disposable. Match backup and
+restore-test depth to the data, downtime and actual change risk.
+
+Keep regular retention and required recovery paths in place. For an additional
+task backup, record its location, purpose, dependencies and removal condition
+in the existing task state if it must outlive the change. When that purpose
+ends, assess snapshot, clone and backup chains before removing the owned extra
+copy within the existing mandate using the native procedure. Read back its
+removal and, for substantial storage, check actual available capacity at the
+affected store. Shared blocks and logical size do not measure reclaimed space.
+
 ## Checks
 
 - RPO and RTO are explicit per critical item.

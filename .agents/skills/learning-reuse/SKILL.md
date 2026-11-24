@@ -9,6 +9,12 @@ Nutze diesen Skill bei einer konkreten wiederkehrenden Fehlerklasse, einem
 bereits belegten funktionierenden Vorgehen oder einer passenden Folgeaufgabe.
 Eine Routineaufgabe benötigt kein Lernen um des Lernens willen.
 
+Sichere vor dem Entfernen eines Aufgabenarbeitsorts belegte Erkenntnisse,
+dauerhaft benötigte Betriebsinformationen und Helfer in der dafür vorgesehenen
+bestehenden Quelle. Lege vertrauliche Rohdaten und große Abbilder am
+vorgesehenen geschützten Ort ab. Einzelnachweise, Einmalskripte und Vollhistorie
+brauchen eine dauerhafte Ablage nur, wenn ihre weitere Verwendung das erfordert.
+
 ## Erfassen oder handeln
 
 - **Erfassung:** Nur bei bereits erlaubtem Schreibpfad aus vorhandener Evidenz

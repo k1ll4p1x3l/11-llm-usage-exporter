@@ -20,8 +20,9 @@ description: Use when the task is to choose between options, document trade-offs
 
 1. State the decision clearly.
 2. List realistic options, including do-nothing where relevant.
-3. Define criteria and rough weighting without fake precision.
-4. Score coarsely and explain why.
+3. Define the criteria and explain which matter most.
+4. Compare options in prose or a table. Use coarse weights and scores only
+   when they clarify the comparison, with reasons for the values.
 5. Document trade-offs, reversibility, and risks.
 6. End with a recommendation plus triggers for re-evaluation.
 
@@ -34,7 +35,7 @@ description: Use when the task is to choose between options, document trade-offs
 ## Checks
 
 - Criteria are explicit.
-- Scoring is coarse and justified.
+- The comparison is reasoned. Any scoring used is coarse and justified.
 - Recommendation follows from stated trade-offs.
 - Review triggers are concrete.
 
@@ -50,8 +51,9 @@ description: Use when the task is to choose between options, document trade-offs
 ## Criteria
 - ...
 
-## Matrix
-| Option | Benefit | Cost | Risk | Reversibility | Overall |
+## Comparison
+Explain how the options meet the criteria and where the main trade-offs lie.
+A matrix is optional.
 
 ## Recommendation
 - ...
